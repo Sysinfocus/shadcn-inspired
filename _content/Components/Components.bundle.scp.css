@@ -1049,6 +1049,25 @@ hr[b-0405xf9y35] {
 .light .sbc-input input[b-3r44t2pqks] {
     box-shadow: 0 1px 2px 0 var(--primary-border);
 }
+/* _content/Components/Progress.razor.rz.scp.css */
+.sbc-percent-container[b-b8pkpf4bbw] {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+.sbc-progress[b-b8pkpf4bbw] {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.sbc-progress-completed[b-b8pkpf4bbw] {
+    position: absolute;
+    left: 0;
+    top: 0;    
+    height: 100%;    
+}
 /* _content/Components/Switch.razor.rz.scp.css */
 .sbc-toggle[b-rt7x10b2kl] {
     display: flex;
