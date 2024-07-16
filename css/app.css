@@ -61,8 +61,11 @@ section {
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    flex-wrap: wrap;
     align-items: center;
+}
+
+.wrap {
+    flex-wrap: wrap;
 }
 
 .flex-col {
@@ -74,6 +77,9 @@ section {
 .jcsa { justify-content: space-around; }
 .jcsb { justify-content: space-between; }
 .jcse { justify-content: space-evenly; }
+.jcs { justify-content: flex-start; }
+.jcc { justify-content: center; }
+.jce { justify-content: flex-end; }
 
 .aifs { align-items: flex-start; }
 .aife { align-items: flex-end; }

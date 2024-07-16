@@ -1,18 +1,15 @@
 .light {
-    --color-scheme: light;    
+    --color-scheme: light;
     --light: white;
     --dark: black;
-
     --primary-bg: #ffffff;
     --primary-fg: #25252b;
     --primary-border: #d4d4d5;
-
     --primary-bg-hover: #25252b;
     --primary-fg-hover: #ffffff;
     --primary-border-hover: #cccccc;
-
     --btn-primary-bg: #18181b;
-    --btn-primary-fg:#f4f4f5 ;
+    --btn-primary-fg: #f4f4f5;
     --btn-primary-border: #e4e4e7;
     --btn-secondary-bg: #f4f4f5;
     --btn-secondary-fg: #18181b;
@@ -35,22 +32,16 @@
     --btn-loading-bg: var(--btn-primary-bg);
     --btn-loading-fg: var(--btn-primary-fg);
     --btn-loading-border: #e4e4e7;
-
     --btn-outline-bg-hover: var(--btn-secondary-bg);
-
     --overlay-bg: #18181b;
     --alert-dialog-bg: #fafafa;
     --alert-dialog-border: #fafafa;
-
     --toggle-bg: #e4e4e7;
     --toggle-fg: #ffffff;
     --toggle-checked: #8b8b8d;
-
     --table-row-bg: #f9f9f9;
-    --table-footer: #f6f6f6;
-
+    --table-footer: #f6f6f6;    
     --error: #ef4444;
-
     --success-bg: #44ef44;
     --success-fg: var(--primary-fg);
     --warning-bg: orange;
@@ -59,8 +50,6 @@
     --info-fg: var(--primary-fg);
     --error-bg: var(--error);
     --error-fg: var(--primary-bg);
-
-
     /* --backcolor: #fff;
     --textcolor: #222;
     --bg: #ffffff;
