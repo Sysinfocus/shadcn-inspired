@@ -1,3 +1,39 @@
+/* geist-sans-latin-200-normal */
+@font-face {
+    font-family: 'Geist Sans';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 200;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-200-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-200-normal.woff) format('woff');
+}
+
+/* geist-sans-latin-400-normal */
+@font-face {
+    font-family: 'Geist Sans';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-400-normal.woff) format('woff');
+}
+
+/* geist-sans-latin-500-normal */
+@font-face {
+    font-family: 'Geist Sans';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 500;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-500-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-500-normal.woff) format('woff');
+}
+
+/* geist-sans-latin-700-normal */
+@font-face {
+    font-family: 'Geist Sans';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 700;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-700-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-700-normal.woff) format('woff');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,15 +41,14 @@
 }
 
 body {
-    font-family: Inter, sans-serif;
-    font-size: 1rem;
+    font-family: 'Geist Sans', sans-serif;
     transition: all 300ms ease-in-out;
 }
 
 .container {
     max-width: 1400px;
     width: 100%;
-    padding: 2rem;
+    padding: 0 2rem;
     max-height: 100vh;
     margin: auto;
 }
@@ -75,7 +110,6 @@ main {
 }
 
 .menu {
-    /* margin-top: 1rem; */
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -84,7 +118,7 @@ main {
     width: 100%;
     height: 100%;
     padding-bottom: 1rem;
-    max-height: calc(100vh - 6rem);
+    max-height: calc(100vh - 4rem);
     overflow: auto;
 }
 
