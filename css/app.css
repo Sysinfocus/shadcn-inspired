@@ -147,7 +147,7 @@ main {
     height: 8px;
 }
 :hover::-webkit-scrollbar-thumb {
-    background-color: var(--btn-secondary-bg);
+    background-color: var(--primary-border) !important;
     border-radius: 8px;
 }
 
