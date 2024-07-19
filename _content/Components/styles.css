@@ -38,7 +38,7 @@
     --alert-dialog-border: #fafafa;
     --toggle-bg: #e4e4e7;
     --toggle-fg: #ffffff;
-    --toggle-checked: #8b8b8d;
+    --toggle-checked: #18181b;
     --table-row-bg: #f9f9f9;
     --table-footer: #f6f6f6;
     --error: #ef4444;
@@ -50,6 +50,9 @@
     --info-fg: var(--primary-fg);
     --error-bg: var(--error);
     --error-fg: var(--primary-bg);
+
+    --dark-text: #09090b;
+    --light-text: #71717a;
     /* --backcolor: #fff;
     --textcolor: #222;
     --bg: #ffffff;
@@ -116,7 +119,7 @@
     --alert-dialog-border: #25252b;
     --toggle-bg: #27272a;
     --toggle-fg: #09090b;
-    --toggle-checked: #818182;
+    --toggle-checked: #fafafa;
     --table-row-bg: #18181a;
     --table-footer: #202022;
     --error: #ef4444;
@@ -128,6 +131,9 @@
     --info-fg: var(--primary-fg);
     --error-bg: var(--error);
     --error-fg: var(--primary-bg);
+    
+    --dark-text: #fafafa;
+    --light-text: #a1a1aa;
     /* --backcolor: #fff;
     --textcolor: #222;
     --bg: #ffffff;
@@ -252,3 +258,13 @@ input, textarea, select, button {
 .g12 {
     gap: 12px;
 }
+
+h1 { font-size: 36px; letter-spacing: -0.85px; font-weight: bold }
+h2 { font-size: 30px; letter-spacing: -0.85px; font-weight: bold }
+h3 { font-size: 24px; letter-spacing: -0.25px; font-weight: bold }
+h4 { font-size: 20px; letter-spacing: -0.85px; font-weight: bold }
+.lead { font-size: 20px; font-weight: 400; color: var(--light-text); letter-spacing: 0px;  }
+.large { font-size: 18px; font-weight: 600; color: var(--dark-text); letter-spacing: 0px;  }
+.small { font-size: 14px; font-weight: 500; color: var(--dark-text); letter-spacing: 0px;  }
+.muted { font-size: 14px; font-weight: 400; color: var(--light-text); letter-spacing: 0px;  }
+.inline { font-size: 14px; font-family: monospace; font-weight: 600; color: var(--dark-text); letter-spacing: -0.25px;  }

@@ -25,6 +25,16 @@
     src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-500-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-500-normal.woff) format('woff');
 }
 
+
+/* geist-sans-latin-600-normal */
+@font-face {
+    font-family: 'Geist Sans';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 600;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-600-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-600-normal.woff) format('woff');
+}
+
 /* geist-sans-latin-700-normal */
 @font-face {
     font-family: 'Geist Sans';

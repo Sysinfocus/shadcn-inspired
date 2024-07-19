@@ -19,13 +19,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    font-size: 1rem;
+    font-size: 14px;
     font-weight: 500;
 }
 
 .sbc-accordion-item-header-icon[b-om9c2jy5h7]  svg {
     width: 16px;
     height: 16px;
+    color: var(--);
     transition: transform 150ms ease-out;
 }
 
@@ -69,24 +70,26 @@
     flex-direction: row;
     gap: 1rem;
     border: 1px solid var(--primary-border);
-    padding: 1rem;
+    padding: 0.75rem 1rem;
     border-radius: 0.5rem;
 }
 
 .sbc-alert span[b-em8pgb82eu] { cursor: default;}
 
 .sbc-alert-header[b-em8pgb82eu] {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark-text);
     line-height: 1.5rem;
 }
 .sbc-alert-content[b-em8pgb82eu] {
-    font-size: 14px;    
+    font-size: 14px;
+    color: var(--light-text);
 }
 
-.error[b-em8pgb82eu] {
+.error[b-em8pgb82eu], .error[b-em8pgb82eu]  * {
     border-color: var(--error);
-    color: var(--error);
+    color: var(--error) !important;
 }
 /* _content/Components/AlertDialog.razor.rz.scp.css */
 .sbc-alertdialog[b-z4sj4desbz] {
@@ -128,7 +131,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
 }
 .sbc-alertdialog-content[b-z4sj4desbz] {
@@ -208,10 +211,10 @@
 /* _content/Components/Badge.razor.rz.scp.css */
 .sbc-badge[b-av0476wejc] {
     height: 22px;
-    padding: 4px 16px;
-    border-radius: 9999px;       
+    padding: 4px 10px;
+    border-radius: 6px;       
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
     cursor: default;
     transition: opacity 150ms ease-in-out;
 }
@@ -228,8 +231,9 @@
     color: var(--btn-secondary-fg);
 }
 .outline[b-av0476wejc] {
-    background-color: var(--btn-primary-bg);
-    color: var(--btn-primary-fg);
+    background-color: transparent;
+    border: 1px solid var(--primary-border);
+    color: var(--btn-primary-bg) !important;
 }
 .destructive[b-av0476wejc] {
     background-color: var(--btn-destructive-bg);
@@ -249,7 +253,7 @@
     text-decoration: none;
     color: var(--primary-fg);
     opacity: 0.65;
-    font-weight: 500;
+    font-weight: 400;
 }
 .sbc-breadcrumb-item:hover[b-b6dcjh4t2f] {
     opacity: 1;
@@ -261,6 +265,9 @@
 [b-b6dcjh4t2f] .sbc-breadcrumb-separator {
     line-height: 0rem;
     opacity: 0.5;
+}
+.current-item[b-b6dcjh4t2f] {
+    font-weight: 400;
 }
 /* _content/Components/Button.razor.rz.scp.css */
 .sbc-button[b-dya36mh3t9] {
@@ -656,7 +663,7 @@
 }
 
 .sbc-card-header[b-bq1hnrxmf6]  h3:first-child {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 2rem;
 }
 
@@ -2163,6 +2170,7 @@ hr[b-bfdhn05mn0] {
 
 [b-x8dkmff9ve] tfoot th {
     text-align: left;
+    font-weight: 500;
     background-color: var(--table-footer);
     border: none;
 }
@@ -2268,8 +2276,8 @@ hr[b-bfdhn05mn0] {
 /* _content/Components/Toast.razor.rz.scp.css */
 .sbc-toast[b-akd64uhxl7] {
     position: fixed;
-    bottom: 1rem;
-    right: 1rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
     border: 1px solid var(--primary-border);
     border-radius: 6px;    
     font-size: 14px;
