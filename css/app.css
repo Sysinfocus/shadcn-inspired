@@ -46,7 +46,6 @@ body {
 }
 
 .container {
-    max-width: 1400px;
     width: 100%;
     max-height: 100vh;
     margin: auto;
@@ -150,8 +149,8 @@ main {
 }
 
 .light {
-    --primary-bg-header: #eeeeee66;
+    --primary-bg-header: #ffffff22;
 }
 .dark {
-    --primary-bg-header: #11111199;
+    --primary-bg-header: #11111122;
 }
