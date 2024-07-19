@@ -40,7 +40,7 @@
     --toggle-fg: #ffffff;
     --toggle-checked: #8b8b8d;
     --table-row-bg: #f9f9f9;
-    --table-footer: #f6f6f6;    
+    --table-footer: #f6f6f6;
     --error: #ef4444;
     --success-bg: #44ef44;
     --success-fg: var(--primary-fg);
@@ -154,9 +154,101 @@
     transition: 300ms all ease-in-out; */
 }
 
-body { 
+body {
     background-color: var(--primary-bg);
     color: var(--primary-fg);
 }
 
-input, textarea, select, button { font-family: inherit; }
+input, textarea, select, button {
+    font-family: inherit;
+}
+
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem
+}
+
+.jcsa {
+    justify-content: space-around;
+}
+
+.jcsb {
+    justify-content: space-between;
+}
+
+.jcse {
+    justify-content: space-evenly;
+}
+
+.jcs {
+    justify-content: flex-start;
+}
+
+.jcc {
+    justify-content: center;
+}
+
+.jce {
+    justify-content: flex-end;
+}
+
+.aifs {
+    align-items: flex-start;
+}
+
+.aife {
+    align-items: flex-end;
+}
+
+.aic {
+    align-items: center;
+}
+
+.mtb1 {
+    margin: 1rem 0
+}
+
+.mlr1 {
+    margin: 0 1rem
+}
+
+.ptb1 {
+    padding: 1rem 0
+}
+
+.plr1 {
+    padding: 0 1rem
+}
+
+.f-1 {
+    flex: 1
+}
+
+.g0 {
+    gap: 0;
+}
+
+.g4 {
+    gap: 4px
+}
+
+.g8 {
+    gap: 8px
+}
+
+.g12 {
+    gap: 12px;
+}

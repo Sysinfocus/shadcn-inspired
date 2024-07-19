@@ -29,7 +29,7 @@ window.activate = function (e) {
 
 window.deactivate = function (e) {    
     if (activeCalendar == null) return;
-    document.querySelector('#dp' + e).classList.remove('show');
+    document.querySelector('#dp' + e)?.classList.remove('show');
 }
 
 export const updatePosition = function (p, e) {
