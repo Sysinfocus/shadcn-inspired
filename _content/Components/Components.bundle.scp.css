@@ -1107,7 +1107,7 @@ hr[b-0405xf9y35] {
     display: flex;
     place-content: center;
     align-items: center;
-    font-size: 14px;
+    font-size: 14px;    
     cursor: default;
 }
 /* _content/Components/DatePicker.razor.rz.scp.css */
@@ -1499,7 +1499,7 @@ hr[b-0405xf9y35] {
 .sbc-menuitem[b-8v0iajmn9l] {
     font-family: inherit;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: normal;
     max-height: 36px;
     background-color: transparent;
     border: 1px solid transparent;
@@ -1584,6 +1584,7 @@ hr[b-0405xf9y35] {
 }
 /* _content/Components/Popover.razor.rz.scp.css */
 .sbc-popover[b-ztxulxv1n1] {
+    --from: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -1669,6 +1670,197 @@ hr[b-0405xf9y35] {
     scrollbar-gutter: stable;
     scroll-behavior: smooth;
 }
+/* _content/Components/Select.razor.rz.scp.css */
+.sbc-select[b-bfdhn05mn0] {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+    .sbc-select label[b-bfdhn05mn0] {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+hr[b-bfdhn05mn0] {
+    height: 1px;
+    border-bottom: 1px solid var(--primary-border);
+    opacity: 0.15;
+}
+
+.sbc-select span.info[b-bfdhn05mn0] {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.sbc-select button[b-bfdhn05mn0] {
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background-color: var(--primary-bg);
+    color: var(--primary-fg);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 36px;
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+    padding: 8px 16px;
+    padding-right: 10px;
+    outline: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 150ms ease-in-out;
+}
+
+    .sbc-select button span[b-bfdhn05mn0] {
+        max-width: calc(100% - 1.5rem);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .sbc-select button:disabled[b-bfdhn05mn0] {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+    .sbc-select button:not(:disabled):hover[b-bfdhn05mn0],
+    .sbc-select button:not(:disabled):focus[b-bfdhn05mn0] {
+        background-color: var(--btn-secondary-bg);
+        color: var(--btn-secondary-fg);
+        cursor: pointer;
+    }
+
+    .sbc-select button[b-bfdhn05mn0]  svg {
+        stroke: var(--primary-fg);
+        opacity: 0.5;
+        width: 16px;
+        height: 16px;
+    }
+
+.sbc-ac-list[b-bfdhn05mn0] {
+    user-select: none;
+    position: fixed;
+    z-index: 50;
+    background-color: var(--primary-bg);
+    max-height: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+    padding: 4px;
+    visibility: collapse;
+}
+
+.search-box[b-bfdhn05mn0] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid var(--primary-border);
+    padding: 0 8px;
+    margin-bottom: 4px;
+}
+
+    .search-box[b-bfdhn05mn0]  svg {
+        min-width: 16px;
+        max-width: 16px;
+        stroke: var(--primary-fg);
+        opacity: 0.5;
+    }
+
+    .search-box input[b-bfdhn05mn0] {
+        font-family: inherit;
+        background-color: transparent;
+        font-size: 14px;
+        width: 100%;
+        min-height: 40px;
+        margin-bottom: 2px;
+        border: none;
+        padding: 8px;
+        outline: transparent;
+    }
+
+.list-items[b-bfdhn05mn0] {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+}
+
+.list-items b[b-bfdhn05mn0] {
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+    .list-items[b-bfdhn05mn0]::-webkit-scrollbar {
+        width: 0px;
+        background-color: transparent;
+    }
+
+.sbc-ac-list .item[b-bfdhn05mn0] {
+    flex: 1;
+    cursor: default;
+    padding: 8px 16px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+    .sbc-ac-list .item span[b-bfdhn05mn0] {
+        width: 16px;
+    }
+
+    .sbc-ac-list .item[b-bfdhn05mn0]  svg {
+        position: absolute;
+        right: 8px;
+        width: 16px !important;
+        height: 16px !important;
+        stroke: var(--primary-fg);
+    }
+
+    .sbc-ac-list .item.selected[b-bfdhn05mn0],
+    .sbc-ac-list .item:hover[b-bfdhn05mn0] {
+        background-color: var(--btn-secondary-bg);
+        border-radius: 4px;
+    }
+
+.sbc-ac-list.show[b-bfdhn05mn0] {
+    visibility: visible;
+    animation: show-b-bfdhn05mn0 100ms linear both;
+}
+
+.light .sbc-ac-list[b-bfdhn05mn0] {
+    box-shadow: 0 1px 4px 1px var(--btn-secondary-bg);
+}
+
+@keyframes show-b-bfdhn05mn0 {
+    from {
+        opacity: 0;
+        transform: scaleX(0.5) scaleY(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.sbc-select-up[b-bfdhn05mn0], .sbc-select-down[b-bfdhn05mn0] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+.sbc-select-down[b-bfdhn05mn0] {
+    bottom: 0;
+}
 /* _content/Components/Separator.razor.rz.scp.css */
 .sbc-separator-horizontal[b-d5d193g4wi] {
     width: 100%;
@@ -1699,13 +1891,14 @@ hr[b-0405xf9y35] {
 
 .sbc-sheet-content[b-vsix4z7trx] {
     position: absolute;
-    top: 0;    
+    top: 0;
     padding: 1.5rem;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: var(--primary-bg);    
+    background-color: var(--primary-bg);
     border-left: 1px solid var(--primary-border);
+    border-right: 1px solid var(--primary-border);
 }
 
 .show[b-vsix4z7trx] {

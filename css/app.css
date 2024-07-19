@@ -107,7 +107,9 @@ main {
 
 .examples {
     flex: 1;
-    padding-bottom: 1rem;    
+    padding-bottom: 1rem;
+    min-width: 300px;
+    overflow: auto;
 }
 
 
