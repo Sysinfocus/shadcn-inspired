@@ -50,33 +50,9 @@
     --info-fg: var(--primary-fg);
     --error-bg: var(--error);
     --error-fg: var(--primary-bg);
-
     --dark-text: #09090b;
+    --medium-text: #6a6a6a;
     --light-text: #71717a;
-    /* --backcolor: #fff;
-    --textcolor: #222;
-    --bg: #ffffff;
-    --fg: #09090b;
-    --border: #e4e4e7;
-    --bg-hover: #f4f4f5;
-    --fg-hover: #18181b;
-    --color-scheme: light;
-    --input-focus: #999999;
-    --primary-bg: #18181b;
-    --secondary-bg: #f4f4f5;
-    --destructive-bg: #dc2626;
-    --outline-bg: #ffffff;
-    --primary-fg: #f4f4f5;
-    --secondary-fg: #18181b;
-    --outline-fg: #18181b;
-    --destructive-fg: #f4f4f5;
-    --outline-border: #e4e4e7;
-    --outline-bg-hover: #f4f4f5;
-    --toggle-wrapper: #e4e4e7;
-    --toggle: #ffffff;
-    --table-row-hover: #f9f9f5;
-    --table-row-selected: #f4f4f5;
-    transition: 300ms all ease-in-out; */
 }
 
 .dark {
@@ -131,33 +107,9 @@
     --info-fg: var(--primary-fg);
     --error-bg: var(--error);
     --error-fg: var(--primary-bg);
-    
     --dark-text: #fafafa;
+    --medium-text: #6a6a6a;
     --light-text: #a1a1aa;
-    /* --backcolor: #fff;
-    --textcolor: #222;
-    --bg: #ffffff;
-    --fg: #09090b;
-    --border: #e4e4e7;
-    --bg-hover: #f4f4f5;
-    --fg-hover: #18181b;
-    --color-scheme: light;
-    --input-focus: #999999;
-    --primary-bg: #18181b;
-    --secondary-bg: #f4f4f5;
-    --destructive-bg: #dc2626;
-    --outline-bg: #ffffff;
-    --primary-fg: #f4f4f5;
-    --secondary-fg: #18181b;
-    --outline-fg: #18181b;
-    --destructive-fg: #f4f4f5;
-    --outline-border: #e4e4e7;
-    --outline-bg-hover: #f4f4f5;
-    --toggle-wrapper: #e4e4e7;
-    --toggle: #ffffff;
-    --table-row-hover: #f9f9f5;
-    --table-row-selected: #f4f4f5;
-    transition: 300ms all ease-in-out; */
 }
 
 body {
@@ -259,12 +211,62 @@ input, textarea, select, button {
     gap: 12px;
 }
 
-h1 { font-size: 36px; letter-spacing: -0.85px; font-weight: bold }
-h2 { font-size: 30px; letter-spacing: -0.85px; font-weight: bold }
-h3 { font-size: 24px; letter-spacing: -0.25px; font-weight: bold }
-h4 { font-size: 20px; letter-spacing: -0.85px; font-weight: bold }
-.lead { font-size: 20px; font-weight: 400; color: var(--light-text); letter-spacing: 0px;  }
-.large { font-size: 18px; font-weight: 600; color: var(--dark-text); letter-spacing: 0px;  }
-.small { font-size: 14px; font-weight: 500; color: var(--dark-text); letter-spacing: 0px;  }
-.muted { font-size: 14px; font-weight: 400; color: var(--light-text); letter-spacing: 0px;  }
-.inline { font-size: 14px; font-family: monospace; font-weight: 600; color: var(--dark-text); letter-spacing: -0.25px;  }
+h1 {
+    font-size: 36px;
+    letter-spacing: -0.85px;
+    font-weight: bold
+}
+
+h2 {
+    font-size: 30px;
+    letter-spacing: -0.85px;
+    font-weight: bold
+}
+
+h3 {
+    font-size: 24px;
+    letter-spacing: -0.25px;
+    font-weight: bold
+}
+
+h4 {
+    font-size: 20px;
+    letter-spacing: -0.85px;
+    font-weight: bold
+}
+
+.lead {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--light-text);
+    letter-spacing: 0px;
+}
+
+.large {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark-text);
+    letter-spacing: 0px;
+}
+
+.small {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark-text);
+    letter-spacing: 0px;
+}
+
+.muted {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--light-text);
+    letter-spacing: 0px;
+}
+
+.inline {
+    font-size: 14px;
+    font-family: monospace;
+    font-weight: 600;
+    color: var(--dark-text);
+    letter-spacing: -0.25px;
+}

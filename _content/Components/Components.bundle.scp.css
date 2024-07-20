@@ -1967,27 +1967,19 @@ hr[b-bfdhn05mn0] {
         outline: transparent;        
     }
 
-    .sbc-slider input[b-mulbegll08]::-webkit-slider-thumb {
-        appearance: none;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        margin-top: -12px;        
-        border: 1px solid var(--primary-fg);
-        background-color: var(--primary-fg) !important;
-        z-index: 2;
-        transition: 200ms ease-in-out;
-    }
-        .sbc-slider input:focus[b-mulbegll08]::-webkit-slider-thumb {
+        .sbc-slider input[b-mulbegll08]::-webkit-slider-thumb {
             appearance: none;
             width: 16px;
             height: 16px;
             border-radius: 50%;
             margin-top: -12px;
-            border: 1px solid var(--primary-fg);
-            background-color: var(--primary-fg) !important;
-            box-shadow: 0 0 2px 2px var(--primary-fg);
+            border: 1px solid var(--medium-text);
+            background-color: var(--medium-text) !important;
             z-index: 2;
+            transition: 200ms ease-in-out;
+        }
+        .sbc-slider input:focus[b-mulbegll08]::-webkit-slider-thumb {
+            box-shadow: 0 0 12px 0 var(--medium-text);
         }
 
         .sbc-slider input[b-mulbegll08]::-webkit-slider-runnable-track {
@@ -2003,7 +1995,7 @@ hr[b-bfdhn05mn0] {
     height: 100%;
     width: var(--width);
     z-index: 1;
-    background-image: linear-gradient(to right, var(--primary-fg) calc(100% - 0px), transparent calc(100% - 16px));
+    background-color: var(--medium-text);
     height: 8px;
     border-radius: 8px;
     pointer-events: none;
