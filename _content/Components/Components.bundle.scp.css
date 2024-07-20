@@ -2090,13 +2090,17 @@ hr[b-bfdhn05mn0] {
     height: 20px;
     background-color: var(--toggle-bg);
     border-radius: 9999px;
+    position: relative;
+    gap: 0 !important;
 }
 
 .toggle-circle[b-rt7x10b2kl] {
+    position: absolute;
     background-color: var(--toggle-fg);
-    width: 17px;
-    height: 17px;
+    width: 16px;
+    height: 16px;
     transform: translateX(1px);
+    border: none;
     border-radius: 50%;
 }
 
@@ -2117,8 +2121,8 @@ hr[b-bfdhn05mn0] {
     box-shadow: 0 1px 2px 0 var(--primary-border);
 }
 @keyframes move-b-rt7x10b2kl {
-    from { transform: translateX(1px) }
-    to { transform: translateX(100%) }
+    from { transform: translateX(0) }
+    to { transform: translateX(calc(100% + 2px)) }
 }
 /* _content/Components/Table.razor.rz.scp.css */
 .sbc-table[b-x8dkmff9ve] {
