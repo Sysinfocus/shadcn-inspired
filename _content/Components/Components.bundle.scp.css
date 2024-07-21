@@ -876,6 +876,7 @@ hr[b-0405xf9y35] {
     border: 1px solid var(--primary-border);
     border-radius: 6px;
     padding: 8px 16px;
+    padding-right: 8px;
     outline: transparent;
     display: flex;
     justify-content: space-between;
@@ -914,7 +915,7 @@ hr[b-0405xf9y35] {
     position: fixed;
     z-index: 50;
     background-color: var(--primary-bg);
-    max-height: 200px;
+    min-height: 200px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -1752,7 +1753,7 @@ hr[b-bfdhn05mn0] {
     position: fixed;
     z-index: 50;
     background-color: var(--primary-bg);
-    max-height: 200px;
+/*    max-height: 200px;*/
     overflow: hidden;
     display: flex;
     flex-direction: column;
