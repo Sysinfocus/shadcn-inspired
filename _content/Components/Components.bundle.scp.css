@@ -769,7 +769,7 @@
 }
 
 .sbc-checkbox:not(:disabled) .checkbox-wrapper:not(.disabled):hover[b-2umz1gzssa],
-.sbc-checkbox:not(:disabled) .checkbox-wrapper:not(.disabled):focus-within[b-2umz1gzssa] {
+.sbc-checkbox:not(:disabled) .checkbox-wrapper:not(.disabled):focus[b-2umz1gzssa] {
     cursor: pointer;
     opacity: 0.8;
 }
@@ -1118,6 +1118,84 @@ hr[b-0405xf9y35] {
     font-size: 14px;    
     cursor: default;
 }
+/* _content/Components/DataTable.razor.rz.scp.css */
+.sbc-data-table-container[b-tgveq3qrxy] {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+}
+.sbc-data-table[b-tgveq3qrxy] {
+    --spacing: 8px 16px;
+    --height: fit-content;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: var(--height);
+    overflow: auto;
+    scrollbar-gutter: both-edges auto;
+}
+
+.sbc-data-table table[b-tgveq3qrxy] {
+    width: 100%;
+    font-weight: 400;
+    border-collapse: separate;    
+    font-size: 14px;
+    position: relative;
+    cursor: default;
+}
+
+.sbc-data-table thead[b-tgveq3qrxy] {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: var(--primary-bg);
+}
+
+    .sbc-data-table tr[b-tgveq3qrxy] {
+        transition: 150ms ease-out;
+        outline: transparent;
+    }
+        .sbc-data-table tr:hover[b-tgveq3qrxy],
+        .sbc-data-table tr.selected[b-tgveq3qrxy] {
+            background-color: var(--data-table-row-hover);
+        }
+
+    .sbc-data-table[b-tgveq3qrxy]  th {
+        font-weight: 500 !important;
+        font-size: 14px;
+        padding: var(--spacing);
+        padding-block: 12px;
+        height: 40px;
+        color: var(--light-text);
+        border-block: 1px solid var(--data-table-border);
+        white-space: nowrap;
+        align-items: center;
+    }
+
+        .sbc-data-table[b-tgveq3qrxy]  th.sorted {
+            background-color: var(--btn-secondary-bg);
+            color: var(--error);
+        }
+
+        .sbc-data-table[b-tgveq3qrxy]  td {
+            padding: var(--spacing);
+            min-height: 50px;
+            border-block: 1px solid var(--data-table-border)
+        }
+
+    .sbc-data-table[b-tgveq3qrxy]  .left {
+        text-align: left;
+    }
+    .sbc-data-table[b-tgveq3qrxy]  .center {
+        text-align: center;
+    }
+    .sbc-data-table[b-tgveq3qrxy]  .right {
+        text-align: right;
+    }
+    .sbc-data-table[b-tgveq3qrxy]  .justify {
+        text-align: justify;
+    }    
 /* _content/Components/DatePicker.razor.rz.scp.css */
 .sbc-datepicker-wrapper[b-q8t9resy8c] {
     outline: transparent;

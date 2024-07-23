@@ -53,6 +53,9 @@
     --dark-text: #09090b;
     --medium-text: #6a6a6a;
     --light-text: #71717a;
+    
+    --data-table-border: rgb(228, 228, 231);
+    --data-table-row-hover: rgba(244, 244, 245, 0.5);
 }
 
 .dark {
@@ -110,6 +113,8 @@
     --dark-text: #fafafa;
     --medium-text: #6a6a6a;
     --light-text: #a1a1aa;
+    --data-table-border: rgb(39, 39, 42);
+    --data-table-row-hover: rgba(39, 39, 42, 0.5);
 }
 
 body {
