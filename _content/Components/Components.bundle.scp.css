@@ -1645,7 +1645,7 @@ hr[b-0405xf9y35] {
 }
 /* _content/Components/MenuItem.razor.rz.scp.css */
 .sbc-menu_separator[b-8v0iajmn9l] {
-    display: flex;
+    display: flex;    
     align-items: center;
     width: calc(100% + 8px);
     height: 1px;
@@ -1661,13 +1661,13 @@ hr[b-0405xf9y35] {
     max-height: 36px;
     background-color: transparent;
     border: 1px solid transparent;
-    border-radius: 6px;
+    border-radius: 4px;
     color: var(--btn-secondary-fg);
     outline: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px;
+    padding: 6px 8px;
     width: 100%;
     transition: background-color 150ms ease-out;
 }

@@ -66,7 +66,7 @@ window.addEventListener("click", e => {
 })
 
 
-function resetSearchBox() {
+function resetSearchBox() {    
     const searchBox = document.querySelector(".search-box")
     if (searchBox !== null) searchBox.parentElement.style.visibility = "collapse"
     const menuItems = document.querySelectorAll(".sbc-menu-items");
