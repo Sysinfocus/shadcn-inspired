@@ -2,6 +2,8 @@
     --color-scheme: light;
     --light: white;
     --dark: black;
+    --body-primary-bg: #ffffff;
+    --body-primary-fg: #25252b;
     --primary-bg: #ffffff;
     --primary-fg: #25252b;
     --primary-border: #d4d4d5;
@@ -53,7 +55,6 @@
     --dark-text: #09090b;
     --medium-text: #6a6a6a;
     --light-text: #71717a;
-    
     --data-table-border: rgb(228, 228, 231);
     --data-table-row-hover: rgba(244, 244, 245, 0.5);
 }
@@ -62,6 +63,8 @@
     --color-scheme: dark;
     --light: white;
     --dark: black;
+    --body-primary-bg: #09090b;
+    --body-primary-fg: #fafafa;
     --primary-bg: #09090b;
     --primary-fg: #fafafa;
     --primary-border: #25252b;
@@ -117,9 +120,30 @@
     --data-table-row-hover: rgba(39, 39, 42, 0.5);
 }
 
+.crimson {
+    --btn-primary-bg: crimson;
+    --btn-primary-fg: #f4f4f5;
+}
+.royalblue {
+    --btn-primary-bg: royalblue;
+    --btn-primary-fg: #f4f4f5;
+}
+.seagreen {
+    --btn-primary-bg: seagreen;
+    --btn-primary-fg: #f4f4f5;
+}
+.maroon {
+    --btn-primary-bg: maroon;
+    --btn-primary-fg: #f4f4f5;
+}
+.orange {
+    --btn-primary-bg: orange;
+    --btn-primary-fg: #f4f4f5;
+}
+
 body {
-    background-color: var(--primary-bg);
-    color: var(--primary-fg);
+    background-color: var(--body-primary-bg);
+    color: var(--body-primary-fg);
 }
 
 input, textarea, select, button {

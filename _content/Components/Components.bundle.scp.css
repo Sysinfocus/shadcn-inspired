@@ -208,6 +208,10 @@
     width: 64px;
     font-size: 24px;
 }
+.tiny[b-soysf4bqjt] {
+    width: 24px;
+    font-size: 12px;
+}
 /* _content/Components/Badge.razor.rz.scp.css */
 .sbc-badge[b-av0476wejc] {
     height: 22px;
@@ -233,7 +237,7 @@
 .outline[b-av0476wejc] {
     background-color: transparent;
     border: 1px solid var(--primary-border);
-    color: var(--btn-primary-bg) !important;
+    color: var(--primary-fg) !important;
 }
 .destructive[b-av0476wejc] {
     background-color: var(--btn-destructive-bg);
@@ -545,9 +549,9 @@
 }
 
 .sbc-datepicker-content button.selected[b-kj67obeyx4] {
-    background-color: var(--primary-fg) !important;
-    color: var(--primary-bg) !important;
-    border: 1px solid var(--primary-fg);
+    background-color: var(--btn-primary-bg) !important;
+    color: var(--btn-primary-fg) !important;
+    border: 1px solid var(--btn-primary-bg);
 }
 
 .sbc-datepicker-content button:focus[b-kj67obeyx4] {
@@ -784,12 +788,12 @@
 }
 
 .checked[b-2umz1gzssa] {
-    background-color: var(--primary-fg);
+    background-color: var(--btn-primary-bg);
     transition: 300ms transform ease-in-out;
 }
 
     .checked .tick-mark[b-2umz1gzssa]  svg {
-        stroke: var(--primary-bg);
+        stroke: var(--btn-primary-fg);
     }
 
 .disabled[b-2umz1gzssa] {
@@ -1282,9 +1286,9 @@ hr[b-0405xf9y35] {
 }
 
 .sbc-datepicker-content button.selected[b-q8t9resy8c] {
-    background-color: var(--primary-fg) !important;
-    color: var(--primary-bg) !important;
-    border: 1px solid var(--primary-fg);
+    background-color: var(--btn-primary-bg) !important;
+    color: var(--btn-primary-fg) !important;
+    border: 1px solid var(--btn-primary-bg);
 }
 
 .sbc-datepicker-content button:focus[b-q8t9resy8c] {
@@ -2176,7 +2180,7 @@ hr[b-bfdhn05mn0] {
 }
 
 .checked[b-rt7x10b2kl] {
-    background-color: var(--toggle-checked);    
+    background-color: var(--btn-primary-bg);    
     transition: 300ms transform ease-in-out;
 }
 
