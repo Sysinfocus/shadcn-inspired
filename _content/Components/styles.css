@@ -96,7 +96,7 @@
     --btn-loading-fg: var(--btn-primary-fg);
     --btn-loading-border: #e4e4e7;
     --btn-outline-bg-hover: var(--btn-secondary-bg);
-    --overlay-bg: var(--primary-bg);
+    --overlay-bg: #020202;
     --alert-dialog-bg: #09090b;
     --alert-dialog-border: #25252b;
     --toggle-bg: #27272a;
@@ -157,6 +157,8 @@ input, textarea, select, button {
     gap: 1rem;
     align-items: center;
 }
+
+.f1 { flex: 1 }
 
 .wrap {
     flex-wrap: wrap;
