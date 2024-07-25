@@ -3,7 +3,7 @@ export let activeCalendar = null;
 window.handlekeyDown = function (e, id) {
     if (e.key === "ArrowDown") activate(id);
     else if (e.key === "Enter") {
-        event.preventDefault();
+        preventDefault();
         return;
     }
 }
@@ -33,20 +33,36 @@ window.deactivate = function (e) {
 }
 
 export const updatePosition = function (p, e) {
-    const parent = document.querySelector(p).getBoundingClientRect();
+    document.querySelector(p).classList.add("show");
+    const parent = document.querySelector(p).getBoundingClientRect();    
     const element = document.querySelector(e);    
     const ww = window.innerWidth;
     const wh = window.innerHeight;
-    const top = parent.y + parent.height;
+    //const top = parent.y + parent.height;
     const left = parent.x;
-    if (top + element.clientHeight < wh) {
+
+    const toBottom = parent.bottom;
+    const toTop = wh - parent.top + 4;    
+    //alert(parent.Top + "+" + parent.Bottom);
+    const top = toBottom < toTop ? toBottom : toTop;
+    if (toBottom < toTop) {
+        element.style.top = toBottom + "px";
         element.style.bottom = "unset";
-        element.style.top = top + "px";
     }
     else {
+        element.style.bottom = toTop + "px";
         element.style.top = "unset";
-        element.style.bottom = (wh - parent.top + 4) + "px";
     }
+    //console.log(toBottom, toTop, top);
+
+    //if (top + element.clientHeight < wh) {
+    //    element.style.bottom = "unset";
+    //    element.style.top = top + "px";
+    //}
+    //else {
+    //    element.style.top = "unset";
+    //    element.style.bottom = (wh - parent.top + 4) + "px";
+    //}
     if (left + element.clientWidth < ww) {
         element.style.right = "unset";
         element.style.left = left + "px";

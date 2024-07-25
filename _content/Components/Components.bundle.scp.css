@@ -215,12 +215,14 @@
 /* _content/Components/Badge.razor.rz.scp.css */
 .sbc-badge[b-av0476wejc] {
     height: 22px;
-    padding: 4px 10px;
+    padding-inline: 10px;
     border-radius: 6px;       
     font-size: 12px;
     font-weight: 500;
-    cursor: default;
+    cursor: default;        
     transition: opacity 150ms ease-in-out;
+    display: flex;
+    align-items: center;
 }
 .sbc-badge:hover[b-av0476wejc] {
     opacity: 0.85;
@@ -555,7 +557,7 @@
 .sbc-datepicker-content button.selected[b-kj67obeyx4] {
     background-color: var(--btn-primary-bg) !important;
     color: var(--btn-primary-fg) !important;
-    border: 1px solid var(--btn-primary-bg);
+    border: 1px solid transparent !important;
 }
 
 .sbc-datepicker-content button:focus[b-kj67obeyx4] {
@@ -762,8 +764,7 @@
         }
 
     .sbc-checkbox input[b-2umz1gzssa] {
-        opacity: 0;
-        display: none;
+        display:none;
         width: 0;
         height: 0;
     }
@@ -793,6 +794,7 @@
 
 .checked[b-2umz1gzssa] {
     background-color: var(--btn-primary-bg);
+    border-color: var(--btn-primary-bg);
     transition: 300ms transform ease-in-out;
 }
 
@@ -1099,6 +1101,7 @@ hr[b-0405xf9y35] {
     display: flex;
     gap: 8px;
     align-items: center;
+    font-size: 14px;
 }
 
     .sbc-command-item-name span:first-child[b-efrbgdocv2] {
@@ -1125,6 +1128,7 @@ hr[b-0405xf9y35] {
     align-items: center;
     font-size: 14px;    
     cursor: default;
+    user-select: none;
 }
 /* _content/Components/DataTable.razor.rz.scp.css */
 .sbc-data-table-container[b-tgveq3qrxy] {
@@ -1292,7 +1296,7 @@ hr[b-0405xf9y35] {
 .sbc-datepicker-content button.selected[b-q8t9resy8c] {
     background-color: var(--btn-primary-bg) !important;
     color: var(--btn-primary-fg) !important;
-    border: 1px solid var(--btn-primary-bg);
+    border: 1px solid transparent !important;
 }
 
 .sbc-datepicker-content button:focus[b-q8t9resy8c] {
@@ -1311,6 +1315,10 @@ hr[b-0405xf9y35] {
     gap: 1px;
     row-gap: 8px;
     text-align: center;
+}
+
+.sbc-date[b-q8t9resy8c] {
+    font-size: 14px;
 }
 
 .sbc-datepicker-weekdays[b-q8t9resy8c] {
@@ -1625,6 +1633,46 @@ hr[b-0405xf9y35] {
     opacity: 0.75;
     cursor: not-allowed !important;
 }
+/* _content/Components/Menubar.razor.rz.scp.css */
+.sbc-menubar[b-rwv23n10mx] {
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    width: fit-content;
+}
+
+[b-rwv23n10mx] .sbc-menu-button {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 14px;
+    background-color: transparent;
+    color: var(--btn-secondary-fg);
+    border-color: transparent;
+    border-radius: 4px;
+    padding: 4px 12px;
+    transition: 150ms ease-out;
+}
+
+.sbc-menubar:focus-within[b-rwv23n10mx]  button.sbc-menu-button:hover,
+[b-rwv23n10mx] .sbc-menubar-item:focus-within button.sbc-menu-button {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-fg);
+}
+
+[b-rwv23n10mx] .sbc-menubar-item .sbc-menu-group {
+    margin-top: 8px;
+    display: none !important
+}
+
+[b-rwv23n10mx] *:focus-within .sbc-menu-group {
+    display: flex !important
+}
+
+.light .sbc-menubar[b-rwv23n10mx] {
+    box-shadow: 0 1px 2px -1px var(--primary-border);
+}
 /* _content/Components/MenuGroup.razor.rz.scp.css */
 .sbc-menu-group[b-sn9fk6vfwi] {
     position: fixed;
@@ -1658,7 +1706,7 @@ hr[b-0405xf9y35] {
     font-family: inherit;
     font-size: 14px;
     font-weight: normal;
-    max-height: 36px;
+    height: 32px;
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 4px;
@@ -1667,7 +1715,7 @@ hr[b-0405xf9y35] {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 6px 8px;
+    padding: 8px;
     width: 100%;
     transition: background-color 150ms ease-out;
 }
@@ -1698,18 +1746,20 @@ hr[b-0405xf9y35] {
 .menu_can_check[b-8v0iajmn9l] {
     display: flex;
     gap: 4px;
-    align-items: center;
+    align-items: center;    
 }
 
 .menu_check[b-8v0iajmn9l] {
     transform: scale(0.7);
     width: 24px;
-    align-self: center;
+    align-self: center;    
 }
 
 .menu_can_check[b-8v0iajmn9l]  .menu_check {
-    /*    color: red !important;*/
     stroke: var(--primary-bg) !important;
+}
+.menu_check[b-8v0iajmn9l]  svg {
+    stroke: var(--primary-fg) !important;
 }
 
 .menu_radio[b-8v0iajmn9l] {
