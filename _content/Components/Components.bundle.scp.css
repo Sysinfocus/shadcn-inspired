@@ -1778,6 +1778,91 @@ hr[b-0405xf9y35] {
     font-size: 12px;
     opacity: 0.5;
 }
+/* _content/Components/NavigationMenu.razor.rz.scp.css */
+.sbc-navigation-menu[b-qkcrxkng55] {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    position: relative;
+}
+
+[b-qkcrxkng55] .sbc-navigation-menu-item button {
+    padding: 0.5rem 1rem;    
+    border: none;
+    max-height: 2.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 0.5rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    color: var(--btn-secondary-fg);
+    gap: 0.5rem;
+    transition: background-color 200ms ease-in-out;
+    outline: transparent;
+}
+    [b-qkcrxkng55] .sbc-navigation-menu-item button span {
+        font-size: 1.15rem;
+        width: 0.75rem;
+        opacity: 0.5;
+    }
+
+[b-qkcrxkng55] .sbc-navigation-menu-item-details {
+    position: absolute;
+    left: 0;
+    margin-top: 0.5rem;
+    border: 1px solid var(--primary-border);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    opacity: 0;
+    display: none;
+    overflow: hidden;
+}
+
+    [b-qkcrxkng55] .sbc-navigation-menu-item-details a {
+        text-decoration: none;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        outline: transparent;
+    }
+        [b-qkcrxkng55] .sbc-navigation-menu-item-details a:hover,
+        [b-qkcrxkng55] .sbc-navigation-menu-item-details a:focus {
+            background-color: var(--btn-secondary-bg);
+        }
+
+[b-qkcrxkng55] .sbc-navigation-menu-item:focus-within,
+[b-qkcrxkng55] .sbc-navigation-menu-item button:hover {
+    background-color: var(--btn-secondary-bg);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+    [b-qkcrxkng55] .sbc-navigation-menu-item:focus-within > .sbc-navigation-menu-item-details,
+    [b-qkcrxkng55] .sbc-navigation-menu-item button:hover + .sbc-navigation-menu-item-details {
+        opacity: 1;
+        display: block;
+    }
+
+
+.light[b-qkcrxkng55]  .sbc-navigation-menu-item-details {
+    box-shadow: 0 1px 2px 0 var(--primary-border);
+}
+
+[b-qkcrxkng55] .slideLeft {
+    animation: slideLeft-b-qkcrxkng55 150ms ease-out forwards
+}
+@keyframes slideLeft-b-qkcrxkng55 {
+    from { transform: translateX(7rem) }
+    to { transform: translateX(0) }
+}
+[b-qkcrxkng55] .slideRight {
+    animation: slideRight-b-qkcrxkng55 150ms ease-out forwards
+}
+@keyframes slideRight-b-qkcrxkng55 {
+    from { transform: translateX(-7rem) }
+    to { transform: translateX(0) }
+}
 /* _content/Components/Pagination.razor.rz.scp.css */
 .sbc-pagination[b-6qji8e5626]
  {

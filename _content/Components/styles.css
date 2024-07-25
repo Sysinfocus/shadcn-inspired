@@ -293,6 +293,9 @@ h4 {
     color: var(--light-text);
     letter-spacing: 0px;
 }
+.muted-color {
+    color: var(--light-text);
+}
 
 .inline {
     font-size: 14px;
