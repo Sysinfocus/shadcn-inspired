@@ -1941,6 +1941,48 @@ hr[b-0405xf9y35] {
 [b-cbyon44cdq] .sbc-radio-item input:checked ~ .sbc-radio-check-mark {
     visibility: visible
 }
+/* _content/Components/Resizable.razor.rz.scp.css */
+.sbc-resizable[b-jfkrsuif68] {
+    height: 100%;
+    width: 100%;    
+    background: var(--primary-bg);
+    border: 1px solid var(--primary-border);
+    border-radius: 0.5rem;
+    display: flex;
+    user-select: none;
+}
+
+    .sbc-resizable .pane[b-jfkrsuif68] {
+        padding: 1em;
+        min-width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sbc-resizable .left[b-jfkrsuif68] {
+    }
+
+    .sbc-resizable .right[b-jfkrsuif68] {
+        position: relative;
+        text-align: center;
+        flex: 1;
+    }
+
+    .sbc-resizable .gutter[b-jfkrsuif68] {
+        width: 2px;
+        height: 100%;
+        background: var(--btn-secondary-bg);
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: col-resize;
+    }
+
+        .sbc-resizable .gutter:hover[b-jfkrsuif68] {
+            width: 5px;
+            background: var(--primary-border);
+        }
 /* _content/Components/ScrollArea.razor.rz.scp.css */
 .sbc-scroll-area-vertical[b-018duyq7te] {
     display: flex;
