@@ -1801,6 +1801,8 @@ hr[b-0405xf9y35] {
     gap: 0.5rem;
     transition: background-color 200ms ease-in-out;
     outline: transparent;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
     [b-qkcrxkng55] .sbc-navigation-menu-item button span {
         font-size: 1.15rem;
