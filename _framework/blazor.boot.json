@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Components.Example",
   "resources": {
-    "hash": "sha256-SqHqQoJq3LmvpzrpdmSP/L/sf9LzlGpUGTQ1U9z6oVg=",
+    "hash": "sha256-IIrmyf7//GPPxKQtB95RqHNtNjDnoHUm0bykVB8QkNM=",
     "jsModuleNative": {
       "dotnet.native.8.0.7.a8qv0kcqge.js": "sha256-HwwB2qlz2hu2EpN+DoKSE0JtfG6ht1rlUjfxHwt3rMU="
     },
@@ -17,8 +17,8 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "Components.Example.wasm": "sha256-N0/N7lk60FNYwOHvFCrZOXoQGNR0u3mYWHHiGb6ULK4=",
-      "Components.wasm": "sha256-jsdIv7jeY/A5/WNcde1Z98hpQyS+Fbo7y6xF3Bq392M=",
+      "Components.Example.wasm": "sha256-8+jbHwUM2qi79pM8Xu4X6dkubq5YZmNRBpRPO2Yi7BM=",
+      "Components.wasm": "sha256-yM2UidaCgYCJeMbh2rjyMBAb82fnJD8EacEcwhtFDkk=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-KIU6+j96Mkt91vP+lRlM7EHhN5xCQTt2WC23PAcVpOY=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-18azufZjedJYFp+KoEAz0GlOeja4MkdcUhBRipwYEOM=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-fPxnSIZZoZh3W05KUfK9pde3Pp3MKV1ZL4EXh2G5/q0=",
