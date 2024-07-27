@@ -8,15 +8,15 @@ window.handlekeyDown = function (e, id) {
     }
 }
 
-window.moveElements = function (n) {
-    const p = document.activeElement.parentElement.childNodes;
-    for (let i = 0; i < p.length; i++) {
-        if (p[i] == document.activeElement) {            
-            p[i + n]?.focus();
-            break;
-        }
-    }
-}
+//window.moveElements = function (n) {
+//    const p = document.activeElement.parentElement.childNodes;
+//    for (let i = 0; i < p.length; i++) {
+//        if (p[i] == document.activeElement) {            
+//            p[i + n]?.focus();
+//            break;
+//        }
+//    }
+//}
 
 window.activate = function (e) {
     if (activeCalendar != null && activeCalendar != e) deactivate(activeCalendar);
@@ -77,7 +77,7 @@ window.addEventListener("scroll", () => resetSearchBox());
 window.addEventListener("resize", () => resetSearchBox());
 
 window.addEventListener("click", e => {
-    if (document.activeElement.parentElement.className.indexOf('sbc-datepicker') == -1)
+    if (document.activeElement.parentElement.className.indexOf('sbc-date-picker') == -1)
         deactivate(activeCalendar);
 })
 

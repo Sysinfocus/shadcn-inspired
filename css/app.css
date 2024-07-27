@@ -184,16 +184,12 @@ main {
     margin: auto        
 }
 
+.mobile { display: block; }
+.mobile-only { display: none;}
 
 @media screen and (max-width: 800px) {
     .mobile { display: none }
-/*    main {
-        padding: 1rem;
-    }*/
-
-/*    .header-content {
-        padding: 0 0.25rem 0 0;
-    }*/
+    .mobile-only { display: block; }
 }
 
 
