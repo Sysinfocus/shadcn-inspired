@@ -3,50 +3,25 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Sysinfocus SimpleUI - Blazor Components inspired by shadcn/ui</title>
+    <title>Sysinfocus simple/ui - Blazor Components inspired by shadcn/ui</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/shadcn-inspired/" />
-    <link href="css/app.css" rel="stylesheet" />    
-    <link href="_content/Components/styles.css" rel="stylesheet" />
-    <link href="_content/Components/Components.bundle.scp.css" rel="stylesheet" />
+    <base href="/" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="_content/Sysinfocus.AspNetCore.Components/styles.css" rel="stylesheet" />
+    <link href="_content/Sysinfocus.AspNetCore.Components/Sysinfocus.AspNetCore.Components.bundle.scp.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <script type="text/javascript">
-
-        // Single Page Apps for GitHub Pages
-        // MIT License
-        // https://github.com/rafgraph/spa-github-pages
-        // This script checks to see if a redirect is present in the query string,
-        // converts it back into the correct url and adds it to the
-        // browser's history using window.history.replaceState(...),
-        // which won't cause the browser to attempt to load the new url. 
-        // When the single page app is loaded further down in this file,
-        // the correct url will be waiting in the browser's history for
-        // the single page app to route accordingly.
-      
-        (function(l) {
-         if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-          return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-           );
-          }
-         }(window.location))
-      </script>    
 </head>
 
 <body class="light">
-<div id="app">
-    <div class="app-loading"><span style="--d: 300ms"></span><span style="--d: 200ms"></span><span style="--d: 100ms"></span><span style="--d: 200ms"></span><span style="--d: 300ms"></span></div>
-</div>
-
+    <div id="app">
+        <div class="app-loading"><span style="--d: 300ms"></span><span style="--d: 200ms"></span><span style="--d: 100ms"></span><span style="--d: 200ms"></span><span style="--d: 300ms"></span></div>
+    </div>
     <div id="blazor-error-ui">
         An unhandled error has occurred.
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
-    <script src="_framework/blazor.webassembly.js"></script>    
+    <script src="_framework/blazor.webassembly.js"></script>
 </body>
 
 </html>
