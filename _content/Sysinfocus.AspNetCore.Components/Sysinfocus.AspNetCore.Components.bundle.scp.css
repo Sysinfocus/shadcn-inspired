@@ -1,0 +1,2721 @@
+/* _content/Sysinfocus.AspNetCore.Components/Accordion.razor.rz.scp.css */
+.sbc-accordion[b-r2j58ysol1] {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+/* _content/Sysinfocus.AspNetCore.Components/AccordionItem.razor.rz.scp.css */
+.sbc-accordion-item[b-yn8kze91g8] {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    border-bottom: 1px solid var(--primary-border);
+}
+
+.sbc-accordion-item-header[b-yn8kze91g8] {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sbc-accordion-item-header-icon[b-yn8kze91g8]  svg {
+    width: 16px;
+    height: 16px;
+    color: var(--);
+    transition: transform 150ms ease-out;
+}
+
+.sbc-accordion-item-header-icon.show[b-yn8kze91g8]  svg {
+    transform: rotate(180deg)
+}
+
+.sbc-accordion-item-header:hover[b-yn8kze91g8] {
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 4px;    
+}
+
+.sbc-accordion-item-content[b-yn8kze91g8] {
+    visibility: hidden;
+    height: 0;
+    line-height: 1.25rem;
+    font-size: 0.85rem;
+}
+
+.sbc-accordion-item-content.show[b-yn8kze91g8] {
+    visibility: visible;
+    animation: show-b-yn8kze91g8 150ms linear forwards;
+    padding-bottom: 1rem;
+}
+
+@keyframes show-b-yn8kze91g8 {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+
+    100% {
+        opacity: 1;
+        height: unset;
+    }
+}
+/* _content/Sysinfocus.AspNetCore.Components/Activity.razor.rz.scp.css */
+.sbc-activity-log[b-3qn4rks7ch] { display: flex; flex-direction: column; gap: 1rem; align-items: center; position: relative; }
+.sbc-log[b-3qn4rks7ch] { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; column-gap: 1rem; position: relative; opacity: 0; width: 100%; }
+.sbc-log[b-3qn4rks7ch]::before { content:''; position: absolute; top: 50%; transform: translateX(-50%); left: 50%; width: 75px; z-index: -10; border: 1px dotted var(--primary-border); }
+.sbc-log[b-3qn4rks7ch]::after { content:''; position: absolute; transform: translateX(-50%); top: 0%; left: 50%; height: 200%; flex: 1; z-index: -10; border: 1px solid var(--primary-border);  } 
+.sbc-log img[b-3qn4rks7ch] { width: 48px; height: 48px; border-radius: 50%; border: 3px solid var(--primary-border); padding: 3px; background-color: var(--primary-bg); z-index: 1; }   
+.sbc-log .data[b-3qn4rks7ch] { padding: 0 0.5rem }
+.sbc-log .data.ra[b-3qn4rks7ch] { text-align: right; }     
+.sbc-log .data.la[b-3qn4rks7ch] { text-align: left; }
+/* _content/Sysinfocus.AspNetCore.Components/Alert.razor.rz.scp.css */
+.sbc-alert[b-ugm5p4ut6w] {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    border: 1px solid var(--primary-border);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.sbc-alert span[b-ugm5p4ut6w] { cursor: default;}
+
+.sbc-alert-header[b-ugm5p4ut6w] {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark-text);
+    line-height: 1.5rem;
+}
+.sbc-alert-content[b-ugm5p4ut6w] {
+    font-size: 14px;
+    color: var(--light-text);
+}
+
+.error[b-ugm5p4ut6w], .error[b-ugm5p4ut6w]  * {
+    border-color: var(--error);
+    color: var(--error) !important;
+}
+/* _content/Sysinfocus.AspNetCore.Components/AlertDialog.razor.rz.scp.css */
+.sbc-alertdialog[b-mwh1mqozj1] {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: fill;
+}
+
+.sbc-alertdialog-overlay[b-mwh1mqozj1] {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--overlay-bg);
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.9;
+    z-index: 0;    
+}
+
+.sbc-alertdialog-alert[b-mwh1mqozj1] {
+    z-index: 1;    
+    padding: 1.5rem;    
+    background-color: var(--alert-dialog-bg);
+    border: 1px solid var(--alert-dialog-border);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sbc-alertdialog-header[b-mwh1mqozj1] {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.sbc-alertdialog-content[b-mwh1mqozj1] {
+    line-height: 1.25rem;
+    font-size: 0.9rem;
+    opacity: 0.65;
+}
+
+.sbc-alertdialog-footer[b-mwh1mqozj1] {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: end;
+}
+
+.show[b-mwh1mqozj1] {
+    animation: show-b-mwh1mqozj1 300ms ease-in-out both;
+}
+@keyframes show-b-mwh1mqozj1 {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+/* _content/Sysinfocus.AspNetCore.Components/AspectRatio.razor.rz.scp.css */
+.sbc-aspect-ratio[b-wp8h2lk0ts] {
+    overflow: hidden;
+    object-fit: cover;
+    position: relative;    
+}
+.sbc-aspect-ratio > *[b-wp8h2lk0ts] {
+    width: 100%;    
+    aspect-ratio: inherit;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Avatar.razor.rz.scp.css */
+.sbc-avatar[b-0d20zdvh5e] {
+    border-radius: 50%;
+    background-color: var(--primary-fg);
+    color: var(--primary-bg);
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    display: flex;
+    place-content: center;
+    align-items: center;    
+    font-weight: 500;
+    cursor: pointer;    
+}
+
+.disabled[b-0d20zdvh5e] {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+}
+
+.sbc-avatar img[b-0d20zdvh5e] {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    transform: scale(1);
+    transition: transform 150ms ease-out;
+}
+
+.sbc-avatar img:hover[b-0d20zdvh5e] {
+    transform: scale(1.1);
+}
+
+.small[b-0d20zdvh5e] {
+    width: 32px;
+    font-size: 14px;
+}
+.regular[b-0d20zdvh5e] {
+    width: 48px;
+    font-size: 18px;
+}
+.large[b-0d20zdvh5e] {
+    width: 64px;
+    font-size: 24px;
+}
+.tiny[b-0d20zdvh5e] {
+    width: 24px;
+    font-size: 12px;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Badge.razor.rz.scp.css */
+.sbc-badge[b-l2s21howrn] {
+    height: 22px;
+    padding-inline: 10px;
+    border-radius: 6px;       
+    font-size: 12px;
+    font-weight: 500;
+    cursor: default;        
+    transition: opacity 150ms ease-in-out;
+    display: flex;
+    align-items: center;
+}
+.sbc-badge:hover[b-l2s21howrn] {
+    opacity: 0.85;
+}
+
+.default[b-l2s21howrn] {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-fg);
+}
+.secondary[b-l2s21howrn] {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-fg);
+}
+.outline[b-l2s21howrn] {
+    background-color: transparent;
+    border: 1px solid var(--primary-border);
+    color: var(--primary-fg) !important;
+}
+.destructive[b-l2s21howrn] {
+    background-color: var(--btn-destructive-bg);
+    color: var(--btn-destructive-fg);
+}
+/* _content/Sysinfocus.AspNetCore.Components/Breadcrumb.razor.rz.scp.css */
+.sbc-breadcrumb[b-gqs9kpqssi] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    cursor: default;
+}
+
+.sbc-breadcrumb-item[b-gqs9kpqssi] {
+    text-decoration: none;
+    color: var(--primary-fg);
+    opacity: 0.65;
+    font-weight: 400;
+}
+.sbc-breadcrumb-item:hover[b-gqs9kpqssi] {
+    opacity: 1;
+}
+.sbc-breadcrumb .material-symbols-outlined[b-gqs9kpqssi] {
+    opacity: 0.5;
+}
+
+[b-gqs9kpqssi] .sbc-breadcrumb-separator {
+    line-height: 0rem;
+    opacity: 0.5;
+}
+.current-item[b-gqs9kpqssi] {
+    font-weight: 400;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Button.razor.rz.scp.css */
+.sbc-button[b-dxlcnpbuql] {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 36px;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    outline: transparent;
+    transition: all 100ms ease;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    user-select: none;
+}
+
+.primary[b-dxlcnpbuql] {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-fg);
+}
+
+.secondary[b-dxlcnpbuql] {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-fg);
+}
+
+.destructive[b-dxlcnpbuql] {
+    background-color: var(--btn-destructive-bg);
+    color: var(--btn-destructive-fg);
+}
+
+.outline[b-dxlcnpbuql] {
+    background-color: var(--btn-outline-bg);
+    color: var(--btn-outline-fg);
+    border: 1px solid var(--btn-outline-border);
+}
+
+.outline:hover[b-dxlcnpbuql],
+.outline:focus[b-dxlcnpbuql] {
+    background-color: var(--btn-outline-bg-hover);
+}
+
+.ghost[b-dxlcnpbuql] {
+    background-color: var(--btn-outline-bg);
+    color: var(--btn-outline-fg);
+}
+
+.ghost:hover[b-dxlcnpbuql],
+.ghost:focus[b-dxlcnpbuql] {
+    background-color: var(--btn-outline-bg-hover);
+}
+
+.link[b-dxlcnpbuql] {
+    background-color: var(--btn-outline-bg);
+    color: var(--btn-outline-fg);
+}
+
+.link:hover[b-dxlcnpbuql],
+.link:focus[b-dxlcnpbuql] {
+    opacity: 1;
+    text-decoration: underline;
+    text-decoration-color: var(--btn-outline-fg);
+    text-underline-offset: 4px;
+}
+
+.icon[b-dxlcnpbuql] {
+    background-color: var(--btn-outline-bg);
+    color: var(--btn-outline-fg);
+    height: 36px;
+    width: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--btn-outline-border);
+}
+
+.icon span[b-dxlcnpbuql] {
+    font-size: 20px;    
+}
+
+.icon:not(:disabled):hover[b-dxlcnpbuql],
+.icon:not(:disabled):focus[b-dxlcnpbuql] {
+    background-color: var(--btn-outline-bg-hover);
+}
+
+.loading[b-dxlcnpbuql] {
+    background-color: var(--btn-loading-bg);
+    color: var(--btn-loading-fg);
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--btn-outline-border);
+    opacity: 0.5;
+}
+
+.loading span[b-dxlcnpbuql] {
+    font-size: 18px;
+}
+
+/* .light .outline,
+.light .icon {
+    box-shadow: 0 1px 2px 0 var(--btn-outline-border);
+} */
+
+.rotate[b-dxlcnpbuql] {
+    animation: rotate-b-dxlcnpbuql 1s linear infinite;
+}
+
+@keyframes rotate-b-dxlcnpbuql {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.sbc-button:not(:disabled):hover[b-dxlcnpbuql],
+.sbc-button:not(:disabled):focus[b-dxlcnpbuql],
+.sbc-button:not(:disabled).loading:hover[b-dxlcnpbuql] {
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.nostyle[b-dxlcnpbuql] {
+    color: var(--btn-outline-fg);
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.rounded[b-dxlcnpbuql] {
+    border-radius: 50%;
+}
+
+.nostyle:hover[b-dxlcnpbuql],
+.nostyle:focus[b-dxlcnpbuql] {
+    background-color: transparent;
+    cursor: default;
+}
+
+.sbc-button:not(:disabled):active[b-dxlcnpbuql] {
+    opacity: 1;
+}
+
+.regular span[b-dxlcnpbuql] {
+    font-size: 18px;
+}
+
+.small[b-dxlcnpbuql] {
+    padding: 8px 16px;
+    min-height: unset;
+    height: 28px;
+    font-size: 12px;
+}
+
+.small span[b-dxlcnpbuql] {
+    font-size: 14px;
+}
+
+.large[b-dxlcnpbuql] {
+    min-height: unset;
+    height: 44px;
+    font-size: 16px;
+}
+
+.large span[b-dxlcnpbuql] {
+    font-size: 22px;
+}
+
+.success[b-dxlcnpbuql] {
+    background-color: var(--success-bg);
+    color: var(--success-fg);
+}
+.warning[b-dxlcnpbuql] {
+    background-color: var(--warning-bg);
+    color: var(--warning-fg);
+}
+.error[b-dxlcnpbuql] {
+    background-color: var(--error-bg);
+    color: var(--error-fg);
+}
+.info[b-dxlcnpbuql] {
+    background-color: var(--info-bg);
+    color: var(--info-fg);
+}
+
+.sbc-button:disabled[b-dxlcnpbuql] {
+    pointer-events: none;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Calendar.razor.rz.scp.css */
+.sbc-date-picker-wrapper[b-7d73tkmg3g] {
+    outline: transparent;
+    overflow: hidden;
+    user-select: none;
+}
+
+.sbc-date-picker[b-7d73tkmg3g] {
+    background-color: var(--primary-bg);
+    width: fit-content;
+    border: 1px solid var(--primary-border);
+    padding: 12px;
+    font-family: inherit;
+    border-radius: 0.5rem;
+    z-index: 100;
+}
+/*
+.sbc-date-picker-button {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-bg);
+    color: var(--primary-fg);
+    font-weight: 500;
+    border: 1px solid var(--primary-border);
+    padding: 8px 16px;
+    height: 36px;
+    border-radius: 6px;
+    outline: transparent;
+    width: 100%;
+}*/
+
+/*    .sbc-date-picker-button span:first-child {
+        opacity: 0.5;
+        font-size: 18px;
+    }
+
+    .sbc-date-picker-button div:first-child {
+        display: flex;
+        gap: 8px;
+        align-items: center
+    }
+
+    .sbc-date-picker-button:not(:disabled):hover,
+    .sbc-date-picker-button:not(:disabled):focus-within {
+        cursor: pointer;
+        background-color: var(--btn-secondary-bg);
+        color: var(--btn-secondary-fg);
+    }
+
+    .sbc-date-picker-button p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+    }*/
+
+
+/*.sbc-date-picker,*/
+.sbc-date-picker-header button[b-7d73tkmg3g],
+.sbc-date-picker-days button[b-7d73tkmg3g] {
+    background-color: var(--primary-bg);
+    color: var(--primary-fg);
+    border: 1px solid transparent;
+    padding: 4px;
+    height: 36px;
+    font-size: 14.5px;
+    font-weight: 500;
+    min-width: 36px;
+    border-radius: 6px;
+    outline: transparent;
+}
+
+.sbc-date-picker-content button:not(:disabled):hover[b-7d73tkmg3g] {
+    cursor: pointer;
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-fg);
+}
+
+.sbc-date-picker-content button.today[b-7d73tkmg3g] {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-fg);
+    border: 1px solid transparent;
+}
+
+.sbc-date-picker-content button.selected[b-7d73tkmg3g] {
+    background-color: var(--btn-primary-bg) !important;
+    color: var(--btn-primary-fg) !important;
+    border: 1px solid transparent !important;
+}
+
+.sbc-date-picker-content button:focus[b-7d73tkmg3g] {
+    border: 1px solid var(--primary-border);
+}
+
+.sbc-date-picker-header[b-7d73tkmg3g] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sbc-date-picker-days[b-7d73tkmg3g] {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    row-gap: 8px;
+    text-align: center;
+}
+
+.sbc-date-picker-weekdays[b-7d73tkmg3g] {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    font-size: 13px;
+    opacity: 0.75;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.prev-month[b-7d73tkmg3g], .next-month[b-7d73tkmg3g] {
+    opacity: 0.5;
+}
+
+.month-year[b-7d73tkmg3g] {
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.back[b-7d73tkmg3g], .next[b-7d73tkmg3g] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px !important;
+    background-color: transparent;
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+}
+
+    .back:hover[b-7d73tkmg3g],
+    .next:hover[b-7d73tkmg3g] {
+        cursor: pointer;
+        background-color: var(--btn-secondary-bg);
+    }
+
+.show[b-7d73tkmg3g] {
+    visibility: visible;
+    opacity: 1;
+    /* animation: show 150ms ease-out forwards; */
+}
+
+@keyframes show-b-7d73tkmg3g {
+    from {
+        opacity: 0;
+        transform: scale(0.8)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+.clear-btn[b-7d73tkmg3g] {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-fg);
+    border-radius: 50%;
+    outline: transparent;
+    transition: 150ms ease-in-out all;
+}
+
+    .clear-btn:hover[b-7d73tkmg3g],
+    .clear-btn:focus[b-7d73tkmg3g] {
+        background-color: var(--btn-primary-bg);
+        color: var(--btn-primary-fg);
+        cursor: pointer;
+    }
+
+.sbc-date-picker-days button:disabled[b-7d73tkmg3g] {
+    opacity: 0.5;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Card.razor.rz.scp.css */
+.sbc-card[b-booeh01of8] {
+    display: flex;
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid var(--primary-border);
+    background-color: var(--primary-bg);
+    color: var(--primary-fg);
+    border-radius: 0.5rem;
+}
+
+.sbc-card-header[b-booeh01of8] {
+    padding: 1rem 1.5rem;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+}
+
+.sbc-card-header[b-booeh01of8]  h3:first-child {
+    font-size: 16px;
+    line-height: 2rem;
+}
+
+.sbc-card-header[b-booeh01of8]  p {
+    font-size: 14px;
+    opacity: 0.75;
+}
+
+.sbc-card-content[b-booeh01of8] {
+    position: relative;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 1rem;
+    flex: 1;
+}
+
+.sbc-card-footer[b-booeh01of8] {    
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.light .sbc-card[b-booeh01of8] {
+    box-shadow: 0 1px 2px 0 var(--primary-border);
+}
+/* _content/Sysinfocus.AspNetCore.Components/Carousel.razor.rz.scp.css */
+.sbc-carousel[b-sllfrs81ih] {
+    --vertical: row;
+    display: flex;
+    flex-direction: var(--vertical);
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;   
+    position: relative;
+}
+
+.sbc-carousel-content[b-sllfrs81ih] {
+    --width: 500px;
+    --height: 500px;
+    --object-fit: cover;
+    width: var(--width);
+    height: var(--height);
+    border: 1px solid var(--primary-border);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: var(--vertical);
+    scroll-behavior: smooth;
+}
+    .sbc-carousel-content[b-sllfrs81ih]::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    .sbc-carousel-content:hover[b-sllfrs81ih]::-webkit-scrollbar {
+        background: transparent;
+    }
+
+.sbc-carousel-content[b-sllfrs81ih]  > * {
+    display: block;
+    min-width: var(--width);
+    width: 100%;
+    height: 100%;
+    object-fit: var(--object-fit);
+}
+/* _content/Sysinfocus.AspNetCore.Components/Chart.razor.rz.scp.css */
+.sbc-chart[b-g2zjdrqq2d] {
+    position: relative;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Checkbox.razor.rz.scp.css */
+.sbc-checkbox[b-ix9et0c73c] {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    gap: 12px;
+}
+
+    .sbc-checkbox label[b-ix9et0c73c] {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+        .sbc-checkbox label:hover[b-ix9et0c73c] {
+            cursor: default
+        }
+
+    .sbc-checkbox input[b-ix9et0c73c] {
+        display:none;
+        width: 0;
+        height: 0;
+    }
+
+.checkbox-wrapper[b-ix9et0c73c] {
+    border: 1px solid var(--primary-fg);
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.sbc-checkbox:not(:disabled) .checkbox-wrapper:not(.disabled):hover[b-ix9et0c73c],
+.sbc-checkbox:not(:disabled) .checkbox-wrapper:not(.disabled):focus[b-ix9et0c73c] {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.tick-mark[b-ix9et0c73c]  svg {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    z-index: 1;
+    width: 14px;
+    height: 14px;
+}
+
+.checked[b-ix9et0c73c] {
+    background-color: var(--btn-primary-bg);
+    border-color: var(--btn-primary-bg);
+    transition: 300ms transform ease-in-out;
+}
+
+    .checked .tick-mark[b-ix9et0c73c]  svg {
+        stroke: var(--btn-primary-fg);
+    }
+
+.disabled[b-ix9et0c73c] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.disabled .checkbox-wrapper[b-ix9et0c73c] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.disabled + label:hover[b-ix9et0c73c] {
+    cursor: not-allowed
+}
+
+.light .sbc-checkbox input:not(:disabled) .checkbox-wrapper:hover[b-ix9et0c73c] {
+    box-shadow: 0 1px 2px 0 var(--primary-border);
+}
+/* _content/Sysinfocus.AspNetCore.Components/Collapsible.razor.rz.scp.css */
+.sbc-collapsible[b-24u3018pb1] {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.sbc-collapsible-header[b-24u3018pb1] {
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+}
+
+.sbc-collapsible-header-handler[b-24u3018pb1] {
+    font-weight: 600;
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 2rem);
+    gap: 8px;
+    margin: 1rem;
+}
+
+.sbc-collapsible-content[b-24u3018pb1] {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Combobox.razor.rz.scp.css */
+.sbc-combobox[b-52fbtuz3y3] {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+    .sbc-combobox label[b-52fbtuz3y3] {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+hr[b-52fbtuz3y3] {
+    height: 1px;
+    border-bottom: 1px solid var(--primary-border);
+    opacity: 0.15;
+}
+
+.sbc-combobox span.info[b-52fbtuz3y3] {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.sbc-combobox button[b-52fbtuz3y3] {
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background-color: var(--primary-bg);
+    color: var(--primary-fg);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 36px;
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+    padding: 8px 16px;
+    padding-right: 8px;
+    outline: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 150ms ease-in-out;
+}
+
+    .sbc-combobox button span[b-52fbtuz3y3] {
+        max-width: calc(100% - 1.5rem);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .sbc-combobox button:disabled[b-52fbtuz3y3] {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+    .sbc-combobox button:not(:disabled):hover[b-52fbtuz3y3],
+    .sbc-combobox button:not(:disabled):focus[b-52fbtuz3y3] {
+        background-color: var(--btn-secondary-bg);
+        color: var(--btn-secondary-fg);
+        cursor: pointer;
+    }
+
+    .sbc-combobox button[b-52fbtuz3y3]  svg {
+        stroke: var(--primary-fg);
+        opacity: 0.5;
+        width: 16px;
+        height: 16px;
+    }
+
+.sbc-ac-list[b-52fbtuz3y3] {
+    user-select: none;
+    position: fixed;
+    z-index: 50;
+    background-color: var(--primary-bg);
+    min-height: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+    padding: 4px;
+    visibility: collapse;
+}
+
+.search-box[b-52fbtuz3y3] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid var(--primary-border);
+    padding: 0 8px;
+    margin-bottom: 4px;
+}
+
+    .search-box[b-52fbtuz3y3]  svg {
+        min-width: 16px;
+        max-width: 16px;
+        stroke: var(--primary-fg);
+        opacity: 0.5;
+    }
+
+    .search-box input[b-52fbtuz3y3] {
+        font-family: inherit;
+        background-color: transparent;
+        font-size: 14px;
+        width: 100%;
+        min-height: 40px;
+        margin-bottom: 2px;
+        border: none;
+        padding: 8px;
+        outline: transparent;
+    }
+
+.list-items[b-52fbtuz3y3] {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+    .list-items[b-52fbtuz3y3]::-webkit-scrollbar {
+        width: 0px;
+        background-color: transparent;
+    }
+
+.sbc-ac-list .item[b-52fbtuz3y3] {
+    flex: 1;
+    cursor: default;
+    padding: 8px;
+    padding-left: 32px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+    .sbc-ac-list .item span[b-52fbtuz3y3] {
+        width: 16px;
+    }
+
+    .sbc-ac-list .item[b-52fbtuz3y3]  svg {
+        position: absolute;
+        left: 8px;
+        width: 16px !important;
+        height: 16px !important;
+        stroke: var(--primary-fg);
+    }
+
+    .sbc-ac-list .item.selected[b-52fbtuz3y3],
+    .sbc-ac-list .item:hover[b-52fbtuz3y3] {
+        background-color: var(--btn-secondary-bg);
+        border-radius: 4px;
+    }
+
+.sbc-ac-list.show[b-52fbtuz3y3] {
+    visibility: visible;
+    animation: show-b-52fbtuz3y3 100ms linear both;
+}
+
+.light .sbc-ac-list[b-52fbtuz3y3] {
+    box-shadow: 0 1px 4px 1px var(--btn-secondary-bg);
+}
+
+@keyframes show-b-52fbtuz3y3 {
+    from {
+        opacity: 0;
+        transform: scaleX(0.5) scaleY(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* _content/Sysinfocus.AspNetCore.Components/Command.razor.rz.scp.css */
+.sbc-command[b-ta3hx27b8r] {
+    position: relative;
+    width: 100%;
+    background-color: var(--primary-bg);
+    border: 1px solid var(--primary-border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: auto;
+    z-index: 3000;
+}
+
+.light .sbc-command[b-ta3hx27b8r] {
+    box-shadow: 0 1px 4px 0 var(--primary-border);
+}
+
+.sbc-command-group[b-ta3hx27b8r] {
+    padding: 4px;
+    border-top: 1px solid var(--primary-border);
+    height: 100%;
+    overflow: auto;
+}
+
+    .sbc-command-group p:first-child[b-ta3hx27b8r] {
+        font-size: 12px;
+        opacity: 0.5;
+        padding: 8px;
+    }
+
+.sbc-command-search[b-ta3hx27b8r] {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    padding: 8px;
+}
+
+    .sbc-command-search span[b-ta3hx27b8r] {
+        font-size: 18px;
+        opacity: 0.5;
+        margin-left: 4px;
+    }
+
+    .sbc-command-search input[b-ta3hx27b8r] {
+        border: none;
+        background-color: transparent;
+        color: var(--primary-fg);
+        outline: transparent;
+        padding: 4px;
+        flex: 1;
+    }
+
+.sbc-command-notfound[b-ta3hx27b8r] {
+    padding: 1.5rem;
+    border: 1px solid var(--primary-border);
+    text-align: center;
+    font-size: 14px;
+}
+/* _content/Sysinfocus.AspNetCore.Components/CommandItem.razor.rz.scp.css */
+.sbc-command-item[b-2ooujjy23m] {
+    display: flex;
+    width: 100%;
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--primary-fg);
+    border: none;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    max-height: 32px;
+    outline: transparent;
+}
+
+.sbc-command-item-name[b-2ooujjy23m] {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 14px;
+}
+
+    .sbc-command-item-name span:first-child[b-2ooujjy23m] {
+        font-size: 18px;
+        opacity: 0.75;
+    }
+
+.sbc-command-item:hover[b-2ooujjy23m],
+.sbc-command-item:focus-within[b-2ooujjy23m],
+.sbc-command-item.selected[b-2ooujjy23m] {
+    background-color: var(--btn-secondary-bg);
+    cursor: pointer;
+}
+
+.sbc-command-item small[b-2ooujjy23m] {
+    opacity: 0.75
+}
+/* _content/Sysinfocus.AspNetCore.Components/ContextMenu.razor.rz.scp.css */
+.sbc-context-menu[b-jlvob8plou]
+ {
+    border: 1px dashed var(--primary-border);
+    display: flex;
+    place-content: center;
+    align-items: center;
+    font-size: 14px;    
+    cursor: default;
+    user-select: none;
+}
+/* _content/Sysinfocus.AspNetCore.Components/DataTable.razor.rz.scp.css */
+.sbc-data-table-container[b-7xhksee9mk] {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+}
+.sbc-data-table[b-7xhksee9mk] {
+    --spacing: 8px 16px;
+    --height: fit-content;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: var(--height);
+    overflow: auto;
+    scrollbar-gutter: both-edges auto;
+}
+
+.sbc-data-table table[b-7xhksee9mk] {
+    width: 100%;
+    font-weight: 400;
+    border-collapse: separate;    
+    font-size: 14px;
+    position: relative;
+    cursor: default;
+}
+
+.sbc-data-table thead[b-7xhksee9mk] {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    user-select: none;
+    background-color: var(--data-table-row);
+}
+
+    .sbc-data-table tr[b-7xhksee9mk] {
+        transition: 150ms ease-out;
+        outline: transparent;
+    }
+        .sbc-data-table tr:hover[b-7xhksee9mk],
+        .sbc-data-table tr.selected[b-7xhksee9mk] {
+            background-color: var(--data-table-row-hover);
+        }
+
+    .sbc-data-table[b-7xhksee9mk]  th {
+        font-weight: 500 !important;
+        font-size: 14px;
+        padding: var(--spacing);
+        padding-block: 12px;
+        height: 40px;
+        color: var(--light-text);
+        border-bottom: 1px solid var(--data-table-border);
+        white-space: nowrap;
+        align-items: center;
+    }
+
+        .sbc-data-table[b-7xhksee9mk]  th.sorted {
+            background-color: var(--btn-secondary-bg);
+            color: var(--error);
+        }
+
+        .sbc-data-table[b-7xhksee9mk]  td {
+            padding: var(--spacing);
+            min-height: 50px;
+            border-bottom: 1px solid var(--data-table-border)
+        }
+
+    .sbc-data-table[b-7xhksee9mk]  .left {
+        text-align: left;
+    }
+    .sbc-data-table[b-7xhksee9mk]  .center {
+        text-align: center;
+    }
+    .sbc-data-table[b-7xhksee9mk]  .right {
+        text-align: right;
+    }
+    .sbc-data-table[b-7xhksee9mk]  .justify {
+        text-align: justify;
+    }    
+/* _content/Sysinfocus.AspNetCore.Components/DatePicker.razor.rz.scp.css */
+.sbc-datepicker[b-seqom3cw9y] {
+    display: flex;   
+    position: relative;
+}
+
+.clear-btn[b-seqom3cw9y] {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: var(--primary-fg);
+    margin-top: 10px;
+    right: 16px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    outline: transparent;
+    transition: 150ms ease-in-out all;
+}
+
+    .clear-btn:hover[b-seqom3cw9y],
+    .clear-btn:focus[b-seqom3cw9y] {
+        background-color: var(--primary-border);
+        cursor: pointer;
+    }
+/* _content/Sysinfocus.AspNetCore.Components/Dialog.razor.rz.scp.css */
+.sbc-dialog[b-d4ez2zyrqb] {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: fill;
+}
+
+.sbc-dialog-overlay[b-d4ez2zyrqb] {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--overlay-bg);
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.9;
+    z-index: 0;
+}
+
+.sbc-dialog-alert[b-d4ez2zyrqb] {
+    z-index: 1;
+    padding: 1.5rem;
+    background-color: var(--alert-dialog-bg);
+    border: 1px solid var(--alert-dialog-border);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sbc-dialog-header[b-d4ez2zyrqb] {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sbc-dialog-content[b-d4ez2zyrqb] {
+    line-height: 1.25rem;
+}
+
+.sbc-dialog-footer[b-d4ez2zyrqb] {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: end;
+}
+
+.show[b-d4ez2zyrqb] {
+    animation: show-b-d4ez2zyrqb 300ms ease-in-out both;
+}
+
+@keyframes show-b-d4ez2zyrqb {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* _content/Sysinfocus.AspNetCore.Components/Drawer.razor.rz.scp.css */
+.sbc-drawer[b-tnp5clhn05] {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.sbc-drawer-overlay[b-tnp5clhn05] {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--overlay-bg);
+    opacity: 0.85;
+}
+
+.sbc-drawer-content[b-tnp5clhn05] {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    min-height: 50vh;
+    background-color: var(--primary-bg);
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    border-start-start-radius: 10px;
+    border-start-end-radius: 10px;
+    padding: 1rem;
+    transform: translateY(100%)
+}
+
+.sbc-drawer-close[b-tnp5clhn05] {
+    border-radius: 8px;
+    width: 100px;
+    height: 8px;
+    cursor: pointer;
+    background-color: var(--btn-secondary-bg);
+}
+
+.show[b-tnp5clhn05] { 
+    animation: show-b-tnp5clhn05 300ms ease-in-out forwards
+}
+
+@keyframes show-b-tnp5clhn05
+{
+    from { opacity: 0; transform: translateY(100%)}
+    to { opacity: 1; transform: translateY(0)}
+}
+
+.hide[b-tnp5clhn05] { 
+    animation: hide-b-tnp5clhn05 300ms ease-in-out forwards
+}
+
+@keyframes hide-b-tnp5clhn05
+{
+    from { opacity: 1; transform: translateY(0)}
+    to { opacity: 0; transform: translateY(100%)}
+}
+/* _content/Sysinfocus.AspNetCore.Components/Group.razor.rz.scp.css */
+.sbc-group[b-l5eahwxxm4] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 8px
+}
+
+    .sbc-group label[b-l5eahwxxm4] {
+        font-size: 14px;
+        font-weight: 500;
+        /* margin-bottom: 4px; */
+    }
+
+    .sbc-group span[b-l5eahwxxm4] {
+        font-size: 12px;
+        opacity: 0.5;
+    }
+/* _content/Sysinfocus.AspNetCore.Components/Input.razor.rz.scp.css */
+.sbc-input[b-9pp4fu6np5] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;        
+    gap: 8px
+}
+.sbc-input label[b-9pp4fu6np5] {
+    font-size: 14px;
+    font-weight: 500;
+}
+.sbc-input span[b-9pp4fu6np5] {
+    font-size: 12px;
+    opacity: 0.5;
+}
+.sbc-input input[b-9pp4fu6np5] {
+    font-family: inherit;
+    font-size: 14px;
+    min-height: 36px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--primary-border);
+    outline: transparent;
+    transition: all 100ms ease;
+    background-color: var(--primary-bg);
+    color: var(--fg);
+    width: 100%;
+}
+
+.sbc-input input:focus[b-9pp4fu6np5] {
+    border-color: transparent;
+    box-shadow: 0 0 1px 1px var(--primary-fg) !important;
+}
+
+.sbc-input input:disabled[b-9pp4fu6np5] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.light .sbc-input input[b-9pp4fu6np5] {
+    box-shadow: 0 1px 2px 0 var(--primary-border);
+}
+/* _content/Sysinfocus.AspNetCore.Components/InputOTP.razor.rz.scp.css */
+.sbc-input-otp[b-xrw4bh561a] {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+    .sbc-input-otp span[b-xrw4bh561a] {
+        padding: 8px;
+        user-select: none;
+        pointer-events: none;
+    }
+
+    .sbc-input-otp input[b-xrw4bh561a] {
+        background-color: transparent;
+        color: var(--primary-fg);
+        border: 1px solid var(--primary-border);
+        outline: transparent;
+        border-radius: 6px;
+        width: 36px;
+        height: 36px;
+        text-align: center;
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .sbc-input-otp input:focus[b-xrw4bh561a] {
+        background-color: transparent;
+        color: var(--primary-fg);
+        font-weight: 500;
+        border-color: var(--input-border);
+    }
+
+/* Chrome, Safari, Edge, Opera */
+    .sbc-input-otp input[b-xrw4bh561a]::-webkit-outer-spin-button,
+    .sbc-input-otp input[b-xrw4bh561a]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+/* Firefox */
+    .sbc-input-otp input[type=number][b-xrw4bh561a] {
+        -moz-appearance: textfield;
+    }
+/* _content/Sysinfocus.AspNetCore.Components/Label.razor.rz.scp.css */
+.sbc-label[b-wsbd6ex0bf] {
+    font-weight: normal;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;    
+}
+
+.sbc-label-info[b-wsbd6ex0bf] {
+    opacity: 0.5
+}
+
+.bold[b-wsbd6ex0bf] {
+    font-weight: 500;
+}
+
+.disabled[b-wsbd6ex0bf] {
+    opacity: 0.75;
+    cursor: not-allowed !important;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Menubar.razor.rz.scp.css */
+.sbc-menubar[b-7nv3jrqc85] {
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    width: fit-content;
+}
+
+[b-7nv3jrqc85] .sbc-menu-button {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 14px;
+    background-color: transparent;
+    color: var(--btn-secondary-fg);
+    border-color: transparent;
+    border-radius: 4px;
+    padding: 4px 12px;
+    transition: 150ms ease-out;
+}
+
+[b-7nv3jrqc85] .sbc-menubar-item:focus-within button.sbc-menu-button,
+[b-7nv3jrqc85] button.sbc-menu-button:hover {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-fg);
+    outline: transparent;
+}
+
+[b-7nv3jrqc85] .sbc-menubar-item > .sbc-menu-group {
+    margin-top: 8px;
+    display: none !important
+}
+
+[b-7nv3jrqc85] .sbc-menubar-item:focus-within .sbc-menu-group,
+[b-7nv3jrqc85] .sbc-menubar-item button:hover .sbc-menu-group {
+    display: flex !important
+}
+
+.light .sbc-menubar[b-7nv3jrqc85] {
+    box-shadow: 0 1px 2px -1px var(--primary-border);
+}
+/* _content/Sysinfocus.AspNetCore.Components/MenuGroup.razor.rz.scp.css */
+.sbc-menu-group[b-y1yvki29h8] {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background-color: var(--primary-bg);
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+    padding: 4px;
+    min-width: 200px;
+    width: 100%;
+    z-index: 50;
+}
+
+.light .sbc-menu-group[b-y1yvki29h8] {
+    box-shadow: 0 3px 4px 0.5px var(--primary-border);
+}
+/* _content/Sysinfocus.AspNetCore.Components/MenuItem.razor.rz.scp.css */
+.sbc-menu_separator[b-zvobfdt8qz] {
+    display: flex;    
+    align-items: center;
+    width: calc(100% + 8px);
+    height: 1px;
+    margin: 0 -4px;
+    border-bottom: 1px solid var(--primary-border);
+    pointer-events: none;
+}
+
+.sbc-menuitem[b-zvobfdt8qz] {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: normal;
+    height: 32px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: var(--btn-secondary-fg);
+    outline: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    width: 100%;
+    transition: background-color 150ms ease-out;
+}
+
+    .sbc-menuitem:disabled[b-zvobfdt8qz] {
+        opacity: 0.5;
+    }
+
+    .sbc-menuitem:not(:disabled, .menu_header):hover[b-zvobfdt8qz],
+    .sbc-menuitem:not(:disabled, .menu_header):focus[b-zvobfdt8qz] {
+        background-color: var(--btn-secondary-bg);
+        border: 1px solid var(--btn-secondary-bg);
+        color: var(--btn-secondary-fg);
+        cursor: pointer;
+    }
+
+.menu_header[b-zvobfdt8qz] {
+    font-weight: 700 !important;
+    pointer-events: none;
+}
+
+.menu_text[b-zvobfdt8qz] {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menu_can_check[b-zvobfdt8qz] {
+    display: flex;
+    gap: 4px;
+    align-items: center;    
+}
+
+.menu_check[b-zvobfdt8qz] {
+    transform: scale(0.7);
+    width: 24px;
+    align-self: center;    
+}
+
+.menu_can_check[b-zvobfdt8qz]  .menu_check {
+    stroke: var(--primary-bg) !important;
+}
+.menu_check[b-zvobfdt8qz]  svg {
+    stroke: var(--primary-fg) !important;
+}
+
+.menu_radio[b-zvobfdt8qz] {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin: 9px;
+    background-color: var(--primary-fg);
+}
+
+.menu_icon[b-zvobfdt8qz] {
+    align-self: center;
+}
+
+.menu_shortcut[b-zvobfdt8qz] {
+    font-size: 12px;
+    opacity: 0.5;
+}
+/* _content/Sysinfocus.AspNetCore.Components/NavigationMenu.razor.rz.scp.css */
+.sbc-navigation-menu[b-bkh4qmzm97] {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    position: relative;
+}
+
+[b-bkh4qmzm97] .sbc-navigation-menu-item button {
+    padding: 0.5rem 1rem;    
+    border: none;
+    max-height: 2.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 0.5rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    color: var(--btn-secondary-fg);
+    gap: 0.5rem;
+    transition: background-color 200ms ease-in-out;
+    outline: transparent;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+    [b-bkh4qmzm97] .sbc-navigation-menu-item button span {
+        font-size: 1.15rem;
+        width: 0.75rem;
+        opacity: 0.5;
+    }
+
+[b-bkh4qmzm97] .sbc-navigation-menu-item-details {
+    position: absolute;
+    left: 0;
+    margin-top: 0.5rem;
+    border: 1px solid var(--primary-border);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    opacity: 0;
+    display: none;
+    overflow: hidden;
+}
+
+    [b-bkh4qmzm97] .sbc-navigation-menu-item-details a {
+        text-decoration: none;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        outline: transparent;
+    }
+        [b-bkh4qmzm97] .sbc-navigation-menu-item-details a:hover,
+        [b-bkh4qmzm97] .sbc-navigation-menu-item-details a:focus {
+            background-color: var(--btn-secondary-bg);
+        }
+
+[b-bkh4qmzm97] .sbc-navigation-menu-item:focus-within,
+[b-bkh4qmzm97] .sbc-navigation-menu-item button:hover {
+    background-color: var(--btn-secondary-bg);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+    [b-bkh4qmzm97] .sbc-navigation-menu-item:focus-within > .sbc-navigation-menu-item-details,
+    [b-bkh4qmzm97] .sbc-navigation-menu-item button:hover + .sbc-navigation-menu-item-details {
+        opacity: 1;
+        display: block;
+    }
+
+
+.light[b-bkh4qmzm97]  .sbc-navigation-menu-item-details {
+    box-shadow: 0 1px 2px 0 var(--primary-border);
+}
+
+[b-bkh4qmzm97] .slideLeft {
+    animation: slideLeft-b-bkh4qmzm97 150ms ease-out forwards
+}
+@keyframes slideLeft-b-bkh4qmzm97 {
+    from { transform: translateX(7rem) }
+    to { transform: translateX(0) }
+}
+[b-bkh4qmzm97] .slideRight {
+    animation: slideRight-b-bkh4qmzm97 150ms ease-out forwards
+}
+@keyframes slideRight-b-bkh4qmzm97 {
+    from { transform: translateX(-7rem) }
+    to { transform: translateX(0) }
+}
+/* _content/Sysinfocus.AspNetCore.Components/Pagination.razor.rz.scp.css */
+.sbc-pagination[b-eeewzadjmu]
+ {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+.sbc-pagination[b-eeewzadjmu]  button {
+    padding: 8px 12px;
+    min-width: 36px;
+    text-align: center;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Popover.razor.rz.scp.css */
+.sbc-popover[b-6a62xt4hpz] {
+    --from: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:5000;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Progress.razor.rz.scp.css */
+.sbc-percent-container[b-4ch6subpbl] {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+.sbc-progress[b-4ch6subpbl] {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.sbc-progress-completed[b-4ch6subpbl] {
+    position: absolute;
+    left: 0;
+    top: 0;    
+    height: 100%;    
+}
+/* _content/Sysinfocus.AspNetCore.Components/RadioGroup.razor.rz.scp.css */
+.sbc-radiogroup[b-r113yzy3kq] {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+}
+
+[b-r113yzy3kq] .sbc-radio-item {
+    font-size: inherit;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+    [b-r113yzy3kq] .sbc-radio-item input {
+        appearance: none;
+        background-color: var(--primary-bg);
+        border: 1px solid var(--primary-fg);
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        outline: 1px solid var(--primary-fg) inset;
+    }
+
+[b-r113yzy3kq] .sbc-radio-item input {
+    box-shadow: 0 1px 4px 1px var(--primary-border);
+}
+
+[b-r113yzy3kq] .sbc-radio-check-mark {
+    position: absolute;
+    margin-left: 1px;
+    margin-top: 1px;
+    visibility: hidden;
+}
+
+[b-r113yzy3kq] .sbc-radio-item input:checked ~ .sbc-radio-check-mark {
+    visibility: visible
+}
+/* _content/Sysinfocus.AspNetCore.Components/Resizable.razor.rz.scp.css */
+.sbc-resizable[b-mlngf8w2y0] {
+    max-height: 100%;
+    max-width: 100%;
+    background: var(--primary-bg);    
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+    overflow: hidden;
+}
+    .sbc-resizable.res-border[b-mlngf8w2y0] {
+        border: 1px solid var(--primary-border);
+        border-radius: 0.5rem !important;
+    }
+    .sbc-resizable.no-res-border[b-mlngf8w2y0] {
+        border: none;
+    }
+
+.sbc-resizable.vertical[b-mlngf8w2y0] {
+    flex-direction: column;
+}
+
+    .sbc-resizable .pane[b-mlngf8w2y0] {
+        min-width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sbc-resizable .vPane[b-mlngf8w2y0] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: fit-content;
+    }
+
+/*    .sbc-resizable .left {
+        min-width: fit-content !important;
+    }
+*/
+    .sbc-resizable .top[b-mlngf8w2y0] {
+        min-height: fit-content !important;
+    }
+
+    .sbc-resizable .right[b-mlngf8w2y0],
+    .sbc-resizable .bottom[b-mlngf8w2y0] {
+        position: relative;
+        text-align: center;
+        min-height: fit-content !important;
+        flex: 1;
+    }
+
+    .sbc-resizable .hGutter[b-mlngf8w2y0] {
+        width: 2px;
+        height: 100%;
+        background: var(--btn-secondary-bg);
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: col-resize;
+    }
+
+    .sbc-resizable .vGutter[b-mlngf8w2y0] {
+        height: 2px;
+        width: 100%;
+        background: var(--btn-secondary-bg);
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: row-resize;
+    }
+
+        .sbc-resizable .hGutter:hover[b-mlngf8w2y0] {
+            width: 5px;
+            background: var(--primary-border);
+        }
+    .sbc-resizable .vGutter:hover[b-mlngf8w2y0] {
+        height: 5px;
+        background: var(--primary-border);
+    }
+/* _content/Sysinfocus.AspNetCore.Components/ScrollArea.razor.rz.scp.css */
+.sbc-scroll-area-vertical[b-epyu621z5b] {
+    display: flex;
+    gap: 6px;
+    flex-direction: column;
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+    overflow: hidden;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+}
+.sbc-scroll-area-horizontal[b-epyu621z5b] {
+    display: flex;
+    gap: 6px;
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+    overflow: hidden;
+    overflow-x: auto;
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Select.razor.rz.scp.css */
+.sbc-select[b-oioz0f36uz] {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+    .sbc-select label[b-oioz0f36uz] {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+hr[b-oioz0f36uz] {
+    height: 1px;
+    border-bottom: 1px solid var(--primary-border);
+    opacity: 0.15;
+}
+
+.sbc-select span.info[b-oioz0f36uz] {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.sbc-select button[b-oioz0f36uz] {
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background-color: var(--primary-bg);
+    color: var(--primary-fg);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 36px;
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+    padding: 8px 16px;
+    padding-right: 10px;
+    outline: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 150ms ease-in-out;
+}
+
+    .sbc-select button span[b-oioz0f36uz] {
+        max-width: calc(100% - 1.5rem);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .sbc-select button:disabled[b-oioz0f36uz] {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+    .sbc-select button:not(:disabled):hover[b-oioz0f36uz],
+    .sbc-select button:not(:disabled):focus[b-oioz0f36uz] {
+        background-color: var(--btn-secondary-bg);
+        color: var(--btn-secondary-fg);
+        cursor: pointer;
+    }
+
+    .sbc-select button[b-oioz0f36uz]  svg {
+        stroke: var(--primary-fg);
+        opacity: 0.5;
+        width: 16px;
+        height: 16px;
+    }
+
+.sbc-ac-list[b-oioz0f36uz] {
+    user-select: none;
+    position: fixed;
+    z-index: 50;
+    max-height: 220px;
+    background-color: var(--primary-bg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+    padding: 4px;
+    visibility: collapse;
+}
+
+.search-box[b-oioz0f36uz] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid var(--primary-border);
+    padding: 0 8px;
+    margin-bottom: 4px;
+}
+
+    .search-box[b-oioz0f36uz]  svg {
+        min-width: 16px;
+        max-width: 16px;
+        stroke: var(--primary-fg);
+        opacity: 0.5;
+    }
+
+    .search-box input[b-oioz0f36uz] {
+        font-family: inherit;
+        background-color: transparent;
+        font-size: 14px;
+        width: 100%;
+        min-height: 40px;
+        margin-bottom: 2px;
+        border: none;
+        padding: 8px;
+        outline: transparent;
+    }
+
+.list-items[b-oioz0f36uz] {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+}
+
+.list-items b[b-oioz0f36uz] {
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+    .list-items[b-oioz0f36uz]::-webkit-scrollbar {
+        width: 0px;
+        background-color: transparent;
+    }
+
+.sbc-ac-list .item[b-oioz0f36uz] {
+    flex: 1;
+    cursor: default;
+    padding: 8px 16px;
+    min-height: 32px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+    .sbc-ac-list .item span[b-oioz0f36uz] {
+        width: 16px;
+    }
+
+    .sbc-ac-list .item[b-oioz0f36uz]  svg {
+        position: absolute;
+        right: 8px;
+        width: 16px !important;
+        height: 16px !important;
+        stroke: var(--primary-fg);
+    }
+
+    .sbc-ac-list .item.selected[b-oioz0f36uz],
+    .sbc-ac-list .item:hover[b-oioz0f36uz] {
+        background-color: var(--btn-secondary-bg);
+        border-radius: 4px;
+    }
+
+.sbc-ac-list.show[b-oioz0f36uz] {
+    visibility: visible;
+    animation: show-b-oioz0f36uz 100ms linear both;
+}
+
+.light .sbc-ac-list[b-oioz0f36uz] {
+    box-shadow: 0 1px 4px 1px var(--btn-secondary-bg);
+}
+
+@keyframes show-b-oioz0f36uz {
+    from {
+        opacity: 0;
+        transform: scaleX(0.5) scaleY(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* .sbc-select-up, .sbc-select-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+.sbc-select-down {
+    bottom: 0;
+} */
+/* _content/Sysinfocus.AspNetCore.Components/Separator.razor.rz.scp.css */
+.sbc-separator-horizontal[b-a729lixv8b] {
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid var(--primary-border);
+}
+    .sbc-separator-vertical[b-a729lixv8b] {        
+        width: 1px !important;
+        height: 100%;
+        border-left: 1px solid var(--primary-border);
+    }
+/* _content/Sysinfocus.AspNetCore.Components/Sheet.razor.rz.scp.css */
+.sbc-sheet[b-aheysmy87t] {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;    
+    z-index: 2000;
+}
+
+.sbc-sheet-overlay[b-aheysmy87t] {
+    position: fixed;
+    background-color: var(--overlay-bg);
+    filter: opacity(0.85);
+    width: 100vw;
+    height: 100vh;
+}
+
+.sbc-sheet-content[b-aheysmy87t] {
+    position: fixed;
+    top: 0;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--primary-bg);
+    border-left: 1px solid var(--primary-border);
+    border-right: 1px solid var(--primary-border);
+    z-index: 1;
+    opacity: 0;
+}
+
+.sbc-sheet-container[b-aheysmy87t] {
+    position: fixed;
+    top: 0;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--primary-bg);
+    border-left: 1px solid var(--primary-border);
+    border-right: 1px solid var(--primary-border);
+    z-index: 0;
+}
+
+.show[b-aheysmy87t] {
+    --from: 100%;
+    animation: show-b-aheysmy87t 300ms ease-out forwards;
+}
+.hide[b-aheysmy87t] {
+    animation: hide-b-aheysmy87t 300ms ease-out forwards;
+}
+.xshow[b-aheysmy87t] {
+    animation: xshow-b-aheysmy87t 1ms ease-out 300ms forwards;    
+}
+.xhide[b-aheysmy87t] {    
+    animation: xhide-b-aheysmy87t 1ms ease-out 300ms forwards;    
+}
+
+@keyframes xshow-b-aheysmy87t
+{    
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
+@keyframes xhide-b-aheysmy87t 
+{    
+    from { opacity: 1 }
+    to { opacity: 0 }
+}
+
+@keyframes show-b-aheysmy87t 
+{    
+    from { opacity: 0; transform: translateX(var(--from)); }
+    to { opacity: 1; transform: translateX(0) }
+}
+@keyframes hide-b-aheysmy87t
+{    
+    from { opacity: 1; transform: translateX(0) }
+    to { opacity: 0; transform: translateX(var(--from)) }
+}
+
+[b-aheysmy87t] .show-close {
+    position: absolute;    
+    top: 1rem;    
+    right: 1rem;
+    padding: 8px;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Skeleton.razor.rz.scp.css */
+.sbc-skeleton[b-rdllu0a49g] {
+    position: relative;
+    display: block;
+    background-color: var(--primary-border);
+    width: 100%;
+    height: 100%;
+    border: none;
+    animation: skeleton-b-rdllu0a49g 1s ease-in-out infinite alternate-reverse;
+    pointer-events: none;
+}
+
+@keyframes skeleton-b-rdllu0a49g
+{
+    from { opacity: 0.4 }
+    to { opacity: 0.8 }
+}
+/* _content/Sysinfocus.AspNetCore.Components/Slider.razor.rz.scp.css */
+.sbc-slider[b-31m14i83ff] {
+    --width: 0%;
+    position: relative;
+    width: 100%;
+    height: 8px;
+    border-radius: 8px;
+    background-color: var(--primary-border);
+}
+
+    .sbc-slider input[b-31m14i83ff] {
+        appearance: none;        
+        width: 100%;
+        background-color: transparent;
+        outline: transparent;        
+    }
+
+        .sbc-slider input[b-31m14i83ff]::-webkit-slider-thumb {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-top: -12px;
+            border: 1px solid var(--medium-text);
+            background-color: var(--medium-text) !important;
+            z-index: 2;
+            transition: 200ms ease-in-out;
+        }
+        .sbc-slider input:focus[b-31m14i83ff]::-webkit-slider-thumb {
+            box-shadow: 0 0 12px 0 var(--medium-text);
+        }
+
+        .sbc-slider input[b-31m14i83ff]::-webkit-slider-runnable-track {
+            height: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+.sbc-slider-complete[b-31m14i83ff] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: var(--width);
+    z-index: 1;
+    background-color: var(--medium-text);
+    height: 8px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Sonner.razor.rz.scp.css */
+.sbc-sonner[b-1muo9l3izn]
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--primary-border);
+    align-items: center;
+    position: fixed;
+    visibility: hidden;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 9999;
+}
+
+.sbc-sonner-content[b-1muo9l3izn]{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sbc-sonner-content b[b-1muo9l3izn] {
+    font-weight: 500;
+    font-size: 14px;
+}
+.sbc-sonner-content p[b-1muo9l3izn] {
+    font-weight: normal;
+    opacity: 0.5;
+    font-size: 13px;
+}
+
+.light .sbc-sonner[b-1muo9l3izn] {
+    box-shadow: 0 2px 8px 0 var(--primary-border);
+}
+
+.show[b-1muo9l3izn] {
+    visibility: visible;
+    animation: show-b-1muo9l3izn 200ms ease-in-out forwards;
+}
+
+@keyframes show-b-1muo9l3izn {
+    from { opacity: 0; transform: translateY(100%) }
+    to { opacity: 1; transform: translateY(0) }
+}
+
+.hide[b-1muo9l3izn] {
+    visibility: visible;
+    animation: hide-b-1muo9l3izn 200ms ease-in-out forwards;
+}
+
+@keyframes hide-b-1muo9l3izn {
+    from { opacity: 1; transform: translateY(0) }
+    to { opacity: 0; transform: translateY(100%) }
+}
+/* _content/Sysinfocus.AspNetCore.Components/Switch.razor.rz.scp.css */
+.sbc-toggle[b-3wz4cvsirk] {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background-color: transparent;
+}
+
+.sbc-toggle .disabled[b-3wz4cvsirk] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.sbc-toggle .label[b-3wz4cvsirk] {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.sbc-toggle input[b-3wz4cvsirk] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-wrapper[b-3wz4cvsirk] {
+    display: flex;
+    align-items: center;
+    width: 36px;
+    height: 20px;
+    background-color: var(--toggle-bg);
+    border-radius: 9999px;
+    position: relative;
+    gap: 0 !important;
+}
+
+.toggle-circle[b-3wz4cvsirk] {
+    position: absolute;
+    background-color: var(--toggle-fg);
+    width: 16px;
+    height: 16px;
+    transform: translateX(1px);
+    border: none;
+    border-radius: 50%;
+}
+
+.checked[b-3wz4cvsirk] {
+    background-color: var(--btn-primary-bg);    
+    transition: 300ms transform ease-in-out;
+}
+
+.checked>.toggle-circle[b-3wz4cvsirk] {
+    animation: move-b-3wz4cvsirk 100ms ease-in-out forwards;
+}
+
+.toggle-wrapper:hover[b-3wz4cvsirk] {
+    cursor: pointer;
+}
+
+.light .toggle-wrapper[b-3wz4cvsirk] {
+    box-shadow: 0 1px 2px 0 var(--primary-border);
+}
+@keyframes move-b-3wz4cvsirk {
+    from { transform: translateX(0) }
+    to { transform: translateX(calc(100% + 2px)) }
+}
+/* _content/Sysinfocus.AspNetCore.Components/Table.razor.rz.scp.css */
+.sbc-table[b-j45b6ih47o] {
+    width: 100%;    
+    overflow: auto;
+    font-size: 14px;
+}
+.sbc-table-table[b-j45b6ih47o] {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;;
+}
+
+
+[b-j45b6ih47o] th, [b-j45b6ih47o] td {
+    font-weight: normal;
+    padding: 10px;
+    border-bottom: 1px solid var(--primary-border);
+}
+tbody.lastBorder[b-j45b6ih47o]  tr:last-child td { 
+    border-bottom: none;
+}
+[b-j45b6ih47o] th {
+    width: fit-content;
+    font-weight: normal;
+    padding: 10px;
+    border-bottom: 1px solid var(--primary-border);
+}
+
+[b-j45b6ih47o] thead {
+    font-weight: 600 !important;
+    opacity: 0.8;
+    text-align: left;
+}
+
+[b-j45b6ih47o] td {
+    font-size: 14.5px;
+}
+
+[b-j45b6ih47o] .left {
+    text-align: left;
+}
+[b-j45b6ih47o] .center {
+    text-align: center;
+}
+[b-j45b6ih47o] .right {
+    text-align: right;
+}
+[b-j45b6ih47o] .justify {
+    text-align: justify;
+}
+
+[b-j45b6ih47o] tfoot th {
+    text-align: left;
+    font-weight: 500;
+    background-color: var(--table-footer);
+    border: none;
+}
+
+[b-j45b6ih47o] tr:hover {
+    background-color: var(--table-row-bg);
+}
+/* _content/Sysinfocus.AspNetCore.Components/Tabs.razor.rz.scp.css */
+.sbc-tabs-container[b-de2pj2huiq] {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;    
+}
+
+.sbc-tabs[b-de2pj2huiq] {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    background-color: var(--btn-secondary-bg);
+    width: 100%;
+    padding: 4px;
+    border-radius: 6px;
+    height: 36px;
+    border: none;
+    overflow: hidden;
+}
+
+.sbc-tabs button[b-de2pj2huiq] {
+    font-family: inherit;
+    height: 28px;    
+    font-size: 14px;
+    font-weight: 500;
+    background-color: transparent;
+    color: var(--primary-fg);
+    border: none;
+    border-radius: 6px;
+    padding: 4px 16px;
+    flex: 1;
+    transition: 300ms ease-in-out;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.sbc-tabs button.active[b-de2pj2huiq] {
+    background-color: var(--primary-bg);
+    color: var(--primary-fg);
+}
+.sbc-tabs button:not(:disabled):hover[b-de2pj2huiq] {
+    cursor: pointer;
+}
+.light .sbc-tabs button.active[b-de2pj2huiq] {
+    border: 1px solid var(--primary-border);
+    box-shadow: 0 1px 2px 0 var(--primary-border);
+}
+
+.sbc-tabs-items[b-de2pj2huiq] {
+    width: 100%;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Textarea.razor.rz.scp.css */
+.sbc-textarea[b-t4xl5q84mh] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+.sbc-textarea label[b-t4xl5q84mh] {
+    font-size: 14px;
+    font-weight: 500;
+}
+.sbc-textarea span[b-t4xl5q84mh] {
+    font-size: 12px;
+    opacity: 0.5;
+}
+.sbc-textarea textarea[b-t4xl5q84mh] {
+    font-family: inherit;
+    font-size: 14px;
+    min-height: 36px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--primary-border);
+    outline: transparent;
+    transition: all 100ms ease;
+    background-color: var(--primary-bg);
+    color: var(--fg);
+    width: 100%;
+    resize: none;
+}
+
+.sbc-textarea textarea:focus[b-t4xl5q84mh] {
+    border-color: transparent;
+    box-shadow: 0 0 1px 1px var(--primary-fg) !important;
+}
+
+.sbc-textarea textarea:disabled[b-t4xl5q84mh] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.light .sbc-textarea textarea[b-t4xl5q84mh] {
+    box-shadow: 0 1px 2px 0 var(--primary-border);
+}
+/* _content/Sysinfocus.AspNetCore.Components/TimePicker.razor.rz.scp.css */
+.sbc-timepicker[b-93c41n6ujy] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Toast.razor.rz.scp.css */
+.sbc-toast[b-zz5e4w4zxv] {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;    
+    font-size: 14px;
+    overflow: hidden;
+    padding: 1rem;
+    min-width: 360px;    
+}
+.light .sbc-toast[b-zz5e4w4zxv] {
+    box-shadow: 0 1px 8px 0 var(--primary-border);
+}
+
+.sbc-toast:hover[b-zz5e4w4zxv]  .toast-close {
+    display: unset
+}
+
+[b-zz5e4w4zxv] .toast-close {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8px;
+    padding: 0 4px;
+    margin: 0;
+    max-width: 24px;
+    max-height: 24px;
+    display: none;
+}
+
+.show[b-zz5e4w4zxv] {
+    animation: show-b-zz5e4w4zxv 300ms ease-in-out forwards;
+}
+
+@keyframes show-b-zz5e4w4zxv {
+    from { opacity: 0; transform: translateY(100%) }
+    to { opacity: 1; transform: translateY(0%) }
+}
+
+.hide[b-zz5e4w4zxv] {
+    animation: hide-b-zz5e4w4zxv 300ms ease-in-out forwards;
+}
+
+@keyframes hide-b-zz5e4w4zxv {
+    from { opacity: 1; transform: translateX(0) }
+    to { opacity: 0; transform: translateX(100%) }
+}
+/* _content/Sysinfocus.AspNetCore.Components/Toggle.razor.rz.scp.css */
+.sbc-toggle[b-pi9ukkqm1s] {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background-color: transparent;
+    color: var(--primary-fg);
+    border: 1px solid transparent;
+    border-radius: 6px;
+    justify-content: center;    
+}
+
+.default[b-pi9ukkqm1s] {
+    padding: 8px;
+    min-width: 36px;
+    height: 36px;
+}
+.outline[b-pi9ukkqm1s] {
+    padding: 8px;
+    min-width: 36px;
+    height: 34px;
+    border: 1px solid var(--primary-border);    
+}
+.light .outline[b-pi9ukkqm1s] {
+    box-shadow: 0 1px 1px 0 var(--primary-border);
+}
+
+.sbc-toggle[b-pi9ukkqm1s]  span.material-symbols-outlined {
+    font-size: 20px !important;
+}
+
+.small[b-pi9ukkqm1s] {
+    width: 32px;
+    height: 32px;
+}
+.small[b-pi9ukkqm1s]  span.material-symbols-outlined {
+    font-size: 16px !important;
+}
+
+.large[b-pi9ukkqm1s] {
+    min-width: 40px;
+    height: 40px;    
+}
+.large[b-pi9ukkqm1s]  span.material-symbols-outlined {
+    font-size: 24px !important;
+}
+
+.active[b-pi9ukkqm1s] {
+    background-color: var(--btn-secondary-bg) !important;
+}
+
+.sbc-toggle:not(:disabled):hover[b-pi9ukkqm1s] {
+    cursor: pointer;
+    background-color: var(--btn-secondary-bg);
+    opacity: 0.5;
+}
+
+.sbc-toggle:disabled[b-pi9ukkqm1s] {
+    opacity: 0.5;
+    cursor: default;
+}
+/* _content/Sysinfocus.AspNetCore.Components/ToggleGroup.razor.rz.scp.css */
+.sbc-toggle-group[b-ost7wtmjvt] {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Tooltip.razor.rz.scp.css */
+.sbc-tooltip[b-7c9b6xt70x] {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.sbc-tooltip:hover .sbc-tooltip-tip[b-7c9b6xt70x] {
+    animation: show-b-7c9b6xt70x 100ms ease-out 500ms forwards;
+}
+.sbc-tooltip:hover .sbc-tooltip-tip.bottom[b-7c9b6xt70x] {
+    animation: bottom-b-7c9b6xt70x 100ms ease-out 500ms forwards;
+}
+
+.sbc-tooltip-tip[b-7c9b6xt70x] {
+    text-align: center;
+    line-height: 1.15rem;
+    visibility: collapse;
+    position: fixed;            
+    font-size: 12px;
+    background-color: var(--primary-fg);
+    color: var(--primary-bg);
+    padding: 6px 12px;
+    border-radius: 6px;
+    z-index: 9999;
+}
+
+@keyframes  show-b-7c9b6xt70x {
+    from { opacity: 0; visibility: collapse; transform: scale(0) translateY(0px); }
+    to { opacity: 1; visibility: visible; transform: scale(1) translateY(calc(-100% - 4px));}
+}
+@keyframes  bottom-b-7c9b6xt70x {
+    from { opacity: 0; visibility: collapse; transform: scale(0) translateY(0px); }
+    to { opacity: 1; visibility: visible; transform: scale(1) translateY(calc(var(--height) + 4px));}
+}
