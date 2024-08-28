@@ -165,6 +165,7 @@ main {
 
 .header-overlay {
     background: var(--primary-bg-header);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     position: absolute;
     left: 0;
