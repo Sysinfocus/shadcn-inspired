@@ -1,0 +1,7 @@
+<section class="flex-col">
+    <h2>Textarea</h2>    
+    <div class="flex-col">
+        <Textarea Placeholder="Type your message here." />
+        <Textarea Placeholder="Type your message here." Label="Permanent address" Info="Type your permanent address here." />
+    </div>
+</section>

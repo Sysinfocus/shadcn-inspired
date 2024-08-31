@@ -1664,6 +1664,7 @@ hr[b-52fbtuz3y3] {
     gap: 1rem;
     align-items: flex-start;
     position: relative;
+    background-color: var(--primary-bg);
 }
 
 [b-bkh4qmzm97] .sbc-navigation-menu-item button {
@@ -1692,6 +1693,7 @@ hr[b-52fbtuz3y3] {
 
 [b-bkh4qmzm97] .sbc-navigation-menu-item-details {
     position: absolute;
+    background-color: var(--primary-bg);
     left: 0;
     margin-top: 0.5rem;
     border: 1px solid var(--primary-border);

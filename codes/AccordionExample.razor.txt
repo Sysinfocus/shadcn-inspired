@@ -1,0 +1,43 @@
+﻿<section class="flex-col">
+    <h2>Accordion</h2>    
+
+    <Accordion Style="width: fit-content; min-width: 300px">
+        <AccordionItem Show="@(activeItem == 0)">
+            <Header>
+                Is it accessible?
+            </Header>
+            <Content>
+                Yes. It adheres to the WAI-ARIA design pattern.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci officiis quod saepe suscipit esse ut
+                placeat hic consequuntur. Sit quisquam voluptas numquam officia sunt quasi nulla pariatur nisi at vel?
+            </Content>
+        </AccordionItem>
+        <AccordionItem Show="@(activeItem == 1)">
+            <Header>
+                Is it styled?
+            </Header>
+            <Content>
+                Yes. It comes with default styles that matches the other components' aesthetic.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptas voluptate, exercitationem
+                doloremque error dolore provident at corrupti, vel, quo hic officia eligendi minima quis beatae?
+                Voluptatibus nulla pariatur possimus.
+            </Content>
+        </AccordionItem>
+        <AccordionItem Show="@(activeItem == 2)">
+            <Header>
+                Is it animated?
+            </Header>
+            <Content>
+                Yes. It's animated by default, but you can disable it if you prefer.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas atque, voluptate tempore ratione
+                molestias voluptatem enim aliquid nulla quae, corrupti minus ipsam nemo et ut perferendis sapiente.
+                Consequuntur, enim quod!
+            </Content>
+        </AccordionItem>
+    </Accordion>
+</section>
+
+@code
+{
+    int activeItem = -1;
+}

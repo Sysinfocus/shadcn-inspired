@@ -1,0 +1,35 @@
+﻿<section class="flex-col">
+    <h2>Command</h2>
+    <div class="flex">
+        <Button Text="Show Command" Type="ButtonType.Outline" OnClick="() => show = true" />
+    </div>
+    <div class="flex">
+        <Command Items="@_commandOptions" Show="@show" OnClick="HandleClick" OnClose="() => show = false" />
+    </div>
+    @if (selectedCO is not null)
+    {
+        <p>You have selected:</p>
+        <h3 class="flex g8"><Icon Name="@selectedCO.Icon" /> @selectedCO.Name</h3>
+    }
+</section>
+
+@code
+{
+    private CommandOption? selectedCO;
+    private bool show = true;
+
+    private List<CommandOption> _commandOptions =
+    [
+        new("Suggestions", "Calendar", "calendar_month"),
+        new("Suggestions", "Search Emoji", "sentiment_satisfied"),
+        new("Suggestions", "Launch", "rocket_launch"),
+        new("Settings", "Profile", "person", "P"),
+        new("Settings", "Mail", "mail","B"),
+        new("Settings", "Settings", "settings","S"),
+    ];
+
+    private void HandleClick(CommandOption option)
+    {
+        selectedCO = option;
+    }
+}

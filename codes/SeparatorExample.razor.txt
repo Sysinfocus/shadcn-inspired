@@ -1,0 +1,19 @@
+<section class="flex-col">
+    <h2>Separator</h2>    
+    <div class="flex">
+        <div class="flex-col">
+            <div class="flex-col" style="gap: 4px">
+                <p class="small">Radix Primitives</p>
+                <p class="muted">An open-source UI component library.</p>
+            </div>
+            <Separator />
+            <div class="flex" style="height: 20px">
+                <p class="small">Blog</p>
+                <Separator Vertical />
+                <p class="small">Docs</p>
+                <Separator Vertical />
+                <p class="small">Source</p>                         
+            </div>
+        </div>
+    </div>
+</section>

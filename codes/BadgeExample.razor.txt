@@ -1,0 +1,9 @@
+﻿<section class="flex-col">
+    <h2>Badge</h2>    
+    <div class="flex">
+        <Badge Text="Default" />
+        <Badge Text="Secondary" Type="Badge.BadgeType.Secondary" />
+        <Badge Text="Outline" Type="Badge.BadgeType.Outline" />
+        <Badge Text="Destructive" Type="Badge.BadgeType.Destructive" />
+    </div>
+</section>

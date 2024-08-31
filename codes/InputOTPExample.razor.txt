@@ -1,0 +1,27 @@
+<section class="flex-col">
+    <h2>Input OTP</h2>    
+
+    <p>Grouped by 3 numbers</p>
+    <div class="flex">
+        <InputOTP OnComplete="x => otp = x" />
+    </div>
+    <br/>
+    <p>Grouped by 2 numbers</p>
+    <div class="flex">
+        <InputOTP OnComplete="x => otp = x" GroupBy="2" />
+    </div>
+    <br />
+    <p>No grouping</p>
+    <div class="flex">
+        <InputOTP OnComplete="x => otp = x" GroupBy="0" />
+    </div>
+
+    <div class="mtb1">
+        You have entered OTP: <b>@otp</b>
+    </div>
+</section>
+
+@code
+{
+    string? otp;
+}

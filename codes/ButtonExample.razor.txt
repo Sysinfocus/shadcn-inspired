@@ -1,0 +1,18 @@
+﻿<section class="flex-col">
+    <h2>Button</h2>
+    <div class="flex wrap">
+        <Button Text="Primary" Type="ButtonType.Primary" />
+        <Button Text="Secondary" Type="ButtonType.Secondary" />
+        <Button Text="Destructive" Type="ButtonType.Destructive" />
+        <Button Text="Outline" Type="ButtonType.Outline" />
+        <Button Text="Ghost" Type="ButtonType.Ghost" />
+        <Button Text="Link" Type="ButtonType.Link" />
+        <Button Icon="chevron_right" Type="ButtonType.Icon" />
+        <Button Icon="drafts" Text="Login with Email" />
+        <Button Text="Please wait" Type="ButtonType.Loading" />        
+    </div>
+    <div class="flex">
+        <Button Icon="drafts" Text="Login with Email" Type="ButtonType.Destructive" Size="ButtonSize.Small" />
+        <Button Text="Please wait" Type="ButtonType.Loading" Size="ButtonSize.Large"  />
+    </div>
+</section>

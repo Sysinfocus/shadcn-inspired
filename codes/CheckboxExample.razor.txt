@@ -1,0 +1,32 @@
+<section class="flex-col">
+    <h2>Checkbox</h2>    
+    <div class="flex-col">
+        <Checkbox Label="Accept terms and conditions" />
+
+        <div class="mtb1">
+            <Checkbox Label="Accept terms and conditions" />
+            <p style="opacity: 0.5; font-size: 14px; margin: 6px 30px;">You agree to our Terms of Service and Privacy Policy.</p>
+        </div>
+
+        <div class="border mtb1">
+            <Checkbox Checked Label="Use different settings for my mobile devices" />
+            <p style="opacity: 0.75; font-size: 12.5px; margin: 4px 30px;">You can manage your mobile notifications in the mobile settings page.</p>
+        </div>
+        <Button Text="Submit" Width="fit-content" />
+
+        <div class="mtb1">
+            <b>Sidebar</b>
+            <p style="opacity: 0.75; font-size: 12.5px; margin: 4px 0">Select the items you want to display in the sidebar.</p>
+            <div class="mtb1 flex-col g12">
+                <Checkbox Checked Label="Recents" />
+                <Checkbox Checked Label="Home" />
+                <Checkbox Label="Applications" />
+                <Checkbox Label="Desktop" />
+                <Checkbox Label="Downloads" />
+                <Checkbox Label="Documents" />
+            </div>
+            <br/>
+            <Button Text="Submit" Width="fit-content" />
+        </div>
+    </div>
+</section>

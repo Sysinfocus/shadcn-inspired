@@ -1,0 +1,20 @@
+<section class="flex-col">
+    <h2>Skeleton</h2>    
+    <div class="flex-col">        
+        Sample 1
+        <div class="flex g8">            
+            <Skeleton Width="60px" Height="60px" Radius="60px" />
+            <div class="flex-col g8" style="width: 300px">
+                <Skeleton />
+                <Skeleton Width="75%" />
+            </div>
+        </div>
+        <br/><br/>
+        Sample 2
+        <div class="flex-col g8" style="width: 300px">
+            <Skeleton Width="100%" Height="150px" Radius="1rem" />
+            <Skeleton />
+            <Skeleton Width="75%" />
+        </div>
+    </div>
+</section>

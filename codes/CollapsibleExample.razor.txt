@@ -1,0 +1,15 @@
+@page "/Examples/CollapsibleExample"
+<section class="flex-col">
+    <h2>Collapsible</h2>    
+    <div class="flex">
+        <Collapsible Title="@("@peduarte starred 3 repositories")" Style="max-width: 400px">
+            <Header>                
+                <Button Text="@("@radix-ui/primitives")" Type="ButtonType.Outline" Disabled Style="font-weight: 400" Width="100%" />
+            </Header>
+            <Content>
+                <Button Text="@("@radix-ui/primitives")" Type="ButtonType.Outline" Disabled Style="font-weight: 400" Width="100%" />
+                <Button Text="@("@radix-ui/primitives")" Type="ButtonType.Outline" Disabled Style="font-weight: 400" Width="100%" />
+            </Content>
+        </Collapsible>
+    </div>
+</section>

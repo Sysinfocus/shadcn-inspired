@@ -1,0 +1,15 @@
+<section class="flex-col">
+    <h2>Date Picker</h2>    
+    <div class="flex-col">
+        <b>With clear</b>
+        <DatePicker Date="@date" DateChanged="x => date = x" Placeholder="Pick a date" Style="width: 200px" />
+        <Separator Class="mtb1" />
+        <b>Without clear</b>
+        <DatePicker Date="@date1" DateChanged="x => date1 = x" Placeholder="Pick a date" Style="width: 200px" AllowClear="false" />
+    </div>
+</section>
+
+@code
+{
+    DateTime? date, date1 = DateTime.Now;
+}

@@ -1,0 +1,81 @@
+﻿<section class="flex-col">
+    <div class="flex-col g8">
+        <h2>Menubar</h2>    
+        <p>A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.</p>
+    </div>
+    <div class="flex">
+        <Menubar>
+            <MenubarItem Root="File">
+                <MenuGroup Items="@file" Style="width: 210px" Show OnSelect="HandleMenuSelection" />
+            </MenubarItem>
+            <MenubarItem Root="Edit">
+                <MenuGroup Items="@edit" Style="width: fit-content" Show OnSelect="HandleMenuSelection" />
+            </MenubarItem>
+            <MenubarItem Root="View">
+                <MenuGroup Items="@view" Style="width: 250px" Show OnSelect="HandleMenuSelection" />
+            </MenubarItem>
+            <MenubarItem Root="Profiles">
+                <MenuGroup Items="@profiles" Style="width: fit-content" Show OnSelect="HandleMenuSelection" />
+            </MenubarItem>
+        </Menubar>
+    </div>
+
+    @if (selected is not null)
+    {
+        @selected.Text
+    }
+</section>
+
+@code{
+
+    List<MenuItemOption> file = [];
+    List<MenuItemOption> edit = [];
+    List<MenuItemOption> view = [];
+    List<MenuItemOption> profiles = [];
+
+    MenuItemOption? selected;
+
+    protected override void OnInitialized()
+    {
+        file.Add(new MenuItemOption("New Tab", Shortcut: "⌘T"));
+        file.Add(new MenuItemOption("New Window", Shortcut: "⌘N"));
+        file.Add(new MenuItemOption("New Incognito Window", Shortcut: "⌘B") { Disabled = true });
+        file.Add(new(""));
+        file.Add(new MenuItemOption("Share"));
+        file.Add(new(""));
+        file.Add(new MenuItemOption("Print...", Shortcut: "⌘P"));
+
+        edit.Add(new MenuItemOption("Undo", Shortcut: "⌘Z"));
+        edit.Add(new MenuItemOption("Redo", Shortcut: "⌘Z"));
+        edit.Add(new(""));
+        edit.Add(new MenuItemOption("Find"));
+        edit.Add(new(""));
+        edit.Add(new MenuItemOption("Cut"));
+        edit.Add(new MenuItemOption("Copy"));
+        edit.Add(new MenuItemOption("Paste"));
+
+        view.Add(new MenuItemOption("Always Show Bookmarks Bar") { MenuType = MenuType.Checkbox });
+        view.Add(new MenuItemOption("Always Show Full URLs") { MenuType = MenuType.Checkbox, Checked = true });
+        view.Add(new(""));
+        view.Add(new MenuItemOption("Reload", Shortcut: "⌘R") { MenuType = MenuType.Checkbox, ShowCheckmark = false });
+        view.Add(new MenuItemOption("Force Reload", Shortcut: "⌘R") { MenuType = MenuType.Checkbox, ShowCheckmark = false, Disabled = true });
+        view.Add(new(""));
+        view.Add(new MenuItemOption("Toggle Fullscreen") { MenuType = MenuType.Checkbox, ShowCheckmark = false });
+        view.Add(new(""));
+        view.Add(new MenuItemOption("Hide Sidebar") { MenuType = MenuType.Checkbox, ShowCheckmark = false });
+
+        profiles.Add(new MenuItemOption("Andy") { MenuType = MenuType.Radio, Value = "1", RadioGroup = "Profiles" });
+        profiles.Add(new MenuItemOption("Benoit") { MenuType = MenuType.Radio, Value = "2", RadioGroup = "Profiles", Checked = true });
+        profiles.Add(new MenuItemOption("Luis") { MenuType = MenuType.Radio, Value = "3", RadioGroup = "Profiles" });
+        profiles.Add(new(""));
+        profiles.Add(new MenuItemOption("Edit...") { MenuType = MenuType.Checkbox, ShowCheckmark = false });
+        profiles.Add(new(""));
+        profiles.Add(new MenuItemOption("Add Profile...") { MenuType = MenuType.Checkbox, ShowCheckmark = false });
+    }
+
+    private async Task HandleMenuSelection(MenuItemOption menu)
+    {
+        selected = menu;        
+        await be.EvalVoid("document.activeElement.parentNode.click()");
+    }
+}

@@ -1,0 +1,22 @@
+<section class="flex-col">
+    <h2>Switch</h2>    
+    <div class="flex-col">
+        <Switch Label="Airplane Mode" />
+
+        <div class="mtb1 border flex">
+            <div>
+                <p style="font-size: 14px; font-weight: 500;">Marketing emails</p>
+                <p style="opacity: 0.75; font-size: 12.5px; margin-top: 4px">Receive emails about new products, features, and more.</p>
+            </div>
+            <Switch />
+        </div>
+
+        <div class="mtb1 border flex">
+            <div>
+                <p style="font-size: 14px; font-weight: 500;">Security emails</p>
+                <p style="opacity: 0.75; font-size: 12.5px; margin-top: 4px">Receive emails about your account security.</p>
+            </div>
+            <Switch Checked />
+        </div>
+    </div>
+</section>

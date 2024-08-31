@@ -1,0 +1,36 @@
+<section class="flex-col">
+    <h2>Scroll Area</h2>
+    <div class="flex-col">
+        Vertical Scrolling
+        <ScrollArea Gap="4px" Padding="8px 16px">
+            <style>
+                .versions {
+                    border-bottom: 1px solid var(--primary-border); padding: 8px 0; font-size: 14px;
+                }
+            </style>
+            @for (int i = 0; i < 100; i++)
+            {
+                <p class="versions">v1.2.0-beta.@i</p>
+            }
+        </ScrollArea>
+        <br /><br />
+        Horizontal Scrolling
+        <ScrollArea Width="500px" Height="fit-content" Horizontal Gap="1rem">
+            <style>
+                img { border-radius: 6px }
+            </style>
+            <div class="flex-col g8">
+                <img src="https://ui.shadcn.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1465869185982-5a1a7522cbcb%3Fauto%3Dformat%26fit%3Dcrop%26w%3D300%26q%3D80&w=384&q=75" />
+                <small>Photo by <b>Ornella Binni</b></small>
+            </div>
+            <div class="flex-col g8">
+                <img src="https://ui.shadcn.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1548516173-3cabfa4607e9%3Fauto%3Dformat%26fit%3Dcrop%26w%3D300%26q%3D80&w=384&q=75" />
+                <small>Photo by <b>Tom Byrom</b></small>
+            </div>
+            <div class="flex-col g8">
+                <img src="https://ui.shadcn.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1494337480532-3725c85fd2ab%3Fauto%3Dformat%26fit%3Dcrop%26w%3D300%26q%3D80&w=384&q=75" />
+                <small>Photo by <b>Vladimir Malyavko</b></small>
+            </div>
+        </ScrollArea>
+    </div>
+</section>

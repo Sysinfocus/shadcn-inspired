@@ -1,0 +1,35 @@
+<section class="flex-col">
+    <h2>Pagination</h2>    
+    <div class="flex-col">
+        <p>Default</p>
+        <Pagination State="@_paginationState" OnPageChange="x => currentPage = x" />
+    </div>
+    <hr />
+    <div class="flex-col">
+        <p>Active is Secondary, Others Outline</p>
+        <Pagination ActiveType="ButtonType.Secondary" Type="ButtonType.Outline" State="@_paginationState" OnPageChange="x => currentPage = x" />
+    </div>
+    <hr />
+    <div class="flex-col">
+        <p>Active is Primary</p>
+        <Pagination ActiveType="ButtonType.Primary" State="@_paginationState" OnPageChange="x => currentPage = x" />
+    </div>
+    <hr />
+    <div class="flex-col">
+        <p>Active is Primary, Others Secondary</p>
+        <Pagination ActiveType="ButtonType.Primary" Type="ButtonType.Secondary" State="@_paginationState" OnPageChange="x => currentPage = x" />
+    </div>
+    <hr />
+    <div class="flex-col">
+        <p>Active is Primary, Others Ghost and Size Small</p>
+        <Pagination ActiveType="ButtonType.Primary" Type="ButtonType.Ghost" Size="ButtonSize.Small" State="@_paginationState" OnPageChange="x => currentPage = x" />
+    </div>
+    <hr />
+    <p>You have selected Page no <b>@currentPage</b></p>
+</section>
+
+@code
+{
+    int currentPage = 1;
+    PaginationState _paginationState = new() { TotalRecords = 100, CurrentPage = 1 };
+}

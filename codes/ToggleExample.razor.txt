@@ -1,0 +1,42 @@
+<section class="flex-col">
+    <h2>Toggle</h2>    
+    <div class="flex wrap" style="gap: 4rem">
+        <div class="flex-col">
+            <p>Default</p>
+            <Toggle>
+                <Icon Name="format_bold" />
+            </Toggle>
+        </div>
+        <div class="flex-col">
+            <p>Outline</p>
+            <Toggle Type="Toggle.ToggleType.Outline">
+                <Icon Name="format_italic" />
+            </Toggle>
+        </div>
+        <div class="flex-col">
+            <p>With Text</p>
+            <Toggle>
+                <Icon Name="format_italic" />
+                Italic
+            </Toggle>
+        </div>
+        <div class="flex-col">
+            <p>Small</p>
+            <Toggle Type="Toggle.ToggleType.Small">
+                <Icon Name="format_italic" />
+            </Toggle>
+        </div>
+        <div class="flex-col">
+            <p>Large</p>
+            <Toggle Type="Toggle.ToggleType.Large">
+                <Icon Name="format_italic" />
+            </Toggle>
+        </div>
+        <div class="flex-col">
+            <p>Disabled</p>
+            <Toggle Disabled>
+                <Icon Name="format_underlined" />
+            </Toggle>
+        </div>
+    </div>
+</section>

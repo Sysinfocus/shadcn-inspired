@@ -1,0 +1,53 @@
+@inject HttpClient client
+
+<section class="flex-col">
+    <h2>Combobox</h2>
+    <Combobox Items="items" TItem="string" Width="200px" Searchable="false" Display="x => x"
+              SelectedItem="@selectedFramework" OnItemSelect="x => selectedFramework = x" Placeholder="Select framework..." />
+    @if (selectedFramework is not null)
+    {
+        <p>You have selected: <b>@selectedFramework</b></p>
+    }
+
+    <div class="mtb1">
+        <Combobox Placeholder="Select country..." Items="@countries" TItem="CountryDto" Display="x => x.Name"
+                  SelectedItem="@selectedCountry" OnItemSelect="x => selectedCountry = x" Width="350px" Height="200px"
+                  Label="Country" Info="Choose your favorite country from the list." />
+    </div>
+
+    @if (selectedCountry is not null)
+    {
+        <p>Code: <b>@selectedCountry.Country</b></p>
+        <p>Name: <b>@selectedCountry.Name</b></p>
+        <p>Latitude: <b>@selectedCountry.Latitude</b></p>
+        <p>Longitude: <b>@selectedCountry.Longitude</b></p>
+    }
+</section>
+
+@code
+{
+    string? selectedFramework;
+    string[] items = ["Blazor", "Next.js", "SvelteKit", "Nuxt.js", "Remix", "Astro"];
+
+    CountryDto? selectedCountry;
+    List<CountryDto> countries = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        var countriesData = await client.GetStringAsync("countries.tsv");
+        if (countriesData is null) return;
+        var tsv = countriesData.Split(Environment.NewLine);
+        foreach (var t in tsv)
+        {
+            var v = t.Split('\t');
+            try
+            {
+                var record = new CountryDto(v[0].ToString(), double.Parse(v[1]), double.Parse(v[2]), v[3].ToString());
+                countries.Add(record);
+            }
+            catch { }
+        }
+    }
+
+    record CountryDto(string Country, double? Latitude, double? Longitude, string Name);
+}

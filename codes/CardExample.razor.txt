@@ -1,0 +1,90 @@
+<style>
+    .rg {
+        font-size: 14px;
+    }
+    .lg {
+        font-size: 18px;
+    }
+    .nm {
+        font-size: 16px;
+    }
+    .sm {
+        font-size: 12px;
+    }
+    .card-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #0ea5e9;
+        margin-top: 4px;
+    }
+</style>
+
+<section class="flex-col">
+    <h2>Card</h2>
+    <div class="flex wrap aifs" style="gap: 4rem">
+        <Card Style="min-width: 350px; max-width: 350px;">
+            <CardHeader>
+                <h3>Create project</h3>
+                <p>Deploy your new project in one-click.</p>
+            </CardHeader>
+            <CardContent>
+                <div style="display: flex; flex-direction: column; gap: 1rem; padding: 0.5rem 0">
+                    <Input Label="Name" Placeholder="Name of your project" TItem="string" />
+                    <Input Label="Framework" Placeholder="Select" TItem="string" />
+                </div>
+            </CardContent>
+            <CardFooter>
+                <div class="flex jcsb" style="width: 100%; padding: 1.5rem; padding-top: 0">
+                    <Button Text="Cancel" Type="ButtonType.Outline" />
+                    <Button Text="Deploy" />
+                </div>
+            </CardFooter>
+        </Card>
+
+        <Card Style="min-width: 350px; max-width: 350px;">
+            <CardHeader>
+                <h3>Notifications</h3>
+                <p>You have 3 unread messages.</p>
+            </CardHeader>
+            <CardContent>
+                <div class="flex-col" style="gap: 1rem">
+                    <div class="flex border aic" style="width: 100%;">
+                        <Button Icon="notifications" Class="nostyle" Disabled />
+                        <div class="flex-col g4 f-1">
+                            <b class="rg">Push Notifications</b>
+                            <p class="sm">Send notifications to device.</p>
+                        </div>
+                        <Switch Checked />
+                    </div>
+                    <div class="flex aifs">
+                        <span class="card-dot"></span>
+                        <div class="flex-col g4">
+                            <b class="rg">Your call has been confirmed.</b>
+                            <p class="rg">1 hour ago</p>
+                        </div>
+                    </div>
+                    <div class="flex aifs">
+                        <span class="card-dot"></span>
+                        <div class="flex-col g4">
+                            <b class="rg">You have a new message!</b>
+                            <p class="rg">1 hour ago</p>
+                        </div>
+                    </div>
+                    <div class="flex aifs">
+                        <span class="card-dot"></span>
+                        <div class="flex-col g4">
+                            <b class="rg">Your subscription is expiring soon!</b>
+                            <p class="rg">2 hour ago</p>
+                        </div>
+                    </div>
+                </div>
+            </CardContent>
+            <CardFooter>
+                <div class="flex jcsb" style="width: 100%; padding: 1.5rem; padding-top: 0">
+                    <Button Icon="check" Text="Mark all as read" Width="100%" Style="justify-content: center" />
+                </div>
+            </CardFooter>
+        </Card>
+    </div>
+</section>

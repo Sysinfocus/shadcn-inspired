@@ -1,0 +1,11 @@
+<section class="flex-col">
+    <h2>Tooltip</h2>    
+    <div class="flex">
+        <Tooltip Tip="Add to library">
+            <Button Text="Hover" Type="ButtonType.Outline" />
+        </Tooltip>
+        <Tooltip Tip="I am creator of this component library!" TipWidth="140px" ShowBelow>
+            <Button Text="Who am I?" Type="ButtonType.Outline" />
+        </Tooltip>
+    </div>
+</section>

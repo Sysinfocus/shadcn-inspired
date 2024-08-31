@@ -1,0 +1,59 @@
+<section class="flex-col">
+    <h2>Dialog</h2>    
+    <div class="flex">
+        <Button Text="Edit Profile" Type="ButtonType.Outline" Class="border" OnClick="() => show = true" />        
+    </div>
+
+    <div class="flex">
+        <Button Text="Share" Type="ButtonType.Outline" Class="border" OnClick="() => showShare = true" />        
+    </div>
+</section>
+
+<Dialog Show="@show" Width="400px" OnClose="() => show = false">
+    <Header>
+        <div class="flex-col g4">
+            <p class="large">Edit profile</p>
+            <p class="muted">Make changes to your profile here. Click save when you're done.</p>
+        </div>
+    </Header>
+    <Content>
+        <div class="flex-col mtb1">
+            <div class="flex">
+                <span style="font-size: 14px; width: 100px; text-align: right">Name</span>
+                <Input TItem="string" Placeholder="@("Pedro Duarte")" />
+            </div>
+            <div class="flex">
+                <span style="font-size: 14px; width: 100px; text-align: right">Username</span>
+                <Input TItem="string" Placeholder="@("@peduarte")" />
+            </div>
+        </div>
+    </Content>
+    <Footer>
+        <Button Text="Save changes" />
+    </Footer>
+</Dialog>
+
+<Dialog Show="@showShare" Width="500px" OnClose="() => showShare = false">
+    <Header>
+        <div class="flex-col g4">
+            <p class="large">Share link</p>
+            <p class="muted">Anyone who has this link will be able to view this.</p>
+        </div>
+    </Header>
+    <Content>
+        <div class="flex g8">
+            <Input TItem="string" Placeholder="https://ui.shadcn.com/docs/installation" />
+            <Button Icon="content_copy" Type="ButtonType.Primary" Style="padding: 8px 12px" />
+        </div>
+    </Content>
+    <Footer>
+        <div style="width: 100%; display: flex">
+            <Button Text="Close" Type="ButtonType.Secondary" OnClick="() => showShare = false" />        
+        </div>
+    </Footer>
+</Dialog>
+
+@code
+{
+    bool show, showShare;
+}

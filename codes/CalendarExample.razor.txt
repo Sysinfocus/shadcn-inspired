@@ -1,0 +1,33 @@
+<div class="flex-col">
+    <p>Can select up to today</p>
+    <Calendar Date="@date" DateChanged="x => date = x" MaxDate="@DateTime.Now.Date" />
+</div>
+
+<div class="flex-col">
+    <p>Can select only last 7 days</p>
+    <Calendar Date="@date" DateChanged="x => date = x" MinDate="@DateTime.Now.Date.AddDays(-7)" MaxDate="@DateTime.Now.Date.AddDays(-1)" />
+</div>
+<small>@Format(date)</small>
+
+@code
+{
+    DateTime? date;
+
+    string Format(DateTime? dt)
+    {
+        if (dt is null) return string.Empty;
+        int day = dt!.Value.Day;
+        return $"{dt:MMMM} {day}{GetOrdinalSuffix(day)}, {dt:yyyy}";
+    }
+
+    string GetOrdinalSuffix(int num)
+        => num.ToString() switch {
+            string x when x.EndsWith("11") => "th",
+            string x when x.EndsWith("12") => "th",
+            string x when x.EndsWith("13") => "th",
+            string x when x.EndsWith("1") => "st",
+            string x when x.EndsWith("2") => "nd",
+            string x when x.EndsWith("3") => "rd",
+            _ => "th"
+        };        
+}

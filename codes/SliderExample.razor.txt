@@ -1,0 +1,16 @@
+<section class="flex-col">
+    <h2>Slider</h2>    
+    <div class="flex-col">
+        <Slider Min="0" Max="100" Step="10" OnChange="x => slide = x" Value="@slide" />
+        <h3>@slide</h3>
+        <br/><br/>
+        <Slider Min="0" Max="10" Step="1" Value="@slide2" OnChange="x => slide2 = x" Style="width: 40%" />
+        <h3>@slide2</h3>
+    </div>
+
+</section>
+
+@code
+{
+    double slide = 50, slide2;
+}

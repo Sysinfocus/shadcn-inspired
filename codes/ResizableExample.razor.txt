@@ -1,0 +1,39 @@
+<section class="flex-col">
+    <h2>Resizable</h2>
+    <div class="flex">
+        <Resizable ShowBorder>
+            <LeftOrTopContent>
+                <div style="padding: 1em">
+                    <h4>Left</h4>
+                </div>
+            </LeftOrTopContent>
+            <RightOrBottomContent>
+                <Resizable Vertical Height="600px">
+                    <LeftOrTopContent>
+                        <div style="padding: 1em">
+                            <h4>Top</h4>
+                        </div>
+                    </LeftOrTopContent>
+                    <RightOrBottomContent>
+                        <div style="padding: 1em">
+                            <h4>Bottom</h4>
+                        </div>
+                    </RightOrBottomContent>
+                </Resizable>
+            </RightOrBottomContent>
+        </Resizable>
+    </div>
+
+    <Resizable Vertical Height="600px">
+        <LeftOrTopContent>
+            <div style="padding: 1em">
+                <h4>Top</h4>
+            </div>
+        </LeftOrTopContent>
+        <RightOrBottomContent>
+            <div style="padding: 1em">
+                <h4>Bottom</h4>
+            </div>
+        </RightOrBottomContent>
+    </Resizable>
+</section>

@@ -1,0 +1,23 @@
+<section class="flex-col">
+    <h2>Carousel</h2>    
+    <p>Carousel with Horizontal slides</p>
+    <Carousel Width="400" Height="300">
+        <img src="https://plus.unsplash.com/premium_photo-1688045722767-8d8672f6950b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8" />
+        <img src="https://images.unsplash.com/photo-1720728659925-9ca9a38afb2c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8" />
+        <img src="https://images.unsplash.com/photo-1720937172267-575f3575386b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8" />
+        <img src="https://images.unsplash.com/photo-1718506921878-781af1aadaf2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8" />
+        <img src="https://plus.unsplash.com/premium_photo-1664551734513-7c7e0dd24fac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8" />
+        <img src="https://images.unsplash.com/photo-1720458087424-5908294c1d20?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMnx8fGVufDB8fHx8fA%3D%3D" />
+        <img src="https://images.unsplash.com/photo-1710444223962-a18f0de17a24?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D" />
+    </Carousel>
+    <p class="mtb1">Carousel with Vertical slides</p>
+    <Carousel ShowVertical>
+        <img src="https://plus.unsplash.com/premium_photo-1688045722767-8d8672f6950b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8" />
+        <img src="https://images.unsplash.com/photo-1720728659925-9ca9a38afb2c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8" />
+        <img src="https://images.unsplash.com/photo-1720937172267-575f3575386b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8" />
+        <img src="https://images.unsplash.com/photo-1718506921878-781af1aadaf2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8" />
+        <img src="https://plus.unsplash.com/premium_photo-1664551734513-7c7e0dd24fac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8" />
+        <img src="https://images.unsplash.com/photo-1720458087424-5908294c1d20?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMnx8fGVufDB8fHx8fA%3D%3D" />
+        <img src="https://images.unsplash.com/photo-1710444223962-a18f0de17a24?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D" />
+    </Carousel>
+</section>

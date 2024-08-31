@@ -1,0 +1,15 @@
+<section class="flex-col">
+    <h2>Label</h2>    
+    <div class="flex" style="align-items: flex-start">
+        <Checkbox Id="terms" />
+        <Label Text="Accept terms and conditions" For="terms" Emphasized />
+    </div>
+    <div class="flex" style="align-items: flex-start">
+        <Checkbox Id="terms-info" />
+        <Label Text="Accept terms and conditions" Info="You agree to our Terms of Service and Privacy Policy." For="terms-info" Emphasized />
+    </div>
+    <div class="flex" style="align-items: flex-start">
+        <Checkbox Id="terms-2" />
+        <Label Text="Accept terms and conditions" For="terms-2" Emphasized Disabled />
+    </div>
+</section>

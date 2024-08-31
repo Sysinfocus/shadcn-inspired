@@ -1,0 +1,7 @@
+﻿<section class="flex-col">
+    <h2>Alert</h2>
+    <div class="flex-col">
+        <Alert Title="Heads up!" Description="You can add components to your app using the cli." />
+        <Alert Icon="error" Title="Error" Description="Your session has expired. Please log in again." Type="AlertType.Destructive" />
+    </div>
+</section>

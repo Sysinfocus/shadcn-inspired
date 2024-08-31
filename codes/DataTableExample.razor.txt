@@ -1,0 +1,130 @@
+@inject HttpClient client
+
+<section class="flex-col">
+    <h2>Data Table</h2>
+    <div class="flex-col">
+        @if (pagedData is not null)
+        {
+            <DataTable Items="@pagedData" TItem="DataItem" Height="calc(100vh - 190px)" ShowSelectAll OnSelectAll="x => HandleSelectAll(x)">
+                <DataColumns>
+                    <DataTableColumn>
+                        <Template>
+                            <Checkbox Checked="@context.Selected" OnClick="@(() => HandleSelect(@context))" />
+                        </Template>
+                    </DataTableColumn>
+                    <DataTableColumn Property="d => d.Id" Header="Actions" Width="75px" Align="Alignment.Center">
+                        <Template>
+                            <div class="flex ai-c">
+                                <Icon Name="delete" Tooltip="Delete" Size="18px" Color="red" OnClick="() => HandleDelete(context)" />
+                                <Icon Name="edit" Tooltip="Edit" Size="18px" Color="royalblue" OnClick="() => HandleEdit(context)" />
+                            </div>
+                        </Template>
+                    </DataTableColumn>
+                    <DataTableColumn Property="d => d.Id" Header="ID" Width="65px" Align="Alignment.Right" SortOn="@_sortModel" OnSort="HandleSorting" />
+                    <DataTableColumn Property="d => d.UserId" Header="User ID" Width="65px" Align="Alignment.Right" SortOn="@_sortModel" OnSort="HandleSorting" />
+                    <DataTableColumn Property="d=> d.UserId" Header="Image" Style="width: fit-content" Align="Alignment.Center">
+                        <Template>                        
+                            <Avatar ImageUrl="@($"https://randomuser.me/api/portraits/men/{context.Id - 1}.jpg")" Size="AvatarSize.Small" />
+                        </Template>
+                    </DataTableColumn>
+                    <DataTableColumn Property="d => d.Title" Style="min-width: 250px; width: 250px" />
+                    <DataTableColumn Property="d => d.Body" Style="min-width: 350px; font-size: 12px" />
+                </DataColumns>
+            </DataTable>
+            
+            <div class="mobile">
+                <div class="flex jcsb aic">
+                    <p class="muted">@SelectedRecordCount()</p>
+                    <Pagination State="@paging" OnPageChange="HandlePaging" ActiveType="ButtonType.Primary" ShowFirstLast PreviousText="" NextText="" />
+                </div>
+            </div>
+
+            <div class="mobile-only">
+                <div class="flex-col aic mobile-only">
+                    <p class="muted">@SelectedRecordCount()</p>
+                    <Pagination State="@paging" OnPageChange="HandlePaging" ActiveType="ButtonType.Primary" ShowFirstLast PreviousText="" NextText="" />
+                </div>
+            </div>
+        }
+        else
+        {
+            <p>Loading...</p>
+        }
+    </div>
+</section>
+
+@code
+{
+    List<DataItem>? data;
+    IEnumerable<DataItem>? pagedData;
+    bool isAllChecked;
+    SortModel _sortModel = new() { Header = "ID", IsAscending = true };
+    PaginationState paging = new() { CurrentPage = 1, TotalRecords = 0 };
+
+    protected override async Task OnParametersSetAsync()
+    {
+        data = await client.GetFromJsonAsync<List<DataItem>>("https://jsonplaceholder.typicode.com/posts");        
+        if (data is not null) {
+            paging.TotalRecords = (int)data?.Count!;
+            pagedData = data.Take(paging.PageSize);
+        }
+    }
+
+    private string SelectedRecordCount()
+    {                
+        int count = data!.Count(a => a.Selected);
+        if (count == 0) return $"Showing {pagedData?.Count()} / {data?.Count()} records with none selected.";
+        else if (count == 1) return $"Showing {pagedData?.Count()} / {data?.Count()} records with {count} selected.";
+        return $"Showing {pagedData?.Count()} / {data?.Count()} records with {count} selected.";
+    }
+
+    private async Task HandleSelect(DataItem item)
+    {
+        item.Selected = !item.Selected;
+        if (!item.Selected) isAllChecked = false;
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private void HandleSelectAll(bool status)
+    {
+        isAllChecked = status;
+        data?.ForEach(d => d.Selected = status);
+    }
+
+    private async Task HandleDelete(DataItem dataItem)
+    {
+        data?.Remove(dataItem);
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private async Task HandleEdit(DataItem dataItem)
+    {
+        await Task.Delay(10);
+    }
+
+    private void HandleSorting(SortModel sortModel)
+    {
+        if (data is null) return;
+        data = (sortModel.Header.ToLower(), sortModel.IsAscending) switch
+        {
+            ("id", true) => data.OrderBy(a => a.Id).ToList(),
+            ("id", false) => data.OrderByDescending(a => a.Id).ToList(),
+            ("user id", true) => data.OrderBy(a => a.UserId).ToList(),
+            ("user id", false) => data.OrderByDescending(a => a.UserId).ToList(),
+            (_,_) => data
+        };
+        paging.CurrentPage = 1;
+        HandlePaging();
+    }
+
+    private void HandlePaging()
+    {
+        var skip = (paging.CurrentPage - 1) * paging.PageSize;
+        pagedData = data!.Skip(skip).Take(paging.PageSize);
+    }
+
+    public record DataItem(int UserId, int Id, string Title, string Body)
+    {
+        public bool Selected { get; set; }
+    };
+}

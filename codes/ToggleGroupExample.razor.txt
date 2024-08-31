@@ -1,0 +1,68 @@
+<section class="flex-col">
+    <h2>Toggle Group</h2>
+    <div class="flex wrap" style="gap: 4rem">
+        <div class="flex-col">
+            <p>Default</p>
+            <ToggleGroup>
+                <Toggle>
+                    <Icon Name="format_bold" />
+                </Toggle>
+                <Toggle>
+                    <Icon Name="format_italic" />
+                </Toggle>
+                <Toggle>
+                    <Icon Name="format_underlined" />
+                </Toggle>
+            </ToggleGroup>
+        </div>
+
+        <div class="flex-col">
+            <p>Outline</p>
+            <ToggleGroup>
+                <Toggle Type="Toggle.ToggleType.Outline">
+                    <Icon Name="format_bold" />
+                </Toggle>
+                <Toggle Type="Toggle.ToggleType.Outline">
+                    <Icon Name="format_italic" />
+                </Toggle>
+                <Toggle Type="Toggle.ToggleType.Outline">
+                    <Icon Name="format_underlined" />
+                </Toggle>
+            </ToggleGroup>
+        </div>
+
+        <div class="flex-col">
+            <p>Single Outline</p>
+            <ToggleGroup>
+                <Toggle Type="Toggle.ToggleType.Outline" Active="@(isActive == 0)" OnToggle="x => isActive = 0">
+                    <Icon Name="format_bold" />
+                </Toggle>
+                <Toggle Type="Toggle.ToggleType.Outline" Active="@(isActive == 1)" OnToggle="x => isActive = 1">
+                    <Icon Name="format_italic" />
+                </Toggle>
+                <Toggle Type="Toggle.ToggleType.Outline" Active="@(isActive == 2)" OnToggle="x => isActive = 2">
+                    <Icon Name="format_underlined" />
+                </Toggle>
+            </ToggleGroup>
+        </div>
+        <div class="flex-col">
+            <p>Single Default</p>
+            <ToggleGroup>
+                <Toggle Active="@(isActive == 0)" OnToggle="x => isActive = 0">
+                    <Icon Name="format_bold" />
+                </Toggle>
+                <Toggle Active="@(isActive == 1)" OnToggle="x => isActive = 1">
+                    <Icon Name="format_italic" />
+                </Toggle>
+                <Toggle Active="@(isActive == 2)" OnToggle="x => isActive = 2">
+                    <Icon Name="format_underlined" />
+                </Toggle>
+            </ToggleGroup>
+        </div>
+    </div>
+</section>
+
+@code
+{
+    int isActive = 0;
+}

@@ -1,0 +1,38 @@
+<section class="flex-col">
+    <h2>Hover Card</h2>    
+    <div class="flex">
+        <HoverCard>
+            <HoverCardElement>
+                <Button Text="@("@nextjs")" Type="ButtonType.Link" />
+            </HoverCardElement>
+            <HoverCardToggle>
+                <Card>                    
+                    <CardContent>
+                        <style>
+                            .circle {
+                                min-width: 40px;
+                                min-height: 40px;
+                                background: var(--primary-fg);
+                                border-radius: 50%;
+                                display: flex;
+                                justify-content: center;
+                                align-items:center;                                
+                            }
+                        </style>
+                        <div class="flex" style="width: 300px; align-items: flex-start">
+                            <div class="circle"><Icon Name="change_history" Color="var(--primary-bg)" /></div>
+                            <div class="flex-col" style="font-size: 14px;">
+                                <b>@@nextjs</b>
+                                The React Framework - created and maintained by @@vercel.
+                                <div class="flex g8" style="font-size: 12px; opacity: 0.5">
+                                    <Icon Name="calendar_month" Size="18px" />
+                                    Joined December 2021
+                                </div>
+                            </div>
+                        </div>
+                    </CardContent>
+                </Card>
+            </HoverCardToggle>
+        </HoverCard>
+    </div>
+</section>

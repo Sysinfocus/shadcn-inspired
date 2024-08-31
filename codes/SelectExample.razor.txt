@@ -1,0 +1,24 @@
+<section class="flex-col">
+    <h2>Select</h2>    
+    <div class="flex">
+        <Select Items="@fruits" Placeholder="Select a fruit" Width="200px" Display="x => x" TItem="string" SelectedItem="@selectedItem" OnItemSelect="x => selectedItem = x" /> 
+    </div>
+    
+    <div class="flex-col mtb1">
+        <h4 class="large">Form example</h4>
+        <Select Label="Email" Info="You can manage email addresses in your email settings." Items="@emails" Display="x => x"
+            TItem="string" SelectedItem="@selectedEmail" OnItemSelect="x => selectedEmail = x" Width="400px" />
+
+        <Button Text="Submit" Width="fit-content" />
+    </div>
+
+</section>
+
+@code
+{
+    string[] fruits = ["**Fruits**", "Apple", "Banana", "Blueberry", "Grapes", "Pineapple"];
+    string? selectedItem = "Grapes";
+
+    string[] emails = ["m@example.com", "m@google.com", "m@support.com"];
+    string? selectedEmail = "m@support.com";
+}

@@ -1,0 +1,86 @@
+<section class="flex-col">
+    <h2>Popover</h2>
+    <div class="flex">
+        <Button Id="openPopover" Text="Open popover" Type="ButtonType.Outline" Class="border" OnClick="() => show = !show" />
+
+        <Popover Show="@show" ParentId="openPopover" OnClose="x => show = x">
+            <Card>
+                <CardHeader>
+                    <h4 class="large">Dimensions</h4>
+                    <p class="muted">Set the dimensions for the layer.</p>
+                </CardHeader>
+                <CardContent>
+                    <style>
+                        .s1 {
+                            width: 125px;
+                            font-size: 14px
+                        }
+                    </style>
+                    <div class="flex-col g8">
+                        <div class="flex">
+                            <span class="s1">Width</span>
+                            <Input TItem="string" Focus />
+                        </div>
+                        <div class="flex">
+                            <span class="s1">Max. width</span>
+                            <Input TItem="string" />
+                        </div>
+                        <div class="flex">
+                            <span class="s1">Height</span>
+                            <Input TItem="string" />
+                        </div>
+                        <div class="flex">
+                            <span class="s1">Max. height</span>
+                            <Input TItem="string" />
+                        </div>
+                    </div>
+                </CardContent>
+                <CardFooter>
+                </CardFooter>
+            </Card>
+        </Popover>
+    </div>
+    <div style="margin-top: 30vh">
+        <Button Id="openPopoverBottom" Text="Open popover" Type="ButtonType.Outline" Class="border" OnClick="() => showBottom = !showBottom" Style="margin-left: 60vw" />
+        <Popover Show="@showBottom" ParentId="openPopoverBottom" OnClose="x => showBottom = x">
+            <Card>
+                <CardHeader>
+                    <h4 class="large">Dimensions</h4>
+                    <p class="muted">Set the dimensions for the layer.</p>
+                </CardHeader>
+                <CardContent>
+                    <style>
+                        .s1 {
+                            width: 125px;
+                            font-size: 14px
+                        }
+                    </style>
+                    <div class="flex-col g8">
+                        <div class="flex">
+                            <span class="s1">Width</span>
+                            <Input TItem="string" Focus />
+                        </div>
+                        <div class="flex">
+                            <span class="s1">Max. width</span>
+                            <Input TItem="string" />
+                        </div>
+                        <div class="flex">
+                            <span class="s1">Height</span>
+                            <Input TItem="string" />
+                        </div>
+                        <div class="flex">
+                            <span class="s1">Max. height</span>
+                            <Input TItem="string" />
+                        </div>
+                    </div>
+                </CardContent>
+                <CardFooter>
+                </CardFooter>
+            </Card>
+        </Popover>
+    </div>
+</section>
+
+@code {
+    bool show, showBottom;
+}

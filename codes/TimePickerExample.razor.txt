@@ -1,0 +1,11 @@
+﻿<section class="flex-col">
+    <h2>Time Picker</h2>
+    <div class="flex-col">
+        <TimePicker Time="@date" TimeChanged="x => date = x" Style="width: 200px" />
+    </div>
+</section>
+
+@code
+{
+    DateTime? date;
+}

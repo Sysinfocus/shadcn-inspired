@@ -1,0 +1,45 @@
+@inject HttpClient httpClient
+
+<section class="flex-col">
+    <h2>Table</h2>
+    <div class="flex-col">
+        <Table>
+            <TableHeader>
+                <th>Invoice</th>
+                <th>Status</th>
+                <th>Method</th>
+                <th class="right">Amount</th>
+            </TableHeader>
+            <TableBody>
+                @foreach(var row in rows ?? []) {
+                    <tr>
+                        <td style="font-weight: 500">@row.Invoice</td>
+                        <td>@row.PaymentStatus</td>
+                        <td>@row.PaymentMethod</td>
+                        <td class="right">@row.TotalAmount</td>
+                    </tr>
+                }
+            </TableBody>
+            <TableFooter>
+                <th>Total</th>
+                <th></th>
+                <th></th>
+                <th class="right">$2,500.00</th>
+            </TableFooter>
+        </Table>
+
+        <p style="opacity: 0.75; font-size: 13.5px; margin: 4px; text-align: center; width: 100%">A list of your recent invoices.</p>
+    </div>
+</section>
+
+@code
+{
+    private List<TableRow>? rows;
+
+    protected override async Task OnInitializedAsync()
+    {
+        rows = await httpClient.GetFromJsonAsync<List<TableRow>>("table-data.json");
+    }
+
+    private record TableRow(string Invoice, string PaymentStatus, string PaymentMethod, string TotalAmount);
+}

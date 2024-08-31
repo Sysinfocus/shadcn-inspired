@@ -1,0 +1,186 @@
+@inject HttpClient client
+
+<section class="flex-col">
+    <h2>Chart</h2>
+    <p>We have used <b>Apache ECharts</b> for creating charts.</p>
+    @if (option6 is not null)
+    {
+        <div class="flex wrap" style="justify-content: flex-start">
+            <Card Style="min-width: 350px; height: 450px">
+            <CardHeader>
+                <div class="flex-col g0" style="align-items: center">
+                    <h3 class="large">Pie Chart - Donut with Text</h3>
+                    <p class="muted">January - June 2024</p>
+                </div>
+            </CardHeader>
+            <CardContent>
+                <div class="flex ai-c" style="justify-content: center">
+                    <Chart Option="@option2" Width="400px" Height="300px" />
+                </div>
+            </CardContent>
+            <CardFooter>
+                <div class="flex-col g4" style="align-items: center; width: 100%; padding-top: 8px; padding-bottom: 1.5rem">
+                    <p class="small" style="display: flex; gap: 8px; align-items: center">Trending up by 5.2% this month <Icon Name="trending_up" Size="18px" /></p>
+                    <p class="muted">Showing total sales for the last 6 months</p>
+                </div>
+            </CardFooter>
+        </Card>
+        <Card Style="min-width: 350px; height: 450px; ">
+            <CardHeader>
+                <div class="flex-col g0">
+                    <h3 class="large">Bar Chart - with Text</h3>
+                    <p class="muted">January - June 2024</p>
+                </div>
+            </CardHeader>
+            <CardContent>
+                <div class="flex ai-c" style="justify-content: center">
+                    <Chart Option="@option" Width="400px" Height="300px" />
+                </div>
+            </CardContent>
+            <CardFooter>
+                <div class="flex-col g4" style="padding: 1.5rem">
+                    <p class="small" style="display: flex; gap: 8px; align-items: center">Trending up by 5.2% this month <Icon Name="trending_up" Size="18px" /></p>
+                    <p class="muted">Showing total sales for the last 6 months</p>
+                </div>
+            </CardFooter>
+        </Card>
+        <Card Style="min-width: 350px; height: 450px; ">
+            <CardHeader>
+                <div class="flex-col g0">
+                    <h3 class="large">Gradient Stacked Area Chart</h3>
+                    <p class="muted">January - June 2024</p>
+                </div>
+            </CardHeader>
+            <CardContent>
+                <div class="flex ai-c" style="justify-content: center">
+                    <Chart Option="@option3" Width="400px" Height="300px" />
+                </div>
+            </CardContent>
+            <CardFooter>
+                <div class="flex-col g4" style="padding: 1.5rem">
+                    <p class="small" style="display: flex; gap: 8px; align-items: center">Trending up by 5.2% this month <Icon Name="trending_up" Size="18px" /></p>
+                    <p class="muted">Showing total sales for the last 6 months</p>
+                </div>
+            </CardFooter>
+        </Card>
+        <Card Style="min-width: 350px; height: 450px">
+            <CardHeader>
+                <div class="flex-col g0" style="align-items: center">
+                    <h3 class="large">Gauge Speed - Donut with Text</h3>
+                    <p class="muted">January - June 2024</p>
+                </div>
+            </CardHeader>
+            <CardContent>
+                <div class="flex ai-c" style="justify-content: center">                    
+                    <Chart Option="@option4" Width="400px" Height="300px" />
+                </div>
+            </CardContent>
+            <CardFooter>
+                <div class="flex-col g4" style="align-items: center; width: 100%; padding-top: 8px; padding-bottom: 1.5rem">
+                    <p class="small" style="display: flex; gap: 8px; align-items: center">Trending up by 5.2% this month <Icon Name="trending_up" Size="18px" /></p>
+                    <p class="muted">Showing total sales for the last 6 months</p>
+                </div>
+            </CardFooter>
+        </Card>        
+        <Card Style="min-width: 350px; height: 450px">
+            <CardHeader>
+                <div class="flex-col g0" style="align-items: center">
+                    <h3 class="large">Funnel</h3>
+                    <p class="muted">January - June 2024</p>
+                </div>
+            </CardHeader>
+            <CardContent>
+                <div class="flex ai-c" style="justify-content: center">
+                    <Chart Option="@option5" Width="400px" Height="300px" />
+                </div>
+            </CardContent>
+            <CardFooter>
+                <div class="flex-col g4" style="align-items: center; width: 100%; padding-top: 8px; padding-bottom: 1.5rem">
+                    <p class="small" style="display: flex; gap: 8px; align-items: center">Trending up by 5.2% this month <Icon Name="trending_up" Size="18px" /></p>
+                    <p class="muted">Showing total sales for the last 6 months</p>
+                </div>
+            </CardFooter>
+        </Card>
+        <Card Style="min-width: 350px; height: 450px">
+            <CardHeader>
+                <div class="flex-col g0" style="align-items: center">
+                    <h3 class="large">Punch Card</h3>
+                    <p class="muted">January - June 2024</p>
+                </div>
+            </CardHeader>
+            <CardContent>
+                <div class="flex ai-c" style="justify-content: center">
+                    <Chart DataOption="@option6" Width="400px" Height="300px" />
+                </div>
+            </CardContent>
+            <CardFooter>
+                <div class="flex-col g4" style="align-items: center; width: 100%; padding-top: 8px; padding-bottom: 1.5rem">
+                    <p class="small" style="display: flex; gap: 8px; align-items: center">Trending up by 5.2% this month <Icon Name="trending_up" Size="18px" /></p>
+                    <p class="muted">Showing total sales for the last 6 months</p>
+                </div>
+            </CardFooter>
+        </Card>
+    </div>
+    }
+</section>
+
+@code
+{
+    string? option, option2, option3, option4, option5, option6;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var o = new
+        {
+            tooltip = new { },
+            legend = new { data = new[] { "Sales" } },
+            xAxis = new
+            {
+                data = new[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun" }
+            },
+            yAxis = new { },
+            series = new
+            {
+                name = "Sales",
+                type = "bar",
+                data = new[] { 5, 20, 36, 10, 10, 20 },
+                showBackground = true,
+                backgroundStyle = new { color = "rgba(220, 220, 220, 0.8)" }
+            }
+        };
+        option = JsonSerializer.Serialize(o);
+
+        var o2 = new
+        {
+            tooltip = new { trigger = "item", formatter = "{a} <br/>{b} : {c} ({d}%)" },
+            series = new
+            {
+                radius = "70%",
+                center = new[] { "50%", "50%" },
+                name = "Sales",
+                type = "pie",
+                data = new[] {
+                    new { value = 5, name = "Jan" },
+                    new { value = 20, name = "Feb" },
+                    new { value = 36, name = "Mar" },
+                    new { value = 10, name = "Apr" },
+                    new { value = 10, name = "May" },
+                    new { value = 20, name = "Jun" }
+                },
+                emphasis = new
+                {
+                    itemStyle = new {
+                        shadowBlur = 10,
+                        shadowOffsetX = 0,
+                        shadowColor = "rgba(0, 0, 0, 0.5)"
+                    }
+                }
+            }
+        };
+        option2 = JsonSerializer.Serialize(o2);
+        option3 = await client.GetStringAsync("stacked-chart.txt");
+        option4 = await client.GetStringAsync("gauge-speed.txt");
+        option5 = await client.GetStringAsync("funnel-chart.txt");
+        option6 = await client.GetStringAsync("punch-card.txt");
+    }
+}

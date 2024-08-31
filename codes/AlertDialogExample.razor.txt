@@ -1,0 +1,25 @@
+﻿<section class="flex-col">
+    <h2>Alert Dialog</h2>
+    <div class="flex">
+        <Button Text="Show Dialog" Type="ButtonType.Outline" Class="border" OnClick="() => showAlertDialog = true" />
+    </div>
+</section>
+
+
+<AlertDialog Show="@showAlertDialog">
+    <Header>
+        Are you absolutely sure?
+    </Header>
+    <Content>
+        This action cannot be undone. This will permanently delete your account and remove your data from our servers.
+    </Content>
+    <Footer>
+        <Button Text="Cancel" Type="ButtonType.Outline" OnClick="() => showAlertDialog = false" />
+        <Button Text="Continue" OnClick="() => showAlertDialog = false" />
+    </Footer>
+</AlertDialog>
+
+@code
+{
+    bool showAlertDialog;
+}

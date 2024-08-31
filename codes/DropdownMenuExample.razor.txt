@@ -1,0 +1,59 @@
+﻿<section class="flex-col">
+    <div class="flex-col g8">
+        <h2>Dropdown Menu</h2>
+        <p>Displays a menu to the user — such as a set of actions or functions — triggered by a button.</p>
+    </div>
+    <div class="flex-col">
+        <div>
+            <Button Id="ddmenu" Text="Open" Type="ButtonType.Outline" Class="border" OnClick="() =>showMenu = !showMenu" />
+            <Popover ParentId="ddmenu" Show="@showMenu" OnClose="x => showMenu = x">
+                <MenuGroup Items="@menu" OnSelect="UpdateMenu" Style="position: relative; width: 250px" Show />
+            </Popover>
+        </div>
+
+        @if (selectedMenu is not null)
+        {
+            <p>You have selected <b>@selectedMenu.Text</b></p>        
+        }
+    </div>
+</section>
+
+@code
+{
+    List<MenuItemOption> menu = [];
+    MenuItemOption? selectedMenu;
+    bool showMenu;
+
+    protected override void OnInitialized()
+    {
+        menu.Add(new MenuItemOption("My Account") { IsHeader = true });
+        menu.Add(new(""));
+        menu.Add(new MenuItemOption("Profile", Shortcut: "⇧⌘P"));
+        menu.Add(new MenuItemOption("Billing", Shortcut: "⌘B"));
+        menu.Add(new MenuItemOption("Settings", Shortcut: "⌘S"));
+        menu.Add(new MenuItemOption("Keyboard shortcuts", Shortcut: "⌘K"));
+        menu.Add(new(""));
+        menu.Add(new MenuItemOption("Team"));
+        menu.Add(new MenuItemOption("Invite users"));
+        menu.Add(new MenuItemOption("New Team", Shortcut: "T"));
+        menu.Add(new(""));
+        menu.Add(new MenuItemOption("GitHub"));
+        menu.Add(new MenuItemOption("Support"));
+        menu.Add(new MenuItemOption("API") { Disabled = true });
+        menu.Add(new(""));
+        menu.Add(new MenuItemOption("Log out", Shortcut: "Q"));
+    }
+
+    void UpdateMenu(MenuItemOption menu)
+    {
+        selectedMenu = menu;
+        showMenu = false;
+    }
+
+    string style = "";
+    void HandleContextMenu((double x, double y) coords)
+    {
+        style = $"max-width: 260px; left: {coords.x}px; top: {coords.y}px";
+        showMenu = true;
+    }
+}

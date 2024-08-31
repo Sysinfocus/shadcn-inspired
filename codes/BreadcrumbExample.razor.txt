@@ -1,0 +1,22 @@
+﻿<section class="flex-col">
+    <h2>Breadcrumb</h2>    
+    <div class="flex">
+        <Breadcrumb Items="@crumbs" />
+    </div>
+    <div class="flex">
+        <Breadcrumb Items="@crumbs" Separator="pen_size_2" />
+    </div>
+    <div class="flex">
+        <Breadcrumb Items="@crumbs" Separator=" &bull;" />
+    </div>
+</section>
+
+@code
+{
+    List<Breadcrumb.BreadcrumbModel> crumbs = [
+        new("Home") { Url = "." },
+        new("⋯"),
+        new("Components") { Url = "/Examples/AccordionExample" },
+        new("Breadcrumb")
+    ];
+}

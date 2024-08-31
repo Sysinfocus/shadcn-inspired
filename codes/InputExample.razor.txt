@@ -1,0 +1,7 @@
+<section class="flex-col">
+    <h2>Input</h2>    
+    <div class="flex-col">
+        <Input Placeholder="Type your message here." TItem="string" />
+        <Input TItem="string" Label="Full name" Info="Type your full name here." />
+    </div>
+</section>

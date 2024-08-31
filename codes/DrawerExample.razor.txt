@@ -1,0 +1,58 @@
+<section class="flex-col">
+    <h2>Drawer</h2>    
+    <div class="flex">
+        <Button Text="Open Drawer" Type="ButtonType.Outline" Class="border" OnClick="() => show = true" />
+    </div>
+</section>
+
+<style>
+    .bars { display: flex; gap: 8px; align-items: flex-end; margin-bottom: 1rem; height: 110px }
+    .bars span { display: block; background-color: var(--primary-fg); width: 21px; animation: animate 300ms linear 300ms forwards; top: var(--h) }
+    @@keyframes animate {
+        from { height: 0 }
+        to { height: var(--h) }
+    }
+</style>
+
+<Drawer Show="@show" OnClose="() => show = false">
+    <div class="flex-col g4 ai-s" style="width: 360px; height: 100%">
+        <div>
+            <h4 class="large">Move Goal</h4>
+            <p class="muted">Set your daily activity goal.</p>
+        </div>
+        <div style="flex: 1">
+            <div class="flex jcsb f1 mtb1">
+                <Button Icon="remove" Type="ButtonType.Icon" Class="border rounded" />
+                <div style="text-align: center; line-height: 1">
+                    <h1 style="font-size: 72px">350</h1>
+                    <small style="font-size: 11px; opacity: 0.75">CALORIES/DAY</small>
+                </div>                
+                <Button Icon="add" Type="ButtonType.Icon" Class="border rounded" />
+            </div>
+            <div class="bars">
+                <span style="--h:100px; --d:100ms"></span>
+                <span style="--h:82px; --d:82ms"></span>
+                <span style="--h:55px; --d:55ms"></span>
+                <span style="--h:83px; --d:83ms"></span>
+                <span style="--h:55px; --d:55ms"></span>
+                <span style="--h:76px; --d:76ms"></span>
+                <span style="--h:52px; --d:52ms"></span>
+                <span style="--h:66px; --d:66ms"></span>
+                <span style="--h:83px; --d:83ms"></span>
+                <span style="--h:55px; --d:55ms"></span>
+                <span style="--h:76px; --d:76ms"></span>
+                <span style="--h:52px; --d:52ms"></span>
+                <span style="--h:96px; --d:96ms"></span>
+            </div>
+        </div>
+        <div class="flex-col g8">
+            <Button Text="Submit" Style="justify-content: center" Width="100%" OnClick="() => show = false" />
+            <Button Text="Cancel" Type="ButtonType.Outline" Class="border" Style="justify-content: center" Width="100%" OnClick="() => show = false" />
+        </div>
+    </div>
+</Drawer>
+
+@code
+{
+    bool show;
+}

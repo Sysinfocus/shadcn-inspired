@@ -1,0 +1,64 @@
+<section class="flex-col">
+    <h2>Toast</h2>    
+    <div class="flex wrap">
+        <Button Text="Simple Toast" Type="ButtonType.Outline" OnClick="SimpleToast" />
+        <Button Text="With Title Toast" Type="ButtonType.Outline" OnClick="WithTitleToast" />
+        <Button Text="With Action Toast" Type="ButtonType.Outline" OnClick="WithActionToast" />
+        <Button Text="Destructive Toast" Type="ButtonType.Outline" OnClick="DestructiveToast" />
+    </div>
+</section>
+
+<Toast Show="@show" Style="@(!isAction ? "padding: 1rem" : "padding: 0")">
+    @if (isAction)
+    {
+        <div class="flex" style="@(isDestructive ? "background-color: var(--btn-destructive-bg) !important; color: var(--btn-destructive-fg) !important" : null); padding: 1rem">
+            <div class="flex-col g4">
+                <p class="small" style="background-color: inherit; color: inherit">Uh oh! Something went wrong.</p>
+                <small>There was a problem with your request.</small>
+            </div>
+            @if (isDestructive) {
+                <Button Text="Try again" Type="ButtonType.Destructive" Class="small" OnClick="() => show = false" />
+            } else {
+                <Button Text="Try again" Type="ButtonType.Outline" Class="small" OnClick="() => show = false" />
+            }
+        </div>
+    }
+    else {
+        @content
+    }
+
+</Toast>
+
+@code
+{
+    bool show;
+    bool isAction, isDestructive;
+    MarkupString content = new("Your message has been sent.");
+
+    void SimpleToast()
+    {
+        isAction = false;
+        content = new("Your message has been sent.");
+        show = true;
+    }
+
+    void WithTitleToast()
+    {
+        isAction = false;
+        content = new("<p class='small'>Uh oh! Something went wrong.</p><small>There was a problem with your request.</small>");
+        show = true;
+    }
+
+    void WithActionToast()
+    {
+        show = true;
+        isAction = true;
+        isDestructive = false;
+    }
+
+    void DestructiveToast()
+    {
+        WithActionToast();
+        isDestructive = true;
+    }
+}

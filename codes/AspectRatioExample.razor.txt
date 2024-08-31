@@ -1,0 +1,8 @@
+﻿<section class="flex-col">
+    <h2>Aspect Ratio</h2>
+    <div class="flex-col">
+        <AspectRatio Ratio="16 / 9" Style="border-radius: 6px">
+            <img src="https://ui.shadcn.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1588345921523-c2dcdb7f1dcd%3Fw%3D800%26dpr%3D2%26q%3D80&w=1920&q=75" />
+        </AspectRatio>
+    </div>
+</section>

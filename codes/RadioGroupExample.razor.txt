@@ -1,0 +1,21 @@
+<section class="flex-col">
+    <h2>Radio Group</h2>    
+    <div class="flex">
+        <RadioGroup Name="group">            
+            <RadioGroupItem Value="1" Label="Default" />
+            <RadioGroupItem Value="2" Label="Comfortable" Checked />
+            <RadioGroupItem Value="3" Label="Compact" />
+        </RadioGroup>
+    </div>
+    <br/><br/>
+    <p>Form</p>
+    <div class="flex-col">
+        <b>Notify me about...</b>
+        <RadioGroup Name="form">            
+            <RadioGroupItem Value="1" Label="All new messages" />
+            <RadioGroupItem Value="2" Label="Direct messages and mentions" />
+            <RadioGroupItem Value="3" Label="Nothing" Checked />
+        </RadioGroup>
+        <Button Text="Submit" Width="fit-content" />
+    </div>
+</section>

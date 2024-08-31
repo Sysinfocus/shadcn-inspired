@@ -1,0 +1,46 @@
+<section class="flex-col">
+    <h2>Context Menu</h2>
+    <div class="flex-col">
+        <ContextMenu OnContextMenu="HandleContextMenu" Text="Right click here" ShowContent="@showMenu">
+            <MenuGroup Items="@menu" OnSelect="UpdateMenu" Style="@style" Show="@showMenu" />
+        </ContextMenu>
+    </div>
+
+    You have selected: <b>@selectedMenu?.Text</b>
+</section>
+
+@code
+{
+    List<MenuItemOption> menu = [];
+    MenuItemOption? selectedMenu;
+    bool showMenu;
+
+    protected override void OnInitialized()
+    {
+        menu.Add(new MenuItemOption("Back", Shortcut: "[") { MenuType = MenuType.Checkbox, ShowCheckmark = false });
+        menu.Add(new MenuItemOption("Forward", Shortcut: "]") { MenuType = MenuType.Checkbox, Disabled = true, ShowCheckmark = false });
+        menu.Add(new MenuItemOption("Reload", Shortcut: "R") { MenuType = MenuType.Checkbox, ShowCheckmark = false });
+        menu.Add(new MenuItemOption("More Tools") { MenuType = MenuType.Checkbox, ShowCheckmark = false });
+        menu.Add(new(""));
+        menu.Add(new MenuItemOption("Show Bookmarks Bar", Shortcut: "B") { MenuType = MenuType.Checkbox });
+        menu.Add(new MenuItemOption("Show Full URLs") { MenuType = MenuType.Checkbox, Checked = true });
+        menu.Add(new(""));
+        menu.Add(new MenuItemOption("People") { MenuType = MenuType.Checkbox, IsHeader = true });
+        menu.Add(new(""));
+        menu.Add(new MenuItemOption("Pedro Duarte") { MenuType = MenuType.Radio, RadioGroup = "People", Value = "1", Checked = true });
+        menu.Add(new MenuItemOption("Colm Tuite") { MenuType = MenuType.Radio, RadioGroup = "People", Value = "2" });
+    }
+
+    void UpdateMenu(MenuItemOption menu)
+    {
+        selectedMenu = menu;
+        showMenu = false;
+    }
+
+    string style = "";
+    void HandleContextMenu((double x, double y) coords)
+    {
+        style = $"max-width: 260px; left: {coords.x}px; top: {coords.y}px";
+        showMenu = true;
+    }
+}

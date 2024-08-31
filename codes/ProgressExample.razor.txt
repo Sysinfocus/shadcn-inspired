@@ -1,0 +1,23 @@
+<section class="flex-col">
+    <h2>Progress</h2>    
+    <div class="flex-col">
+        <Progress Percent="@percent" Height="2px" />
+        <Progress Percent="60" Foreground="crimson" />
+        <Progress Percent="25" Height="16px" Foreground="seagreen" />
+    </div>
+</section>
+
+@code
+{
+    int percent = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        for(int i = 0; i < 100; i++)
+        {
+            await Task.Delay(1000);
+            percent++;
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+}

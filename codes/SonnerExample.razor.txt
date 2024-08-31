@@ -1,0 +1,13 @@
+<section class="flex-col">
+    <h2>Sonner</h2>
+    <div class="flex">
+        <Button Text="Show Sonner" Type="ButtonType.Outline" OnClick="ShowSonner" />
+        <Sonner Title="Event has been created" Description="Sunday, December 03, 2023 at 9:00 AM" ActionName="Undo" Show="@showSonner" OnActionClick="() => showSonner = false" />
+    </div>
+</section>
+
+@code
+{
+    bool showSonner;
+    void ShowSonner() => showSonner = true;
+}

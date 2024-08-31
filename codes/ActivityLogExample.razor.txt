@@ -1,0 +1,22 @@
+<section class="flex-col">
+    <h2>Activity Log</h2>
+    <div class="flex" style="overflow: auto">
+        <Activity Items="@logs" Animate />
+    </div>
+</section>
+
+@code
+{
+    List<Log> logs = [
+        new("admin", $"https://randomuser.me/api/portraits/men/{DateTime.Now.Second % 1}.jpg", "User", "'student' created", DateTime.Now.AddDays(-10), ActivityEnum.Create),
+        new("student", $"https://randomuser.me/api/portraits/women/{DateTime.Now.Second % 2}.jpg", "Login", "'student' logged in", DateTime.Now.AddDays(-10), ActivityEnum.Read),
+        new("admin", $"https://randomuser.me/api/portraits/men/{DateTime.Now.Second % 1}.jpg", "User", "'teacher-1' created", DateTime.Now.AddDays(-9), ActivityEnum.Create),
+        new("management", $"https://randomuser.me/api/portraits/women/{DateTime.Now.Second % 4}.jpg", "Reports", "'management' looked into X report", DateTime.Now.AddDays(-9), ActivityEnum.Read),
+        new("teacher-1", $"https://randomuser.me/api/portraits/men/{DateTime.Now.Second % 5}.jpg", "Syllabus", "'teacher-1' updated PU - Science - I - Physics - Physical World", DateTime.Now.AddDays(-8), ActivityEnum.Update),
+        new("teacher-3", $"https://randomuser.me/api/portraits/men/{DateTime.Now.Second % 6}.jpg", "Syllabus", "'teacher-3' created PU - Science - I - Physics - Units and Measurements", DateTime.Now.AddDays(-8), ActivityEnum.Create),
+        new("teacher-2", $"https://randomuser.me/api/portraits/women/{DateTime.Now.Second % 7}.jpg", "Syllabus", "'teacher-2' deleted PU - Science - I - Physics - Physical World", DateTime.Now.AddDays(-7), ActivityEnum.Delete),
+        new("student-1", $"https://randomuser.me/api/portraits/women/{DateTime.Now.Second % 8}.jpg", "User", "'username' created", DateTime.Now.AddDays(-7), ActivityEnum.Create),
+        new("student-2", $"https://randomuser.me/api/portraits/men/{DateTime.Now.Second % 9}.jpg", "User", "'username' created", DateTime.Now.AddDays(-6), ActivityEnum.Create),
+        new("student-3", $"https://randomuser.me/api/portraits/women/{DateTime.Now.Second % 10}.jpg", "User", "'username' created", DateTime.Now.AddDays(-6), ActivityEnum.Create),
+    ];
+}

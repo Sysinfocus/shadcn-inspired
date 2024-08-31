@@ -1,0 +1,66 @@
+<section class="flex-col">
+    <div class="flex-col g8">
+        <h2>Navigation Menu</h2>    
+        <p>A collection of links for navigating websites.</p>
+    </div>
+    <div class="flex" style="margin-top: 50px">
+        <NavigationMenu>            
+            <NavigationMenuItem Id="m1" Title="Getting started">                
+                <div class="slideLeft" style="font-size: 15px; width: 500px; height: 300px; display: grid; grid-template-columns: auto 1fr; gap: 1rem">
+                    <div tabindex="0" class="flex-col g4 jce" style="background-color: var(--btn-secondary-bg); padding: 1.5rem; width: 200px; height: 100%; border-radius: 8px; outline: transparent">
+                        <span class="material-symbols-outlined mtb1">fingerprint</span>
+                        <h4 class="large">SimpleUI</h4>
+                        <p class="muted-color">Beautifully designed components built with HTML, CSS, JavaScript and C#.</p>
+                    </div>
+                    <div style="display: grid; grid-template-rows: 1fr 1fr 1fr">
+                        <a tabindex="0" class="flex-col g4 jcc">
+                            <b>Introduction</b>
+                            <p class="muted-color">Re-usable components build using HTML, CSS, JavaScript and C#.</p>
+                        </a>
+                        <a tabindex="0" class="flex-col g4 jcc">
+                            <b>Installation</b>
+                            <p class="muted-color">How to install dependencies and structure your app.</p>
+                        </a>
+                        <a tabindex="0" class="flex-col g4 jcc">
+                            <b>Typography</b>
+                            <p class="muted-color">Styles for headings, paragraphs, lists, etc.,</p>
+                        </a>
+                    </div>
+                </div>
+            </NavigationMenuItem>
+            <NavigationMenuItem Id="m2" Title="Components">
+                <div class="slideRight" style="font-size: 15px; width: 650px; height: 300px; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div style="display: grid; grid-template-rows: 1fr 1fr 1fr; gap: 0">
+                        <a tabindex="0" class="flex-col g4">
+                            <b>Alert Dialog</b>
+                            <p class="muted-color">A modal dialog that interrupts the user with important content and expects a...</p>
+                        </a>
+                        <a tabindex="0" class="flex-col g4">
+                            <b>Progress</b>
+                            <p class="muted-color">Displays an indicator showing the compensation progress of a task...</p>
+                        </a>
+                        <a tabindex="0" class="flex-col g4">
+                            <b>Tabs</b>
+                            <p class="muted-color">A set of layered sections of content - known as tab panels - that are...</p>
+                        </a>
+                    </div>
+                    <div style="display: grid; grid-template-rows: 1fr 1fr 1fr; gap: 0">
+                        <a tabindex="0" class="flex-col g4">
+                            <b>Hover Card</b>
+                            <p class="muted-color">For sighted users to preview content available behind a link.</p>
+                        </a>
+                        <a tabindex="0" class="flex-col g4">
+                            <b>Scroll-area</b>
+                            <p class="muted-color">Visually or semantically separates content.</p>
+                        </a>
+                        <a tabindex="0" class="flex-col g4">
+                            <b>Tooltip</b>
+                            <p class="muted-color">A popup that displays information related to an element when the...</p>
+                        </a>
+                    </div>
+                </div>
+            </NavigationMenuItem>
+            <NavigationMenuItem Id="m3" Title="Documentation" Url="https://ui.shadcn.com/docs" />
+        </NavigationMenu>
+    </div>
+</section>

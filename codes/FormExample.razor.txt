@@ -1,0 +1,37 @@
+<section class="flex-col">
+    <h2>Form</h2>
+    <CascadingValue Value="@errors">
+        <div class="flex-col">
+            <Input Label="Username" Info="This is your public display name." Type="text" TItem="string" Placeholder="shadcn" Value="@username" ValueChanged="x => username = x"
+                   Error="Username" />
+        </div>
+        <div class="flex-col">
+            <Select Label="Select Fruit" Items="@fruits" Placeholder="Select a fruit" Width="200px" Display="x => x" TItem="string"
+                SelectedItem="@selectedItem" OnItemSelect="x => selectedItem = x" Error="Fruit"/>
+        </div>
+        <Button Text="Submit" Width="fit-content" OnClick="OnSubmit" />
+    </CascadingValue>
+
+    @if (errors?.Count == 0)
+    {
+        <Icon Name="check_circle" Size="64px" />
+    }
+</section>
+
+@code
+{
+    string? username;
+    string? selectedItem;
+    string[] fruits = ["**Fruits**", "Apple", "Banana", "Blueberry", "Grapes", "Pineapple"];
+
+    Dictionary<string, string>? errors;
+
+    void OnSubmit()
+    {
+        errors = [];
+        if (string.IsNullOrWhiteSpace(username) || username?.Length < 2) { errors.TryAdd("Username", "Username must be at least 2 characters."); }
+        if (selectedItem is null) { errors.TryAdd("Fruit", "Fruit selection is must."); }
+
+        if (errors.Count > 0) return;
+    }
+}

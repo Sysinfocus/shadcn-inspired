@@ -1,0 +1,23 @@
+﻿<section class="flex-col">
+    <h2>Barcode and QRCode</h2>
+    <div class="flex-col mb1">
+        <h3 class="large">QRCode Samples</h3>
+        <div class="flex wrap mb1">
+            <QRCode Id="qrcode" Text="@Guid.NewGuid().ToString()" />
+            <QRCode Id="qrcode1" Text="@Guid.NewGuid().ToString()" Background="red" Foreground="white" />
+            <QRCode Id="qrcode2" Text="@Guid.NewGuid().ToString()" Foreground="royalblue" />
+        </div>
+
+        <h3 class="large mt1">Barcode Samples</h3>
+        <div class="flex wrap aifs">
+            <Barcode Id="barcode" Text="C1234567890D" Format="BarcodeFormat.Code128" />
+            <Barcode Id="barcode1" Text="C1234567890D" Format="BarcodeFormat.Code39" DisplayValue="false" />
+            <Barcode Id="barcode2" Text="5901234123457" Format="BarcodeFormat.EAN13" />
+            <Barcode Id="barcode3" Text="123456789999" Format="BarcodeFormat.UPC" />
+            <Barcode Id="barcode4" Text="12345678901231" Format="BarcodeFormat.ITF14" />            
+            <Barcode Id="barcode5" Text="1234" Format="BarcodeFormat.Pharmacode" />
+            <Barcode Id="barcode6" Text="1234567890" Format="BarcodeFormat.Codabar" />
+            <Barcode Id="barcode7" Text="123456789" Format="BarcodeFormat.MSI" />
+        </div>
+    </div>
+</section>
