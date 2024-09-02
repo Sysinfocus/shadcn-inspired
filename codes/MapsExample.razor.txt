@@ -1,0 +1,28 @@
+<section class="flex-col">
+    <h2>Maps</h2>
+    <div class="flex">
+        <Maps @ref="@map" Id="map" Latitude="0" Longitude="0" Zoom="2" Width="100%" Height="600px" OnClick="HandleShow" ViewType="MapView.Esri_WorldImagery"></Maps>
+    </div>
+    <div>
+        Showing the clicked co-ordinates: <b>@coords</b>
+    </div>
+    <Button Text="Show Marker on India" OnClick="ShowMarker" />
+</section>
+
+@code
+{
+    Maps? map;
+    string? coords;
+
+    private async Task ShowMarker()
+    {
+        if (map is null) return;
+        await map.Marker(28.644800, 77.216721, 10, "New Delhi, India");
+    }
+
+    async Task HandleShow((double lat, double lng) latlng)
+    {
+        coords = $"{latlng.lat}, {latlng.lng}";
+        await InvokeAsync(StateHasChanged);
+    }
+}

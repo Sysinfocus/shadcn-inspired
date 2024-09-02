@@ -607,7 +607,7 @@
 .month-year[b-7d73tkmg3g] {
     font-size: 15px;
     font-weight: 600;
-    cursor: pointer;
+    cursor: default;
 }
 
 .back[b-7d73tkmg3g], .next[b-7d73tkmg3g] {
@@ -619,6 +619,10 @@
     border: 1px solid var(--primary-border);
     border-radius: 6px;
 }
+    
+    .pnyear[b-7d73tkmg3g] {
+        font-size: 18px !important;
+    }
 
     .back:hover[b-7d73tkmg3g],
     .next:hover[b-7d73tkmg3g] {
@@ -1510,6 +1514,10 @@ hr[b-52fbtuz3y3] {
 .disabled[b-wsbd6ex0bf] {
     opacity: 0.75;
     cursor: not-allowed !important;
+}
+/* _content/Sysinfocus.AspNetCore.Components/Maps.razor.rz.scp.css */
+.sbc-maps[b-upbcs2fybt] {
+    position: relative;
 }
 /* _content/Sysinfocus.AspNetCore.Components/Menubar.razor.rz.scp.css */
 .sbc-menubar[b-7nv3jrqc85] {
@@ -2704,9 +2712,10 @@ tbody.lastBorder[b-j45b6ih47o]  tr:last-child td {
     text-align: center;
     line-height: 1.15rem;
     visibility: collapse;
-    position: fixed;            
+    position: absolute;
+    min-width: 150%;
     font-size: 12px;
-    background-color: var(--primary-fg);
+    background-color: var(--primary-fg);    
     color: var(--primary-bg);
     padding: 6px 12px;
     border-radius: 6px;
