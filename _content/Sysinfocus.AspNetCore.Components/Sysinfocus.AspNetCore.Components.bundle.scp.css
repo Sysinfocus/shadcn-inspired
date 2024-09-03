@@ -1389,6 +1389,72 @@ hr[b-52fbtuz3y3] {
     from { opacity: 1; transform: translateY(0)}
     to { opacity: 0; transform: translateY(100%)}
 }
+/* _content/Sysinfocus.AspNetCore.Components/FileUpload.razor.rz.scp.css */
+.sbc-fileupload[b-emlxcnw45e] {
+	position: relative;
+	user-select: none;
+	cursor: pointer;
+	overflow: hidden;
+	display: block;
+	background-color: var(--primary-bg);
+	width: 200px;
+	height: 200px;
+	border-radius: 8px;
+	border: 1px solid var(--primary-border);
+	transition: 300ms ease-in-out;
+}
+
+	.sbc-fileupload img[b-emlxcnw45e] {
+		position: absolute;
+		left: 2px;
+		top: 2px;
+		object-fit: contain;
+		border-radius: 8px;
+		display: block;
+		border: none;
+		pointer-events: none;
+		width: calc(100% - 3px);
+		height: calc(100% - 3px);
+	}
+
+.disabled[b-emlxcnw45e] {
+	pointer-events: none;
+	cursor: default;
+	opacity: 0.5;
+}
+
+.sbc-fileupload-container[b-emlxcnw45e] {
+	width: 100%;
+	height: 100%;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.sbc-fileupload:not(.disabled):hover[b-emlxcnw45e] {
+	border: 2px dashed var(--primary-fg);
+}
+
+.sbc-fileupload-container small[b-emlxcnw45e] {
+	color: var(--muted-color);
+	opacity: 0.5;
+	text-align: center;
+	pointer-events: none;
+}
+
+[b-emlxcnw45e] .sbc-fileupload-icon {
+	color: var(--muted-color);
+	font-size: 60px;
+	opacity: 0.25;
+	pointer-events: none;
+}
+
+[b-emlxcnw45e] input[type=file] {
+	display: none !important;
+	pointer-events: none;
+}
 /* _content/Sysinfocus.AspNetCore.Components/Group.razor.rz.scp.css */
 .sbc-group[b-l5eahwxxm4] {
     display: flex;

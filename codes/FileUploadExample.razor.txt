@@ -1,0 +1,59 @@
+@using Microsoft.AspNetCore.Components.Forms
+
+<section class="flex-col">
+    <h2>File Upload</h2>    
+    <p class="mt1 large">Image File Upload and Display</p>
+    <div class="flex wrap aifs">
+        <div class="flex-col g4">
+            <FileUpload Id="images" OnError="ShowError" AllowedFileCount="3" IsImage OnImagesUpload="OnImageUpload" Text="Drag and drop upto 3 image files below 1MB" />
+            <p class="error">@errors</p>
+        </div>
+        @foreach(var i in images) {
+            <img src="@i" style="width: 200px; height: 200px; object-fit: cover" />
+        }
+    </div>
+
+    <p class="mt1 large">Upload Excel File only</p>
+    <div class="flex-col g4">
+        <FileUpload Id="excel" OnError="ShowExcelError" OnUpload="HandleUpload" AllowedFileTypes='new[] { "*.xls",".xlsx" }'
+            Text="Drag and drop or click here to upload Excel file below 1MB" />
+        <p class="error">@errorsExcel</p>
+        <p>@((MarkupString)message)</p>
+    </div>
+</section>
+
+@code
+{
+    string? errors, errorsExcel, message;
+    string? newImage;
+
+    ICollection<string> images = [];
+
+    private void ShowError(Dictionary<string, string> err)
+    {
+        errors = "";
+        foreach (var e in err)
+            errors += e.Value;
+    }
+
+    private void OnImageUpload(ICollection<string> img)
+    {
+        errors = "";
+        images = img;
+        newImage = images.FirstOrDefault();
+    }
+
+    private void ShowExcelError(Dictionary<string, string> err)
+    {
+        message = "";
+        errorsExcel = "";
+        foreach (var e in err)
+            errorsExcel += e.Value;
+    }
+
+    private void HandleUpload(IReadOnlyList<IBrowserFile> files)
+    {
+        errorsExcel = "";
+        message = $"You have selected <b>{files.FirstOrDefault()?.Name}</b> having file size of <b>{files.FirstOrDefault()?.Size}</b> bytes to upload.";
+    }
+}
