@@ -2226,6 +2226,67 @@ hr[b-oioz0f36uz] {
     right: 1rem;
     padding: 8px;
 }
+/* _content/Sysinfocus.AspNetCore.Components/Signature.razor.rz.scp.css */
+.sbc-signature-pad[b-p0e6o0899p] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 100%;
+    position: relative;
+}
+
+    .sbc-signature-pad label[b-p0e6o0899p] {
+        color: var(--label-color);
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .sbc-signature-pad .controls[b-p0e6o0899p] {
+        position: relative;
+        text-align: right;
+        display: flex;
+        gap: 8px;
+    }
+
+.controls svg[b-p0e6o0899p] {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 300ms ease-in-out;
+    fill: var(--input-color);
+}
+
+    .controls svg:hover[b-p0e6o0899p] {
+        opacity: 1
+    }
+
+.signature-pad[b-p0e6o0899p] {
+    cursor: default;
+    border: 1px solid var(--input-border);
+    border-bottom: 2px solid var(--input-border);
+    border-radius: 4px;
+}
+
+    .signature-pad:focus[b-p0e6o0899p] {
+        outline: 1px solid var(--input-color);
+    }
+
+span.error[b-p0e6o0899p] {
+    width: 100%;
+    font-size: 11px;
+    color: var(--error);
+}
+
+span.message[b-p0e6o0899p] {
+    width: 100%;
+    font-size: 11px;
+    color: var(--message);
+}
+
+@media (pointer: coarse) {
+    body[b-p0e6o0899p] {
+        overflow: hidden;
+    }
+}
 /* _content/Sysinfocus.AspNetCore.Components/Skeleton.razor.rz.scp.css */
 .sbc-skeleton[b-rdllu0a49g] {
     position: relative;

@@ -1,28 +1,40 @@
+@inject IJSRuntime jsr
+
 <section class="flex-col">
     <h2>Maps</h2>
-    <div class="flex">
-        <Maps @ref="@map" Id="map" Latitude="0" Longitude="0" Zoom="2" Width="100%" Height="600px" OnClick="HandleShow" ViewType="MapView.Esri_WorldImagery"></Maps>
+    <div class="flex">        
+        <Maps Id="map" Latitude="39.0000" Longitude="34.0000" Zoom="3" Width="100%" Height="600px"
+                OnClick="HandleShow" ViewType="MapView.Esri_WorldStreetMap" />        
     </div>
     <div>
         Showing the clicked co-ordinates: <b>@coords</b>
     </div>
-    <Button Text="Show Marker on India" OnClick="ShowMarker" />
+    <div class="flex">
+        <Button Text="Topomap" OnClick="@(() => Map(MapView.Esri_WorldTopoMap))" />
+        <Button Text="Imagery" OnClick="@(() => Map(MapView.Esri_WorldImagery))" />
+        <Button Text="Streetmap" OnClick="@(() => Map(MapView.Esri_WorldStreetMap))" />
+        <Button Text="Show Marker on India" OnClick="ShowMarker" />
+    </div>
 </section>
 
 @code
 {
-    Maps? map;
-    string? coords;
+    private string? coords;
 
     private async Task ShowMarker()
     {
-        if (map is null) return;
-        await map.Marker(28.644800, 77.216721, 10, "New Delhi, India");
+        await Maps.Marker(jsr, 28.644800, 77.216721, 10, "New Delhi, India");
     }
 
-    async Task HandleShow((double lat, double lng) latlng)
+    async Task HandleShow(MapLocation mapLocation)
     {
-        coords = $"{latlng.lat}, {latlng.lng}";
+        coords = $"{mapLocation.Latitude}, {mapLocation.Longitude}";
         await InvokeAsync(StateHasChanged);
     }
+
+    async Task Map(MapView view)
+    {
+        await Maps.RenderMap(jsr, view);
+        await InvokeAsync(StateHasChanged);
+    }    
 }

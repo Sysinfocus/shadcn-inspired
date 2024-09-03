@@ -1,0 +1,23 @@
+<section class="flex-col">
+    <h2>Signature Pad</h2>    
+    <div class="flex">        
+        <Signature Width="400px" Height="200px" Style="border: 1px solid #999"
+            InkColor="@ink" ShowControls="@showControls" OnAccept="HandleAccept" />
+    </div>
+    <br/><br/>
+    @if (yourSign is not null) {
+        <img src="@yourSign" style="width: 400px; height: 200px" />
+    }
+</section>
+
+@code
+{
+    private string ink = $"hsl({Random.Shared.Next(0, 360)}, 50%, 50%)";
+    private bool showControls = true;
+    private string? yourSign;
+    private void HandleAccept(string value)
+    {
+        showControls = false;
+        yourSign = value;        
+    }
+}
