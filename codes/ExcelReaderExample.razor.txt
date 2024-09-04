@@ -1,0 +1,70 @@
+@using Microsoft.AspNetCore.Components.Forms
+
+<section class="flex-col">
+    <h2>Excel Reader</h2>
+    <p>Note: This example reads the excel file content and displays the content. No data/files is actually transferred outside of your browser.</p>
+
+    <div class="flex wrap">
+        <div class="flex-col g0">
+            <FileUpload OnError="ShowExcelError" OnUpload="HandleUpload" AllowedFileTypes='new[] { "*.xls",".xlsx" }'
+                Text="Upload Excel file here..." Style="height: 100px" />
+            <p class="error">@errorsExcel</p>
+        </div>
+        @if (sheets?.Length > 0) {
+            <div>
+                <Group Label="Choose Sheet to display">
+                    <Select Items="sheets" TItem="string" Display="x => x.ToString()" Placeholder="Pick sheet to display data..."
+                        SelectedItem="selectedSheet" OnItemSelect="x => selectedSheet = x" />
+                </Group>
+            </div>
+        }
+    </div>
+    @if (selectedSheet is not null) {
+        <h4>@selectedSheet</h4>
+        var rows = finalOutput?.FirstOrDefault(a => a.Name == selectedSheet)?.Rows;
+        <Table>
+            <TableHeader>
+                @foreach (var col in rows?.FirstOrDefault()?.Values ?? []) {
+                    <th>@col</th>
+                }
+            </TableHeader>
+            <TableBody>
+                @foreach(var row in rows?.Skip(1) ?? []) {
+                    <tr>
+                        @foreach(var col in row.Values) {
+                            <td>@col</td>
+                        }
+                    </tr>
+                }
+            </TableBody>            
+        </Table>
+    }
+</section>
+
+@code
+{
+    string? errorsExcel, selectedSheet;
+    string[]? sheets;
+    IReadOnlyList<SheetData>? finalOutput;
+    private void ShowExcelError(Dictionary<string, string> err)
+    {
+        errorsExcel = "";
+        foreach (var e in err)
+            errorsExcel += e.Value;
+    }
+
+    private async Task HandleUpload(IReadOnlyList<IBrowserFile> files)
+    {
+        sheets = null;
+        selectedSheet = null;
+        finalOutput = null;
+        errorsExcel = "";
+        var excelFile = files.FirstOrDefault();
+        if (excelFile is null) return;
+        MemoryStream? stream = new();
+        await excelFile.OpenReadStream(1024 * 1024).CopyToAsync(stream);
+        finalOutput = await ExcelReader.ReadFile(stream);
+        sheets = finalOutput?.Select(a => a.Name).ToArray();
+        await InvokeAsync(StateHasChanged);
+    }
+}
