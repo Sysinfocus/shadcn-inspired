@@ -1,0 +1,10 @@
+<section class="flex-col">
+    <h2>Video</h2>    
+    <p>Note: This component currently works with YouTube videos only.</p>
+    <div class="flex wrap">
+        <Video Source="_WYPl9tlT-A" FullScreen ShowControls />
+        <Video Source="UYH97nPLWrM" ShowControls />
+        <Video Source="NN4Zzp-vOrU" />
+        <Video Source="bw7ljmvbrr0" />        
+    </div>
+</section>
