@@ -32,15 +32,15 @@
                 </DataColumns>
             </DataTable>
             
-            <div class="mobile">
+            <div class="desktop">
                 <div class="flex jcsb aic">
                     <p class="muted">@SelectedRecordCount()</p>
                     <Pagination State="@paging" OnPageChange="HandlePaging" ActiveType="ButtonType.Primary" ShowFirstLast PreviousText="" NextText="" />
                 </div>
             </div>
 
-            <div class="mobile-only">
-                <div class="flex-col aic mobile-only">
+            <div class="mobile">
+                <div class="flex-col aic">
                     <p class="muted">@SelectedRecordCount()</p>
                     <Pagination State="@paging" OnPageChange="HandlePaging" ActiveType="ButtonType.Primary" ShowFirstLast PreviousText="" NextText="" />
                 </div>

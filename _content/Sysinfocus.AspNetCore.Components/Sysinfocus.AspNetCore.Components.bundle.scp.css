@@ -835,6 +835,11 @@
 .light .sbc-checkbox input:not(:disabled) .checkbox-wrapper:hover[b-ix9et0c73c] {
     box-shadow: 0 1px 2px 0 var(--primary-border);
 }
+/* _content/Sysinfocus.AspNetCore.Components/CodeScanner.razor.rz.scp.css */
+.sbc-codescanner[b-m5twf75skj]
+{
+    position: relative;
+}
 /* _content/Sysinfocus.AspNetCore.Components/Collapsible.razor.rz.scp.css */
 .sbc-collapsible[b-24u3018pb1] {
     display: flex;
