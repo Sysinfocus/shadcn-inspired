@@ -1,12 +1,13 @@
 <section class="flex-col">
     <h2>Code Scanner</h2>
     <div class="flex">
-        <CodeScanner OnCodeDetected="x => result = x" />
+        <CodeScanner OnCodeDetected="x => result = x" OnError="x => error = x" />
     </div>
     <p>Detected code: <b>@result</b></p>
+    <p style="color: red">Error: <b>@error</b></p>
 </section>
 
 @code
 {
-    string? result;
+    string? result, error;
 }
