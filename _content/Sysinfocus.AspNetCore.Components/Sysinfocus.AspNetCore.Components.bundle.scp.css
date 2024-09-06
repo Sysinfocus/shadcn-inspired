@@ -1394,6 +1394,37 @@ hr[b-52fbtuz3y3] {
     from { opacity: 1; transform: translateY(0)}
     to { opacity: 0; transform: translateY(100%)}
 }
+/* _content/Sysinfocus.AspNetCore.Components/Editor.razor.rz.scp.css */
+.sbc-editor[b-dn6bos3dew] {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-width: 300px;
+    min-height: 300px;
+    border: 1px solid var(--primary-border);
+    outline-color: transparent;
+    overflow: hidden;
+}
+
+.sbc-editor-toolbar[b-dn6bos3dew] {
+    border-bottom: 1px solid var(--primary-border);
+    padding: 0.25rem;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap;    
+}
+
+.sbc-editor-toolbar[b-dn6bos3dew]  .sbc-separator-vertical { height: auto }
+
+.sbc-editor-content[b-dn6bos3dew] {
+    width: 100%;
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-border);
+    outline: none;
+    overflow: auto;
+}
 /* _content/Sysinfocus.AspNetCore.Components/FileUpload.razor.rz.scp.css */
 .sbc-fileupload[b-emlxcnw45e] {
 	position: relative;

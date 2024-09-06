@@ -1,0 +1,17 @@
+<section class="flex-col">
+    <h2>Editor</h2>    
+    <div class="flex">
+        <Editor @ref="@editor" Style="width: 100%; height: 600px" />
+    </div>
+    <Textarea @bind-Text="@data" Rows="10" Placeholder="Click on Get Data to get HTML source from the editor or edit the content and click on Set Data to update it on the editor..." />
+    <div class="flex">
+        <Button Text="Get Data" OnClick="async () => data = await editor.GetContent()" />
+        <Button Text="Set Data" OnClick="async () => await editor.SetContent(data)" />
+    </div>
+</section>
+
+@code
+{    
+    Editor? editor;
+    string? data;
+}
