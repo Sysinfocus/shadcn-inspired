@@ -1,7 +1,17 @@
 <section class="flex-col">
-    <h2>Editor</h2>    
+    <div class="flex jcsb">
+        <h2>Editor</h2>
+        <div class="flex">
+            <Button Id="ddmenu" Text="Toggle Toolbars" Type="ButtonType.Outline" Class="border" OnClick="() =>showMenu = !showMenu" />
+            <Popover ParentId="ddmenu" Show="@showMenu" OnClose="x => showMenu = x">
+                <MenuGroup Items="@menu" OnSelect="UpdateMenu" Style="position: relative; width: 250px" Show />
+            </Popover>
+        </div>
+    </div>
     <div class="flex">
-        <Editor @ref="@editor" Style="width: 100%; height: 600px" />
+        <Editor @ref="@editor" Style="width: 100%; height: 500px" ShowTextFormatting="@showTextFormatting"
+                ShowUndoRedo="@showUndoRedo" ShowCutCopyPaste="@showCutCopyPaste" ShowAlignments="@showAlignments"
+                ShowColors="@showColors" ShowExtras="@showExtras" ShowHeadings="@showHeadings" ShowListings="@showListings" />
     </div>
     <Textarea @bind-Text="@data" Rows="10" Placeholder="Click on Get Data to get HTML source from the editor or edit the content and click on Set Data to update it on the editor..." />
     <div class="flex">
@@ -11,7 +21,66 @@
 </section>
 
 @code
-{    
+{
     Editor? editor;
     string? data;
+    bool showUndoRedo = true, showCutCopyPaste = true, showAlignments = true, showListings = true;
+    bool showColors = true, showExtras = true, showHeadings = true, showTextFormatting = true;
+
+    List<MenuItemOption> menu = [];
+    MenuItemOption? selectedMenu;
+    bool showMenu;
+
+    protected override async Task OnInitializedAsync()
+    {
+        menu.Add(new("Undo / Redo") { MenuType = MenuType.Checkbox, Value = nameof(showUndoRedo), Checked = showUndoRedo });
+        menu.Add(new("Cut / Copy / Paste") { MenuType = MenuType.Checkbox, Value = nameof(showCutCopyPaste), Checked = showCutCopyPaste });
+        menu.Add(new("Alignments") { MenuType = MenuType.Checkbox, Value = nameof(showAlignments), Checked = showAlignments });
+        menu.Add(new("Listings") { MenuType = MenuType.Checkbox, Value = nameof(showListings), Checked = showListings });
+        menu.Add(new("Colors") { MenuType = MenuType.Checkbox, Value = nameof(showColors), Checked = showColors });
+        menu.Add(new("Headings") { MenuType = MenuType.Checkbox, Value = nameof(showHeadings), Checked = showHeadings });
+        menu.Add(new("Text Formattings") { MenuType = MenuType.Checkbox, Value = nameof(showTextFormatting), Checked = showTextFormatting });
+        menu.Add(new("Extras") { MenuType = MenuType.Checkbox, Value = nameof(showExtras), Checked = showExtras });
+        menu.Add(new("Reset All") { MenuType = MenuType.Checkbox, Value = "reset", ShowCheckmark = false });
+        if (editor is not null) await editor.SetFocus();
+    }
+
+    async Task UpdateMenu(MenuItemOption menu)
+    {
+        selectedMenu = menu;
+        showMenu = false;
+        if (menu.Value == "reset")
+        {
+            await Reset();
+            return;
+        }
+
+        bool v = menu.Value switch
+        {
+            nameof(showUndoRedo) => showUndoRedo = !showUndoRedo,
+            nameof(showCutCopyPaste) => showCutCopyPaste = !showCutCopyPaste,
+            nameof(showAlignments) => showAlignments = !showAlignments,
+            nameof(showListings) => showListings = !showListings,
+            nameof(showColors) => showColors = !showColors,
+            nameof(showHeadings) => showHeadings = !showHeadings,
+            nameof(showTextFormatting) => showTextFormatting = !showTextFormatting,
+            nameof(showExtras) => showExtras = !showExtras,
+            _ => false
+        };        
+    }
+
+    async Task Reset()
+    {
+        showUndoRedo = showCutCopyPaste = showAlignments = showListings = showColors = showHeadings = showTextFormatting = showExtras = true;
+        foreach (var m in menu.Where(a => a.Value != "reset"))
+            m.Checked = true;
+        await InvokeAsync(StateHasChanged);
+    }
+
+    string style = "";
+    void HandleContextMenu((double x, double y) coords)
+    {
+        style = $"max-width: 260px; left: {coords.x}px; top: {coords.y}px";
+        showMenu = true;
+    }
 }

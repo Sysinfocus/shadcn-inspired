@@ -1411,11 +1411,12 @@ hr[b-52fbtuz3y3] {
     padding: 0.25rem;
     display: flex;
     flex-direction: row;
-    gap: 8px;
-    flex-wrap: wrap;    
+    gap: 4px;    
 }
 
-.sbc-editor-toolbar[b-dn6bos3dew]  .sbc-separator-vertical { height: auto }
+    .sbc-editor-toolbar[b-dn6bos3dew]  .sbc-separator-vertical {
+        height: auto
+    }
 
 .sbc-editor-content[b-dn6bos3dew] {
     width: 100%;
@@ -1425,6 +1426,14 @@ hr[b-52fbtuz3y3] {
     outline: none;
     overflow: auto;
 }
+
+    .sbc-editor-content[b-dn6bos3dew]  ul,
+    .sbc-editor-content[b-dn6bos3dew]  ol,
+    .sbc-editor-content[b-dn6bos3dew]  li {
+        margin: inherit;
+        padding: inherit;
+        font-size: inherit;
+    }
 /* _content/Sysinfocus.AspNetCore.Components/FileUpload.razor.rz.scp.css */
 .sbc-fileupload[b-emlxcnw45e] {
 	position: relative;
