@@ -1434,6 +1434,16 @@ hr[b-52fbtuz3y3] {
         padding: inherit;
         font-size: inherit;
     }
+
+    .sbc-editor-content[b-dn6bos3dew]  table {
+        border: 2px solid var(--primary-border);
+        border-collapse: collapse;
+    }
+        .sbc-editor-content[b-dn6bos3dew]  table th,
+        .sbc-editor-content[b-dn6bos3dew]  table td {
+            border: 1px solid var(--primary-border);
+            padding: 8px;
+        }
 /* _content/Sysinfocus.AspNetCore.Components/FileUpload.razor.rz.scp.css */
 .sbc-fileupload[b-emlxcnw45e] {
 	position: relative;
@@ -2520,6 +2530,12 @@ span.message[b-p0e6o0899p] {
 @keyframes hide-b-1muo9l3izn {
     from { opacity: 1; transform: translateY(0) }
     to { opacity: 0; transform: translateY(100%) }
+}
+/* _content/Sysinfocus.AspNetCore.Components/Sortable.razor.rz.scp.css */
+.sbc-sortable[b-a1phddmn3a] {
+    user-select: none;
+    border: 1px solid var(--primary-border);
+    padding: 0.25rem;    
 }
 /* _content/Sysinfocus.AspNetCore.Components/Switch.razor.rz.scp.css */
 .sbc-toggle[b-3wz4cvsirk] {

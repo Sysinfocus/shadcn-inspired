@@ -1,0 +1,87 @@
+<style>
+    .item,
+    .items {
+        background-color: var(--primary-bg);
+        border: 1px solid var(--btn-secondary-bg);
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        margin-bottom: 2px
+    }
+
+        .item:hover,
+        .items:hover {
+            background-color: var(--btn-secondary-bg);
+            cursor: default
+        }
+
+    .item-ghost {
+        opacity: 0.5;
+        background-color: var(--primary-border);
+    }
+
+    .item-drag {
+        opacity: 0.5;
+        border: 1px dashed var(--primary-border);
+    }
+</style>
+
+<section class="flex-col">
+    <h2>Sortable</h2>
+    <div class="flex wrap aifs" style="gap: 4rem">
+        <div class="flex-col g8 f1">
+            <h4>Block 1</h4>
+            <p>You can re-arrange items within, move from Block 1 to Block 2 and vice-a-versa</p>
+            <Sortable Items="@items" Group="first" Id="first" DragClass="item-drag" Sort Register
+                OnChange='HandleChange' OnInsert="HandleInsert" OnDelete="HandleDelete">
+                <SortableItemTemplate>
+                    <div class="item">@context</div>
+                </SortableItemTemplate>
+            </Sortable>
+        </div>
+
+        <div class="flex-col g8 f1">
+            <h4>Block 2</h4>
+            <p>You can't re-arrange items, but you can move from Block 1 to Block 2 and vice-a-versa</p>
+            <Sortable Items="@newItems" Group="first" Id="second" DragClass="item-drag"
+                OnChange='HandleChange' OnInsert="HandleInsert" OnDelete="HandleDelete">
+                <SortableItemTemplate>
+                    <div class="item">@context</div>
+                </SortableItemTemplate>
+            </Sortable>
+        </div>
+    </div>
+</section>
+
+@code
+{
+    List<string> items = Enumerable.Range(1, 6).Select(a => Convert.ToDateTime($"{DateTime.Now.Year}-{a}-1").ToString("MMMM, yyyy")).ToList();
+    List<string> newItems = Enumerable.Range(7, 6).Select(a => Convert.ToDateTime($"{DateTime.Now.Year}-{a}-1").ToString("MMMM, yyyy")).ToList();
+
+    void HandleChange((int o, int n, string f, string t) index)
+    {
+        if (index.f == "first")
+        {
+            var itm = items[index.o];
+            items.Remove(itm);
+            items.Insert(index.n, itm);
+        }
+        else
+        {
+            var itm = newItems[index.o];
+            newItems.Remove(itm);
+            newItems.Insert(index.n, itm);
+        }
+    }
+
+    void HandleInsert((int o, int n, string f, string t) index)
+    {
+        if (index.f == "first") newItems.Insert(index.n, items[index.o]);
+        else if (index.f == "second") items.Insert(index.n, newItems[index.o]);
+    }
+
+    void HandleDelete((int o, int n, string f, string t) index)
+    {
+        if (index.f == "first") items.Remove(items[index.o]);
+        else newItems.Remove(newItems[index.o]);
+    }
+}
