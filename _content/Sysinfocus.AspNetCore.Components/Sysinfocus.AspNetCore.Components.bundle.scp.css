@@ -2999,3 +2999,28 @@ tbody.lastBorder[b-j45b6ih47o]  tr:last-child td {
 .sbc-video-source:hover[b-owfw8plxlk]  .sbc-video-close {
     opacity: 1;
 }
+/* _content/Sysinfocus.AspNetCore.Components/Widget.razor.rz.scp.css */
+.sbc-widget[b-yw7iy2bg0d] {            
+    position: relative;
+    display: flex;
+    overflow: hidden; 
+    transform: scale(1);   
+    user-select: none;
+    cursor: pointer;
+    padding: 1rem;    
+}
+
+.sbc-widget:hover[b-yw7iy2bg0d] {    
+    animation: ZoomIn-b-yw7iy2bg0d 250ms ease-in-out forwards;
+}
+
+.sbc-widget.disabled[b-yw7iy2bg0d] { 
+    pointer-events: none !important;
+    opacity: 0.75 !important;
+    cursor: default !important;
+}
+
+@keyframes ZoomIn-b-yw7iy2bg0d { to { transform: scale(1.05); } }
+@keyframes ZoomOut-b-yw7iy2bg0d { to { transform: scale(1); } }
+@keyframes FadeIn-b-yw7iy2bg0d { from { opacity: 0; } to { opacity: 1; } }
+@keyframes FadeOut-b-yw7iy2bg0d { from { opacity: 1; } to { opacity: 0; } }
