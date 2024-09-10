@@ -16,11 +16,15 @@
         <Button Text="Draw Circle" OnClick="DrawCircle" />
         <Button Text="Remove Marker" OnClick="RemoveMarker" />        
     </div>
+    <p class="error">@error</p>
 </section>
+
+<Geolocation OnLocationReceived="HandleLocation" EnableLocationUpdates OnLocationError="x => error = x" />
 
 @code
 {
-    private string? coords;
+    private string? coords, error;
+    private bool firstLocation = true;
 
     private async Task ShowMarker() => await Maps.AddMarker(jsr, 28.644800, 77.216721, 10, "New Delhi, India", true);
     private async Task ShowCenterZoomed() => await Maps.Center(jsr, 28.644800, 77.216721);
@@ -35,7 +39,22 @@
 
     async Task Map(MapView view)
     {
-        await Maps.RenderMap(jsr, view);
+        await Maps.RenderMap(jsr, view);        
         await InvokeAsync(StateHasChanged);
     }    
+
+    async Task HandleLocation(MapLocation mapLocation)
+    {
+        if (firstLocation)
+        {
+            await Task.Delay(250);
+            await Maps.AddMarker(jsr, mapLocation.Latitude, mapLocation.Longitude, 4, "Your location", true);
+            await Maps.Center(jsr, mapLocation.Latitude, mapLocation.Longitude);
+            firstLocation = false;
+        }
+        else
+        {
+            await Maps.AddMarker(jsr, mapLocation.Latitude, mapLocation.Longitude, 4, "Your location", true);
+        }
+    }
 }
