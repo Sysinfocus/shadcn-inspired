@@ -1,7 +1,8 @@
 <section class="flex-col">
     <h2>Tabs</h2>
     <div class="flex-col">
-        <Tabs Items="@tabs" ActiveItem="0" Style="min-width: 360px; max-width: 360px;">
+        <div class="flex wrap jcc">
+            <Tabs Items="@tabs" ActiveItem="0" Style="min-width: 340px; max-width: 360px; min-height: 400px">
             <TabItem Item="0">
                 <Card>
                     <CardHeader>
@@ -37,6 +38,43 @@
                 </Card>
             </TabItem>
         </Tabs>
+            <Tabs Items="@tabs" ActiveItem="0" Style="min-width: 340px; max-width: 460px; min-height: 400px" ShowVertical>
+                <TabItem Item="0">
+                    <Card>
+                        <CardHeader>
+                            <h3 class="large">Account</h3>
+                            <p class="muted">Make changes to your account here. Click save when you're done.</p>
+                        </CardHeader>
+                        <CardContent>
+                            <div style="display: flex; flex-direction: column; gap: 1rem; padding: 0.5rem 0">
+                                <Input Label="Name" Placeholder="Pedro Duarte" TItem="string" />
+                                <Input Label="Username" Placeholder="@("@peduarte")" TItem="string" />
+                            </div>
+                        </CardContent>
+                        <CardFooter>
+                            <Button Text="Save changes" Style="margin: 0 1.5rem 1.5rem" />
+                        </CardFooter>
+                    </Card>
+                </TabItem>
+                <TabItem Item="1">
+                    <Card>
+                        <CardHeader>
+                            <h3 class="large">Password</h3>
+                            <p class="muted">Change your password here. After saving, you'll be logged out.</p>
+                        </CardHeader>
+                        <CardContent>
+                            <div style="display: flex; flex-direction: column; gap: 1rem; padding: 0.5rem 0">
+                                <Input Label="Current Password" TItem="string" />
+                                <Input Label="New Password" TItem="string" />
+                            </div>
+                        </CardContent>
+                        <CardFooter>
+                            <Button Text="Save password" Style="margin: 0 1.5rem 1.5rem" />
+                        </CardFooter>
+                    </Card>
+                </TabItem>
+            </Tabs>
+        </div>
     </div>
 </section>
 

@@ -54,8 +54,8 @@
 
 @code
 {
-    List<string> items = Enumerable.Range(1, 6).Select(a => Convert.ToDateTime($"{DateTime.Now.Year}-{a}-1").ToString("MMMM, yyyy")).ToList();
-    List<string> newItems = Enumerable.Range(7, 6).Select(a => Convert.ToDateTime($"{DateTime.Now.Year}-{a}-1").ToString("MMMM, yyyy")).ToList();
+    List<string> items = Enumerable.Range(1, 6).Select(a => Convert.ToDateTime($"{DateTime.Now.Year}-{a}-1").ToString("MMMM")).ToList();
+    List<string> newItems = Enumerable.Range(7, 6).Select(a => Convert.ToDateTime($"{DateTime.Now.Year}-{a}-1").ToString("MMMM")).ToList();
 
     void HandleChange((int o, int n, string f, string t) index)
     {

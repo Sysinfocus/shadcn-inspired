@@ -2,18 +2,19 @@
 
 <section class="flex-col">
     <h2>Maps</h2>
-    <div class="flex">        
-        <Maps Id="map" Latitude="39.0000" Longitude="34.0000" Zoom="3" Width="100%" Height="600px"
-                OnClick="HandleShow" ViewType="MapView.Esri_WorldStreetMap" />        
-    </div>
+    <Maps Id="map" Latitude="39.0000" Longitude="34.0000" Zoom="3" Width="calc(100vw - 2rem)" Height="500px"
+            OnClick="HandleShow" ViewType="MapView.Esri_WorldStreetMap" />        
     <div>
         Showing the clicked co-ordinates: <b>@coords</b>
     </div>
-    <div class="flex">
+    <div class="flex wrap">
         <Button Text="Topomap" OnClick="@(() => Map(MapView.Esri_WorldTopoMap))" />
         <Button Text="Imagery" OnClick="@(() => Map(MapView.Esri_WorldImagery))" />
         <Button Text="Streetmap" OnClick="@(() => Map(MapView.Esri_WorldStreetMap))" />
-        <Button Text="Show Marker on India" OnClick="ShowMarker" />
+        <Button Text="Show Marker" OnClick="ShowMarker" />
+        <Button Text="Center & Zoom" OnClick="ShowCenterZoomed" />
+        <Button Text="Draw Circle" OnClick="DrawCircle" />
+        <Button Text="Remove Marker" OnClick="RemoveMarker" />        
     </div>
 </section>
 
@@ -21,10 +22,10 @@
 {
     private string? coords;
 
-    private async Task ShowMarker()
-    {
-        await Maps.Marker(jsr, 28.644800, 77.216721, 10, "New Delhi, India");
-    }
+    private async Task ShowMarker() => await Maps.AddMarker(jsr, 28.644800, 77.216721, 10, "New Delhi, India", true);
+    private async Task ShowCenterZoomed() => await Maps.Center(jsr, 28.644800, 77.216721);
+    private async Task RemoveMarker() => await Maps.RemoveMarker(jsr, 28.644800, 77.216721);
+    private async Task DrawCircle() => await Maps.DrawCircle(jsr, 28.644800, 77.216721, 50000);
 
     async Task HandleShow(MapLocation mapLocation)
     {

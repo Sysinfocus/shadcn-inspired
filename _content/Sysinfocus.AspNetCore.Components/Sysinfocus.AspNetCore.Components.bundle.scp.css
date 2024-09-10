@@ -1636,6 +1636,10 @@ hr[b-52fbtuz3y3] {
     opacity: 0.75;
     cursor: not-allowed !important;
 }
+/* _content/Sysinfocus.AspNetCore.Components/Lottie.razor.rz.scp.css */
+.sbc-lottie[b-nhwoakmm5v] {
+    position: relative;    
+}
 /* _content/Sysinfocus.AspNetCore.Components/Maps.razor.rz.scp.css */
 .sbc-maps[b-upbcs2fybt] {
     position: relative;
@@ -2667,8 +2671,11 @@ tbody.lastBorder[b-j45b6ih47o]  tr:last-child td {
 .sbc-tabs-container[b-de2pj2huiq] {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 8px;
-    width: 100%;    
+    width: 100%;
+    height: 100%;
 }
 
 .sbc-tabs[b-de2pj2huiq] {
@@ -2713,6 +2720,19 @@ tbody.lastBorder[b-j45b6ih47o]  tr:last-child td {
 
 .sbc-tabs-items[b-de2pj2huiq] {
     width: 100%;
+}
+
+.vertical-tabs[b-de2pj2huiq] {
+    flex-direction: row;    
+    flex: 1;
+    height: 100%;    
+}
+.vertical-tabs > .sbc-tabs[b-de2pj2huiq] {
+    height: 100%;    
+    flex-direction: column; 
+    max-width: max-content;
+    align-items: flex-start;
+    padding: 0.25rem;    
 }
 /* _content/Sysinfocus.AspNetCore.Components/Textarea.razor.rz.scp.css */
 .sbc-textarea[b-t4xl5q84mh] {

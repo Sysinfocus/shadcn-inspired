@@ -197,6 +197,7 @@
 
 html {
     height: -webkit-fill-available;
+    color-scheme: var(--color-scheme);
 }
 
 body {

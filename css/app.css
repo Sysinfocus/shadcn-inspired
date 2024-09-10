@@ -51,10 +51,11 @@ main {
     height: 8px;
 }
 
-:hover::-webkit-scrollbar-thumb {
-    background-color: var(--primary-border) !important;
-    border-radius: 8px;
-}
+    :hover::-webkit-scrollbar-thumb {
+        background-color: var(--primary-border) !important;
+        border-radius: 8px;
+        cursor: default;
+    }
 
 .border {
     width: fit-content;
