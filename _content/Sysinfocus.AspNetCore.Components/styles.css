@@ -1,4 +1,5 @@
-/* geist-sans-latin-200-normal */
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0);
+/* geist-sans-latin-300-normal */
 @font-face {
     font-family: 'Geist Sans';
     font-style: normal;
@@ -6,29 +7,13 @@
     font-weight: 200;
     src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-200-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-200-normal.woff) format('woff');
 }
-/* geist-sans-latin-400-normal */
+/* geist-sans-latin-500-normal */
 @font-face {
     font-family: 'Geist Sans';
     font-style: normal;
     font-display: swap;
     font-weight: 400;
     src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-400-normal.woff) format('woff');
-}
-/* geist-sans-latin-500-normal */
-@font-face {
-    font-family: 'Geist Sans';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 500;
-    src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-500-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-500-normal.woff) format('woff');
-}
-/* geist-sans-latin-600-normal */
-@font-face {
-    font-family: 'Geist Sans';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 600;
-    src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-600-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin-600-normal.woff) format('woff');
 }
 /* geist-sans-latin-700-normal */
 @font-face {
@@ -46,11 +31,9 @@
 .light {
     --color-scheme: light;
     --menu-bg: #a6a6a622;
-
     --light-bg: #ffffff;
     --light-fg: #25252b;
     --light-bdr: #d4d4d5;
-
     --light: white;
     --dark: black;
     --body-primary-bg: var(--light-bg);
@@ -64,7 +47,7 @@
     --btn-primary-bg: #18181b;
     --btn-primary-fg: #f4f4f5;
     --btn-primary-border: #e4e4e7;
-    --btn-secondary-bg: #f4f4f5;
+    --btn-secondary-bg: #e4e4e5;
     --btn-secondary-fg: #18181b;
     --btn-secondary-border: #e4e4e7;
     --btn-destructive-bg: #dc2626;
@@ -92,8 +75,9 @@
     --toggle-bg: #e4e4e7;
     --toggle-fg: var(--light-bg);
     --toggle-checked: #18181b;
-    --table-row-bg: #f9f9f9;
-    --table-footer: #f6f6f6;
+    --table-header: #f4f4f5;
+    --table-row-bg: #f4f4f5;
+    --table-footer: #f4f4f5;
     --error: #ef4444;
     --success-bg: #44ef44;
     --success-fg: var(--primary-fg);
@@ -107,7 +91,7 @@
     --medium-text: #6a6a6a;
     --light-text: #71717a;
     --data-table-border: #f4f4f5;
-    --data-table-row: #f9f9f9;
+    --data-table-row: #f4f4f5;
     --data-table-row-hover: #f4f4f5;
 }
 
@@ -155,8 +139,9 @@
     --toggle-bg: #27272a;
     --toggle-fg: #09090b;
     --toggle-checked: #fafafa;
-    --table-row-bg: #18181a;
-    --table-footer: #202022;
+    --table-header: #17171a;
+    --table-row-bg: #17171a;
+    --table-footer: #17171a;
     --error: #ef4444;
     --success-bg: #44ef44;
     --success-fg: var(--primary-fg);
@@ -169,9 +154,9 @@
     --dark-text: #fafafa;
     --medium-text: #6a6a6a;
     --light-text: #a1a1aa;
-    --data-table-border: #27272a;
-    --data-table-row: #27272a;
-    --data-table-row-hover: #27272a80;
+    --data-table-border: #17171a;
+    --data-table-row: #17171a;
+    --data-table-row-hover: #17171a;
 }
 
 .crimson {

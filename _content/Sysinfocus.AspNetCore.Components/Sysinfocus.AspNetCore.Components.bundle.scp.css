@@ -20,7 +20,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .sbc-accordion-item-header-icon[b-yn8kze91g8]  svg {
@@ -1186,7 +1186,7 @@ hr[b-52fbtuz3y3] {
 .sbc-data-table thead[b-7xhksee9mk] {
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 3;
     user-select: none;
     background-color: var(--data-table-row);
 }
@@ -1234,7 +1234,20 @@ hr[b-52fbtuz3y3] {
     }
     .sbc-data-table[b-7xhksee9mk]  .justify {
         text-align: justify;
-    }    
+    }
+
+.verticalBorder[b-7xhksee9mk]  td,
+.verticalBorder[b-7xhksee9mk]  th {
+    border-inline: 1px solid var(--data-table-border) !important;
+}
+
+[b-7xhksee9mk] .freeze {
+    position: sticky;
+    background-color: var(--data-table-row-hover);
+    opacity: 1;
+    z-index: 2;
+    left: var(--freezeWidth, 0);
+}
 /* _content/Sysinfocus.AspNetCore.Components/DatePicker.razor.rz.scp.css */
 .sbc-datepicker[b-seqom3cw9y] {
     display: flex;   
@@ -2626,42 +2639,44 @@ span.message[b-p0e6o0899p] {
 }
 /* _content/Sysinfocus.AspNetCore.Components/Table.razor.rz.scp.css */
 .sbc-table[b-j45b6ih47o] {
-    width: 100%;    
+    width: 100%;
     overflow: auto;
     font-size: 14px;
 }
 .sbc-table-table[b-j45b6ih47o] {
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     width: 100%;
-    height: 100%;;
+    height: 100%;    
 }
-
-
 [b-j45b6ih47o] th, [b-j45b6ih47o] td {
-    font-weight: normal;
-    padding: 10px;
+    padding: 10px;    
     border-bottom: 1px solid var(--primary-border);
 }
+[b-j45b6ih47o] td {
+    font-weight: normal;
+}
+.nowrap[b-j45b6ih47o] {
+    white-space: nowrap;
+}
+
 tbody.lastBorder[b-j45b6ih47o]  tr:last-child td { 
     border-bottom: none;
 }
 [b-j45b6ih47o] th {
     width: fit-content;
-    font-weight: normal;
     padding: 10px;
+    cursor: default;
     border-bottom: 1px solid var(--primary-border);
 }
-
 [b-j45b6ih47o] thead {
-    font-weight: 600 !important;
-    opacity: 0.8;
+    font-weight: 700;
     text-align: left;
+    background-color: var(--table-header);
 }
-
 [b-j45b6ih47o] td {
     font-size: 14.5px;
 }
-
 [b-j45b6ih47o] .left {
     text-align: left;
 }
@@ -2674,15 +2689,35 @@ tbody.lastBorder[b-j45b6ih47o]  tr:last-child td {
 [b-j45b6ih47o] .justify {
     text-align: justify;
 }
-
+.sticky-header[b-j45b6ih47o] {
+    position: sticky;
+    z-index: 3;
+    top: 0;
+}
+.sticky-footer[b-j45b6ih47o] {
+    position: sticky;
+    z-index: 3;
+    bottom: 0;
+}
 [b-j45b6ih47o] tfoot th {
     text-align: left;
-    font-weight: 500;
+    font-weight: 700;
     background-color: var(--table-footer);
     border: none;
 }
-
-[b-j45b6ih47o] tr:hover {
+.verticalBorder[b-j45b6ih47o]  td,
+.verticalBorder[b-j45b6ih47o]  th {
+    border-inline: 1px solid var(--primary-border) !important;
+}
+[b-j45b6ih47o] .freeze {
+    position: sticky;
+    background-color: var(--table-header) !important;
+    border: 1px solid var(--primary-border);
+    left: 0;
+}
+[b-j45b6ih47o] tr:hover,
+[b-j45b6ih47o] .sticky-header:hover tr,
+[b-j45b6ih47o] .sticky-footer:hover tr {
     background-color: var(--table-row-bg);
 }
 /* _content/Sysinfocus.AspNetCore.Components/Tabs.razor.rz.scp.css */
