@@ -1,0 +1,39 @@
+<section class="flex-col">
+    <div class="flex jcsb aic">
+        <div>
+            <h2>Document Viewer</h2>
+            <p>Choose the document to view. Supports Excel, Word, Powerpoint, PDF, Image, Text and Videos</p>
+        </div>
+
+        <Select Items="files" Width="200px" Placeholder="Pick a document..." TItem="FileViewer" Display="x => (x.Name ?? x.Type.ToString())"
+            SelectedItem="selectedFile" OnItemSelect="ChangeDocument" /> 
+    </div>
+    @if (selectedFile is not null) {
+        <DocumentViewer Source="@selectedFile.Url" Type="@selectedFile.Type" />
+    }
+</section>
+
+@code
+{
+    private List<FileViewer> files = [];
+    FileViewer? selectedFile;
+
+    protected override async Task OnInitializedAsync()
+    {
+        files.Add(new(DocumentType.Excel, "https://filesamples.com/samples/document/xlsx/sample2.xlsx"));
+        files.Add(new(DocumentType.PDF, "https://filesamples.com/samples/document/pdf/sample1.pdf"));
+        files.Add(new(DocumentType.Word, "https://filesamples.com/samples/document/docx/sample2.docx"));
+        files.Add(new(DocumentType.Image, "https://images.unsplash.com/photo-1725203574059-389c2116aad1?q=80&w=2684&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"));
+        files.Add(new(DocumentType.Powerpoint, "https://filesamples.com/samples/document/ppt/sample2.ppt"));
+        files.Add(new(DocumentType.Text, "https://filesamples.com/samples/document/txt/sample3.txt"));
+        files.Add(new(DocumentType.Video, "https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_10mb.mp4"));
+    }
+
+    private async Task ChangeDocument(FileViewer fileViewer)
+    {
+        selectedFile = fileViewer;
+        await InvokeAsync(StateHasChanged);
+    }
+
+    record FileViewer(DocumentType Type, string Url, string? Name = null);
+}

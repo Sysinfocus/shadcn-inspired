@@ -1,0 +1,29 @@
+<section class="flex-col">
+    <h2>Save File Picker</h2>
+    <p>This example showcases two ways a content can be delivered to the user. Direct Download or Get User to Save File.</p>
+    <p><b>Download File</b> will download a text file with this content - "Hi, hello, how are you?"</p>
+    <Button Text="Download File" OnClick="DownloadFile" />
+
+    <p><b>Save File</b> will ask user to save a text file with this content - "Hi, hello, how are you?"</p>
+    <Button Text="Save File" OnClick="SaveFile" />    
+</section>
+
+<SaveFilePicker @ref="@sfp" />
+
+@code
+{
+    private SaveFilePicker? sfp;
+    private string someText = "Hi, hello, how are you?";
+
+    private async Task SaveFile()
+    {
+        if (sfp is null) return;
+        await sfp.SaveFile(System.Text.Encoding.UTF8.GetBytes(someText));
+    }
+
+    private async Task DownloadFile()
+    {
+        if (sfp is null) return;        
+        await sfp.DownloadFile(someText, "text/plain");
+    }
+}

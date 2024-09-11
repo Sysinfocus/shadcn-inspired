@@ -1,7 +1,7 @@
 <section class="flex-col">
     <h2>Lottie</h2>    
     <p>Just use the Lottie JSON or Optimized JSON file in the source.</p>
-    <div class="flex jcse wrap">
+    <div class="flex jcc wrap">
         <Lottie Source="https://lottie.host/ffb368d8-295e-4367-9423-f490ea84d70a/Ru73Iouiy6.json" />
         <Lottie Source="https://lottie.host/258dc450-bc37-4997-b41f-dbff6f48d9be/hOdYAY7JQj.json" />
         <Lottie Source="https://lottie.host/5fee71fd-ad82-45f6-9e83-5c83ba9d04e0/cxq9GW7nC3.json" />

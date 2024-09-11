@@ -186,13 +186,13 @@
     --btn-primary-bg: seagreen;
     --btn-primary-fg: #f4f4f5;
 }
-.maroon {
-    --btn-primary-bg: maroon;
+.magenta {
+    --btn-primary-bg: magenta;
     --btn-primary-fg: #f4f4f5;
 }
 .orange {
     --btn-primary-bg: orange;
-    --btn-primary-fg: #f4f4f5;
+    --btn-primary-fg: #333333;
 }
 
 html {

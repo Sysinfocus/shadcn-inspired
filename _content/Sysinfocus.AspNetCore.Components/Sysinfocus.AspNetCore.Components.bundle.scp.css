@@ -1330,6 +1330,24 @@ hr[b-52fbtuz3y3] {
         transform: scale(1);
     }
 }
+/* _content/Sysinfocus.AspNetCore.Components/DocumentViewer.razor.rz.scp.css */
+.sbc-doc-viewer[b-yiy5vs5u8w]
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--primary-border);
+}
+
+.sbc-doc-viewer iframe[b-yiy5vs5u8w] {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: contain;
+}
 /* _content/Sysinfocus.AspNetCore.Components/Drawer.razor.rz.scp.css */
 .sbc-drawer[b-tnp5clhn05] {
     position: fixed;
@@ -2791,6 +2809,7 @@ tbody.lastBorder[b-j45b6ih47o]  tr:last-child td {
     bottom: 1.5rem;
     right: 1.5rem;
     border: 1px solid var(--primary-border);
+    background-color: var(--primary-bg);
     border-radius: 6px;    
     font-size: 14px;
     overflow: hidden;
