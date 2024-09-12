@@ -64,15 +64,15 @@
         height: unset;
     }
 }
-/* _content/Sysinfocus.AspNetCore.Components/Activity.razor.rz.scp.css */
-.sbc-activity-log[b-3qn4rks7ch] { display: flex; flex-direction: column; gap: 1rem; align-items: center; position: relative; }
-.sbc-log[b-3qn4rks7ch] { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; column-gap: 1rem; position: relative; opacity: 0; width: 100%; }
-.sbc-log[b-3qn4rks7ch]::before { content:''; position: absolute; top: 50%; transform: translateX(-50%); left: 50%; width: 75px; z-index: -10; border: 1px dotted var(--primary-border); }
-.sbc-log[b-3qn4rks7ch]::after { content:''; position: absolute; transform: translateX(-50%); top: 0%; left: 50%; height: 200%; flex: 1; z-index: -10; border: 1px solid var(--primary-border);  } 
-.sbc-log img[b-3qn4rks7ch] { width: 48px; height: 48px; border-radius: 50%; border: 3px solid var(--primary-border); padding: 3px; background-color: var(--primary-bg); z-index: 1; }   
-.sbc-log .data[b-3qn4rks7ch] { padding: 0 0.5rem }
-.sbc-log .data.ra[b-3qn4rks7ch] { text-align: right; }     
-.sbc-log .data.la[b-3qn4rks7ch] { text-align: left; }
+/* _content/Sysinfocus.AspNetCore.Components/ActivityLog.razor.rz.scp.css */
+.sbc-activity-log[b-wsnmzwy8v6] { display: flex; flex-direction: column; gap: 1rem; align-items: center; position: relative; }
+.sbc-log[b-wsnmzwy8v6] { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; column-gap: 1rem; position: relative; opacity: 0; width: 100%; }
+.sbc-log[b-wsnmzwy8v6]::before { content:''; position: absolute; top: 50%; transform: translateX(-50%); left: 50%; width: 75px; z-index: -10; border: 1px dotted var(--primary-border); }
+.sbc-log[b-wsnmzwy8v6]::after { content:''; position: absolute; transform: translateX(-50%); top: 0%; left: 50%; height: 200%; flex: 1; z-index: -10; border: 1px solid var(--primary-border);  } 
+.sbc-log img[b-wsnmzwy8v6] { width: 48px; height: 48px; border-radius: 50%; border: 3px solid var(--primary-border); padding: 3px; background-color: var(--primary-bg); z-index: 1; }   
+.sbc-log .data[b-wsnmzwy8v6] { padding: 0 0.5rem }
+.sbc-log .data.ra[b-wsnmzwy8v6] { text-align: right; }     
+.sbc-log .data.la[b-wsnmzwy8v6] { text-align: left; }
 /* _content/Sysinfocus.AspNetCore.Components/Alert.razor.rz.scp.css */
 .sbc-alert[b-ugm5p4ut6w] {
     display: flex;

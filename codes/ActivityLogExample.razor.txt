@@ -1,7 +1,7 @@
 <section class="flex-col">
     <h2>Activity Log</h2>
     <div class="flex" style="overflow: auto">
-        <Activity Items="@logs" Animate />
+        <ActivityLog Items="@logs" Animate />
     </div>
 </section>
 
