@@ -1,7 +1,10 @@
 ﻿<section class="flex-col">
     <h2>Alert</h2>
     <div class="flex-col">
-        <Alert Title="Heads up!" Description="You can add components to your app using the cli." />
+        <Alert Title="Heads up!" Description="This is your sample description text." />
         <Alert Icon="error" Title="Error" Description="Your session has expired. Please log in again." Type="AlertType.Destructive" />
+        <Alert Icon="task_alt" Title="Success!" Description="This is your sample description text." Type="AlertType.Success" />
+        <Alert Icon="warning" Title="Warning..." Description="This is your sample description text." Type="AlertType.Warning" />
+        <Alert Icon="info" Title="Information" Description="This is your sample description text." Type="AlertType.Info" />
     </div>
 </section>

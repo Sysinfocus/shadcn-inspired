@@ -15,7 +15,7 @@
     {
         for(int i = 0; i < 100; i++)
         {
-            await Task.Delay(1000);
+            await Task.Delay(250);
             percent++;
             await InvokeAsync(StateHasChanged);
         }

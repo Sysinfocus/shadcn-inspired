@@ -4,6 +4,9 @@
         <Button Text="Primary" Type="ButtonType.Primary" />
         <Button Text="Secondary" Type="ButtonType.Secondary" />
         <Button Text="Destructive" Type="ButtonType.Destructive" />
+        <Button Text="Success" Type="ButtonType.Success" />
+        <Button Text="Warning" Type="ButtonType.Warning" />
+        <Button Text="Info" Type="ButtonType.Info" />
         <Button Text="Outline" Type="ButtonType.Outline" />
         <Button Text="Ghost" Type="ButtonType.Ghost" />
         <Button Text="Link" Type="ButtonType.Link" />

@@ -7,6 +7,7 @@
 }
 /* _content/Sysinfocus.AspNetCore.Components/AccordionItem.razor.rz.scp.css */
 .sbc-accordion-item[b-yn8kze91g8] {
+    --minHeight: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -21,12 +22,13 @@
     align-items: center;
     font-size: 14px;
     font-weight: 600;
+    user-select: none;
 }
 
 .sbc-accordion-item-header-icon[b-yn8kze91g8]  svg {
     width: 16px;
     height: 16px;
-    color: var(--);
+    color: inherit;
     transition: transform 150ms ease-out;
 }
 
@@ -37,31 +39,46 @@
 .sbc-accordion-item-header:hover[b-yn8kze91g8] {
     cursor: pointer;
     text-decoration: underline;
-    text-underline-offset: 4px;    
+    text-underline-offset: 4px;
 }
 
 .sbc-accordion-item-content[b-yn8kze91g8] {
-    visibility: hidden;
-    height: 0;
     line-height: 1.25rem;
     font-size: 0.85rem;
 }
 
-.sbc-accordion-item-content.show[b-yn8kze91g8] {
-    visibility: visible;
-    animation: show-b-yn8kze91g8 150ms linear forwards;
-    padding-bottom: 1rem;
-}
-
-@keyframes show-b-yn8kze91g8 {
-    0% {
-        opacity: 0;
-        height: 0;
+    .sbc-accordion-item-content.show[b-yn8kze91g8] {
+        animation: show-b-yn8kze91g8 300ms linear forwards;        
     }
 
-    100% {
+
+    .sbc-accordion-item-content.hide[b-yn8kze91g8] {
+        animation: hide-b-yn8kze91g8 300ms linear forwards;        
+    }
+
+@keyframes show-b-yn8kze91g8 {
+    from {
+        opacity: 0;
+        height: 0px;
+    }
+    to {
         opacity: 1;
-        height: unset;
+        height: var(--minHeight);
+        pointer-events: unset;
+        margin-bottom: 1rem;
+    }
+}
+
+@keyframes hide-b-yn8kze91g8 {
+    from {
+        opacity: 1;
+        height: var(--minHeight);
+    }
+    to {
+        opacity: 0;
+        height: 0px;
+        pointer-events: none;
+        margin-bottom: 0;
     }
 }
 /* _content/Sysinfocus.AspNetCore.Components/ActivityLog.razor.rz.scp.css */
@@ -83,7 +100,9 @@
     border-radius: 0.5rem;
 }
 
-.sbc-alert span[b-ugm5p4ut6w] { cursor: default;}
+    .sbc-alert span[b-ugm5p4ut6w] {
+        cursor: default;
+    }
 
 .sbc-alert-header[b-ugm5p4ut6w] {
     font-size: 16px;
@@ -91,14 +110,30 @@
     color: var(--dark-text);
     line-height: 1.5rem;
 }
+
+.destructive[b-ugm5p4ut6w], .destructive[b-ugm5p4ut6w]  * {
+    border-color: var(--error);
+    color: var(--error) !important;
+}
+
+.success[b-ugm5p4ut6w], .success[b-ugm5p4ut6w]  * {
+    border-color: var(--success-bg);
+    color: var(--success-bg) !important;
+}
+
+.warning[b-ugm5p4ut6w], .warning[b-ugm5p4ut6w]  * {
+    border-color: var(--warning-bg);
+    color: var(--warning-bg) !important;
+}
+
+.info[b-ugm5p4ut6w], .info[b-ugm5p4ut6w]  * {
+    border-color: var(--info-bg);
+    color: var(--info-bg) !important;
+}
+
 .sbc-alert-content[b-ugm5p4ut6w] {
     font-size: 14px;
     color: var(--light-text);
-}
-
-.error[b-ugm5p4ut6w], .error[b-ugm5p4ut6w]  * {
-    border-color: var(--error);
-    color: var(--error) !important;
 }
 /* _content/Sysinfocus.AspNetCore.Components/AlertDialog.razor.rz.scp.css */
 .sbc-alertdialog[b-mwh1mqozj1] {
@@ -254,6 +289,18 @@
     background-color: var(--btn-destructive-bg);
     color: var(--btn-destructive-fg);
 }
+.success[b-l2s21howrn] {
+    background-color: var(--success-bg);
+    color: var(--success-fg);
+}
+.warning[b-l2s21howrn] {
+    background-color: var(--warning-bg);
+    color: var(--warning-fg);
+}
+.info[b-l2s21howrn] {
+    background-color: var(--info-bg);
+    color: var(--info-fg);
+}
 /* _content/Sysinfocus.AspNetCore.Components/Breadcrumb.razor.rz.scp.css */
 .sbc-breadcrumb[b-gqs9kpqssi] {
     display: flex;
@@ -316,6 +363,18 @@
 .destructive[b-dxlcnpbuql] {
     background-color: var(--btn-destructive-bg);
     color: var(--btn-destructive-fg);
+}
+.success[b-dxlcnpbuql] {
+    background-color: var(--success-bg);
+    color: var(--success-fg);
+}
+.warning[b-dxlcnpbuql] {
+    background-color: var(--warning-bg);
+    color: var(--warning-fg);
+}
+.info[b-dxlcnpbuql] {
+    background-color: var(--info-bg);
+    color: var(--info-fg);
 }
 
 .outline[b-dxlcnpbuql] {
@@ -2732,7 +2791,7 @@ tbody.lastBorder[b-j45b6ih47o]  tr:last-child td {
 }
 
 .sbc-tabs[b-de2pj2huiq] {
-    display: flex;
+    display: flex;    
     flex-direction: row;
     gap: 4px;
     background-color: var(--btn-secondary-bg);
@@ -2748,7 +2807,7 @@ tbody.lastBorder[b-j45b6ih47o]  tr:last-child td {
     font-family: inherit;
     height: 28px;    
     font-size: 14px;
-    font-weight: 500;
+    font-weight: bold;
     background-color: transparent;
     color: var(--primary-fg);
     border: none;
@@ -2781,12 +2840,18 @@ tbody.lastBorder[b-j45b6ih47o]  tr:last-child td {
     height: 100%;    
 }
 .vertical-tabs > .sbc-tabs[b-de2pj2huiq] {
-    height: 100%;    
+    height: 100%;            
     flex-direction: column; 
     max-width: max-content;
     align-items: flex-start;
-    padding: 0.25rem;    
+    padding: 0.25rem;        
 }
+    .vertical-tabs > .sbc-tabs button[b-de2pj2huiq] {
+        width: 100%;
+        text-align: left;
+        padding-block: 0.5rem;
+        padding-right: 2rem;
+    }
 /* _content/Sysinfocus.AspNetCore.Components/Textarea.razor.rz.scp.css */
 .sbc-textarea[b-t4xl5q84mh] {
     display: flex;

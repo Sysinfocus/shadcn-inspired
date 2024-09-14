@@ -47,7 +47,7 @@
     {
         if (firstLocation)
         {
-            await Task.Delay(250);
+            await Task.Delay(500);
             await Maps.AddMarker(jsr, mapLocation.Latitude, mapLocation.Longitude, 4, "Your location", true);
             await Maps.Center(jsr, mapLocation.Latitude, mapLocation.Longitude);
             firstLocation = false;

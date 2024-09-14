@@ -6,6 +6,7 @@
 
     <p><b>Save File</b> will ask user to save a text file with this content - "Hi, hello, how are you?"</p>
     <Button Text="Save File" OnClick="SaveFile" />    
+    <small>Note: This feature is available only in supported browsers.</small>
 </section>
 
 <SaveFilePicker @ref="@sfp" />
