@@ -3060,8 +3060,8 @@ tbody.lastBorder[b-j45b6ih47o]  tr:last-child td {
 /* _content/Sysinfocus.AspNetCore.Components/Treeview.razor.rz.scp.css */
 .sbc-treeview[b-b2wsj9tslx] {
     position: relative;
-    font-size: 14px;
-    width: fit-content;
+    font-size: 15px;
+    width: 100%;
     overflow: auto;
     user-select: none;
 }

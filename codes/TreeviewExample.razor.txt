@@ -1,12 +1,18 @@
 <section class="flex-col">
     <h2>Treeview</h2>    
+    <p>Showing a treeview component with context menu. Parent nodes are customized to show in selected accent color.</p>
     <div class="flex-col">
         <div class="flex">
             <Button Type="ButtonType.Secondary" Text="@(enableIcons ? "Hide Icons" : "Show Icons")" OnClick="() => enableIcons = !enableIcons" />
             <Button Type="ButtonType.Secondary" Text="@(collapseAll ? "Expand All" : "Collapse All")" OnClick="HandleCollapseAll" />
         </div>
-        <Treeview Items="@tree" OnClick="HandleClick" OnExpanded="HandleExpanded" OnCollapsed="HandleCollapsed" EnableIcons="@enableIcons"/>
-        <div>Message: @((MarkupString)message)</div>
+        <div style="border: 1px solid var(--primary-border); border-radius: 6px; padding: 0.25rem; width: 329px; overflow: auto">
+            <Treeview Items="@tree" OnClick="HandleClick" OnExpanded="HandleExpanded" OnCollapsed="HandleCollapsed"
+                      EnableIcons="@enableIcons" OnContextMenu="x => HandleContextMenu(x)" OnContextMenuCancelled="() => showMenu = false" />
+
+            <MenuGroup Id="tvContextMenu" Items="@menu" OnSelect="HandleContextMenuSelection" Style="@style" Show="@showMenu" />
+        </div>
+        <div>Message: @((MarkupString)message!)</div>
     </div>
 </section>
 
@@ -24,7 +30,7 @@
         new(5,1,"Feature Resources Allocation", "description"),
         new(6,0,"Personal Documents", "folder_open") { AlternateIcon = "folder" },
         new(7,6,"Home Remodel", "folder_open") { AlternateIcon = "folder" },
-        new(8,7,"Contractor Contact Info", "description") { AlternateIcon = "check" },
+        new(8,7,"Contractor Contact Info", "description") { AlternateIcon = "check", Sequence = 1 },
         new(9,7,"Paint Color Scheme", "description"),
         new(10,7,"Flooring woodgran type", "description") { Disabled = true },
         new(11,7,"Kitchen cabinet style", "description"),
@@ -34,10 +40,10 @@
     {
         tree.ForEach(t => {
             t.Collapsed = false;
-            t.Style = t.IsParent ? "color:blueviolet;" : null;
+            t.Style = t.IsParent ? "color:var(--btn-primary-bg);" : null;
         });
     }
-    
+
     private void HandleCollapseAll()
     {
         collapseAll = !collapseAll;
@@ -50,4 +56,34 @@
     private void HandleExpanded(TreeviewModel model) => message = $"Expanded: <b>{model.Text}</b>";
 
     private void HandleCollapsed(TreeviewModel model) => message = $"Collapsed: <b>{model.Text}</b>";
+
+    // Context Menu specific
+
+    List<MenuItemOption> menu = [];
+    MenuItemOption? selectedMenu;
+    TreeviewModel? selectedNode;
+    bool showMenu;
+
+    protected override void OnInitialized()
+    {
+        menu.Add(new MenuItemOption("Cut"));
+        menu.Add(new MenuItemOption("Copy"));
+        menu.Add(new MenuItemOption("Paste"));
+    }
+
+    void HandleContextMenuSelection(MenuItemOption menu)
+    {
+        selectedMenu = menu;
+        showMenu = false;
+        message = $"ContextMenu: on <b>{selectedNode?.Text}</b> clicked on <b>{menu.Text}</b>";
+    }
+
+    string style = "";
+    async Task HandleContextMenu((MouseEventArgs args, TreeviewModel model) menu)
+    {
+        selectedNode = menu.model;
+        style = $"min-width: unset; max-width: 80px; opacity: 0";
+        showMenu = true;        
+        await be.SetPosition("#tvContextMenu", null, menu.args.ClientX, menu.args.ClientY);
+    }
 }
