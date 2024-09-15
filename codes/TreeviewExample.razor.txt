@@ -1,0 +1,53 @@
+<section class="flex-col">
+    <h2>Treeview</h2>    
+    <div class="flex-col">
+        <div class="flex">
+            <Button Type="ButtonType.Secondary" Text="@(enableIcons ? "Hide Icons" : "Show Icons")" OnClick="() => enableIcons = !enableIcons" />
+            <Button Type="ButtonType.Secondary" Text="@(collapseAll ? "Expand All" : "Collapse All")" OnClick="HandleCollapseAll" />
+        </div>
+        <Treeview Items="@tree" OnClick="HandleClick" OnExpanded="HandleExpanded" OnCollapsed="HandleCollapsed" EnableIcons="@enableIcons"/>
+        <div>Message: @((MarkupString)message)</div>
+    </div>
+</section>
+
+@code
+{
+    private bool enableIcons = true, collapseAll;
+
+    private string? message;
+
+    private List<TreeviewModel> tree = [
+        new(1,0,"Work Documents", "folder_open") { AlternateIcon = "folder" },
+        new(2,1,"XYZ Functional Spec", "description"),
+        new(3,1,"Feature Schedule", "description"),
+        new(4,1,"Overall Project Plan", "description"),
+        new(5,1,"Feature Resources Allocation", "description"),
+        new(6,0,"Personal Documents", "folder_open") { AlternateIcon = "folder" },
+        new(7,6,"Home Remodel", "folder_open") { AlternateIcon = "folder" },
+        new(8,7,"Contractor Contact Info", "description") { AlternateIcon = "check" },
+        new(9,7,"Paint Color Scheme", "description"),
+        new(10,7,"Flooring woodgran type", "description") { Disabled = true },
+        new(11,7,"Kitchen cabinet style", "description"),
+    ];
+
+    protected override void OnParametersSet()
+    {
+        tree.ForEach(t => {
+            t.Collapsed = false;
+            t.Style = t.IsParent ? "color:blueviolet;" : null;
+        });
+    }
+    
+    private void HandleCollapseAll()
+    {
+        collapseAll = !collapseAll;
+        foreach(var t in tree.Where(p => p.Collapsed != collapseAll))
+            t.Collapsed = collapseAll;
+    }
+
+    private void HandleClick(TreeviewModel model) => message = $"Clicked: <b>{model.Text}</b>";
+
+    private void HandleExpanded(TreeviewModel model) => message = $"Expanded: <b>{model.Text}</b>";
+
+    private void HandleCollapsed(TreeviewModel model) => message = $"Collapsed: <b>{model.Text}</b>";
+}

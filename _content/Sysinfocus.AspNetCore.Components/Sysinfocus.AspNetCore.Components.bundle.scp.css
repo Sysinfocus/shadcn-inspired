@@ -3057,6 +3057,102 @@ tbody.lastBorder[b-j45b6ih47o]  tr:last-child td {
     from { opacity: 0; visibility: collapse; transform: scale(0) translateY(0px); }
     to { opacity: 1; visibility: visible; transform: scale(1) translateY(calc(var(--height) + 4px));}
 }
+/* _content/Sysinfocus.AspNetCore.Components/Treeview.razor.rz.scp.css */
+.sbc-treeview[b-b2wsj9tslx] {
+    position: relative;
+    font-size: 14px;
+    width: fit-content;
+    overflow: auto;
+    user-select: none;
+}
+
+    .sbc-treeview[b-b2wsj9tslx]  ul {
+        margin-left: 0;
+        width: max-content;
+        list-style: none;
+    }
+
+    .sbc-treeview[b-b2wsj9tslx]  li {
+        white-space: nowrap;
+        padding: 0.5rem 2rem;
+        margin: 1px;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        transition: 300ms ease-in-out;
+        cursor: pointer;
+        color: var(--btn-secondary-fg);
+        outline: transparent;
+        max-width: calc(100% - 2px);
+        border-radius: 6px;
+    }
+
+.sbc-treeview[b-b2wsj9tslx]  li:not(.disabled):focus-visible,
+.sbc-treeview[b-b2wsj9tslx]  li:not(.disabled):hover {
+    color: var(--btn-secondary-fg);
+    background-color: var(--btn-secondary-bg);    
+    transition: 300ms ease-in-out;
+}
+
+.sbc-treeview[b-b2wsj9tslx]  ul ul {
+    padding-left: 2rem;
+    width: 100%;
+}
+
+.sbc-treeview[b-b2wsj9tslx]  .parent {
+    width: calc(100% + 1.25rem);
+    position: relative;
+    padding-left: 2.25rem;
+    font-weight: 500;
+    animation: expand-b-b2wsj9tslx 300ms ease-in-out forwards;
+}
+
+    .sbc-treeview[b-b2wsj9tslx]  .parent::before {
+        content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2224px%22%20viewBox%3D%220%20-960%20960%20960%22%20width%3D%2224px%22%20fill%3D%22%23666666%22%3E%3Cpath%20d%3D%22M480-344%20240-584l56-56%20184%20184%20184-184%2056%2056-240%20240Z%22%2F%3E%3C%2Fsvg%3E");
+        position: absolute;        
+        left: 0.25rem;
+        top: 50%;
+        transform: translateY(-40%) scale(0.9);
+        transition: 300ms ease-in-out;
+    }
+
+    .sbc-treeview[b-b2wsj9tslx]  .parent.collapse::before {
+        transform: rotate(-90deg) translateX(60%) scale(0.9);
+        transition: 300ms ease-in-out;
+    }
+
+    .sbc-treeview[b-b2wsj9tslx]  .parent.collapse + ul {
+        animation: collapse-b-b2wsj9tslx 300ms ease-in-out forwards;
+    }
+
+        .sbc-treeview[b-b2wsj9tslx]  .parent.collapse + ul li {
+            display: none;
+        }
+
+.sbc-treeview[b-b2wsj9tslx]  .disabled {
+    pointer-events: none;  
+    opacity: 0.5;
+    border-radius: 0.5rem;
+    transition: 300ms ease-in-out;
+}
+
+    .sbc-treeview[b-b2wsj9tslx]  span.material-symbols-outlined {
+        font-size: 18px;
+    }
+
+@keyframes expand-b-b2wsj9tslx {
+    to {
+        opacity: 1;
+        height: auto;
+    }
+}
+
+@keyframes collapse-b-b2wsj9tslx {
+    to {
+        opacity: 0;
+        height: 0;
+    }
+}
 /* _content/Sysinfocus.AspNetCore.Components/Video.razor.rz.scp.css */
 .sbc-video[b-owfw8plxlk] {
     position: relative;

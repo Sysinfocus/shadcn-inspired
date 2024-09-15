@@ -3,9 +3,9 @@
 <section class="flex-col">
     <h2>Maps</h2>
     <Maps Id="map" Latitude="39.0000" Longitude="34.0000" Zoom="3" Width="calc(100vw - 2rem)" Height="500px"
-            OnClick="HandleShow" ViewType="MapView.Esri_WorldStreetMap" />        
+            OnClick="HandleShow" OnMarkerMoved="HandleMarkerMoved" ViewType="MapView.Esri_WorldStreetMap" />        
     <div>
-        Showing the clicked co-ordinates: <b>@coords</b>
+        Showing the clicked co-ordinates: @((MarkupString)coords)
     </div>
     <div class="flex wrap">
         <Button Text="Topomap" OnClick="@(() => Map(MapView.Esri_WorldTopoMap))" />
@@ -25,6 +25,7 @@
 {
     private string? coords, error;
     private bool firstLocation = true;
+    private MapLocation? lastLocation;    
 
     private async Task ShowMarker() => await Maps.AddMarker(jsr, 28.644800, 77.216721, 10, "New Delhi, India", true);
     private async Task ShowCenterZoomed() => await Maps.Center(jsr, 28.644800, 77.216721);
@@ -33,7 +34,13 @@
 
     async Task HandleShow(MapLocation mapLocation)
     {
-        coords = $"{mapLocation.Latitude}, {mapLocation.Longitude}";
+        coords = $"<b>{Math.Round(mapLocation.Latitude,4)}, {Math.Round(mapLocation.Longitude,4)}</b>";
+        if (lastLocation is not null)
+        {
+            var kms = Math.Round(Geolocation.DistanceKilometers(lastLocation, mapLocation), 0);
+            var miles = Math.Round(Geolocation.DistanceMiles(lastLocation, mapLocation), 0);
+            coords += $" - the distance from your location is <b>~{kms} Kms</b> or <b>~{miles} Miles</b>";
+        }
         await InvokeAsync(StateHasChanged);
     }
 
@@ -45,6 +52,8 @@
 
     async Task HandleLocation(MapLocation mapLocation)
     {
+        if (mapLocation == lastLocation) return;
+        lastLocation = mapLocation;
         if (firstLocation)
         {
             await Task.Delay(500);
@@ -56,5 +65,10 @@
         {
             await Maps.AddMarker(jsr, mapLocation.Latitude, mapLocation.Longitude, 4, "Your location", true);
         }
+    }
+
+    private void HandleMarkerMoved(MapMarkerMovedLocation movedLocation)
+    {
+        Console.WriteLine(movedLocation);
     }
 }
