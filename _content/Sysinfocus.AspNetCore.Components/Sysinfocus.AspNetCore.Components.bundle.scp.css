@@ -1982,6 +1982,11 @@ hr[b-52fbtuz3y3] {
     min-width: 36px;
     text-align: center;
 }
+    .sbc-pagination[b-eeewzadjmu]  button.small {
+        padding: 8px;
+        min-width: 28px;
+        text-align: center;
+    }
 /* _content/Sysinfocus.AspNetCore.Components/Popover.razor.rz.scp.css */
 .sbc-popover[b-6a62xt4hpz] {
     --from: 100%;
