@@ -5,14 +5,14 @@
     <div class="flex-col">
         @if (pagedData is not null)
         {
-            <DataTable Items="@pagedData" TItem="DataItem" Height="calc(100vh - 190px)" ShowSelectAll OnSelectAll="x => HandleSelectAll(x)">
+            <DataTable Items="@pagedData" TItem="DataItem" Height="calc(100vh - 190px)" ShowVerticalBorder ShowSelectAll OnSelectAll="x => HandleSelectAll(x)">
                 <DataColumns>
-                    <DataTableColumn>
+                    <DataTableColumn Freeze="0px" Width="40px" Style="z-index: 2">
                         <Template>
                             <Checkbox Checked="@context.Selected" OnClick="@(() => HandleSelect(@context))" />
                         </Template>
                     </DataTableColumn>
-                    <DataTableColumn Property="d => d.Id" Header="Actions" Width="75px" Align="Alignment.Center">
+                    <DataTableColumn Freeze="40px" Property="d => d.Id" Header="Actions" Width="75px" Align="Alignment.Center">
                         <Template>
                             <div class="flex ai-c">
                                 <Icon Name="delete" Tooltip="Delete" Size="18px" Color="red" OnClick="() => HandleDelete(context)" />
