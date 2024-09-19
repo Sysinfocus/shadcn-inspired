@@ -1,0 +1,14 @@
+<section class="flex-col">
+    <h2>Verify Human</h2>
+    <div class="flex jcc aic">
+        <VerifyHuman OnSuccess="HandleSuccess" OnFailure="HandleFailure" />
+    </div>
+    <p>Message: <b>@message</b></p>
+</section>
+
+@code
+{    
+    private string? message;
+    private void HandleSuccess() => message = "Verification successful.";
+    private void HandleFailure() => message = "Verification failed.";
+}
