@@ -1,0 +1,76 @@
+<section class="flex-col">
+    <h2>Text-to-Speech</h2>
+    <div class="flex-col">
+        <Textarea Placeholder="Type your text here to convert it to speech..." @bind-Text="@text" Rows="10" />
+        <div class="flex wrap g8">
+            @if (voices is not null)
+            {
+                <Select Items="@voices" Placeholder="Choose voice..." Width="200px" ListWidth="fit-content" TItem="string" Display="x => x.ToString()" SelectedItem="@selectedVoice" OnItemSelect="HandleVoiceChange" />
+            }
+            <Button Text="@(isPaused ? "Resume" : isSpeaking ? "Pause" : "Play")" OnClick="HandlePlayPause" />
+            @if (isSpeaking)
+            {
+                <Button Text="Stop" OnClick="HandleStop" />
+            }
+        </div>
+        <TextToSpeech @ref="@textToSpeech" Voice="@voice" Text="@text" OnSpeechEnd="HandleStop" />
+    </div>
+</section>
+
+@code
+{
+    TextToSpeech? textToSpeech;
+    string? text = "Blazor is a modern front-end web framework based on HTML, CSS, and C# that helps you build web apps faster.";
+    bool isSpeaking, isPaused;
+    int voice = 0;
+    string[]? voices = null;
+    string? selectedVoice;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (voices is null) await GetVoices();
+    }
+
+    async Task HandlePlayPause()
+    {
+        if (textToSpeech is null) return;
+
+        if (isSpeaking && !isPaused)
+        {
+            await textToSpeech.Pause();
+            isPaused = true;
+        }
+        else if (isSpeaking)
+        {
+            await textToSpeech.Resume();
+            isPaused = false;
+        }
+        else
+        {
+            await textToSpeech.Speak();
+            isSpeaking = true;
+        }
+    }
+
+    async Task GetVoices()
+    {
+        if (textToSpeech is null) return;
+        voices = await textToSpeech.GetVoices();
+        selectedVoice = voices[0];
+        voice = Array.FindIndex(voices!, x => x == selectedVoice);
+    }
+
+    void HandleVoiceChange(string v)
+    {
+        selectedVoice = v;
+        voice = Array.FindIndex(voices!, x => x == selectedVoice);        
+    }
+
+    async Task HandleStop()
+    {
+        if (textToSpeech is null) return;
+        await textToSpeech.Stop();
+        isSpeaking = false;
+        isPaused = false;
+    }
+}

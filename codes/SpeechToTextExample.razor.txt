@@ -1,0 +1,50 @@
+@using System.Text
+
+<section class="flex-col">
+    <div class="flex-col g8">
+        <h2>Speech-to-Text</h2>
+        @* <p>Note: Starting words are skipped sometimes and adding '\' and space in the beginning seems to fix the issue.</p> *@
+    </div>
+    <div class="flex-col">
+        <Textarea Placeholder="Type your text here to convert it to speech..." @bind-Text="@text" Rows="15" Style="width:100%" />
+        <Switch Label="Listing Continuous" Checked="@isContinuous" OnClick="x => isContinuous = x" />
+        <div class="flex wrap g8">            
+            @if (!isListening) { <Button Text="Start Listening" OnClick="HandleListening" /> }
+            else { <Button Text="Stop" OnClick="HandleStop" /> }            
+        </div>
+        <SpeechToText @ref="@speechToText" Continuous="@isContinuous" OnSpeechEnd="HandleStopListening" OnSpeechRecognized="HandleSpeech" />
+    </div>
+</section>
+
+@code
+{
+    private SpeechToText? speechToText;
+    private string? text;
+    private bool isListening;
+    private bool isContinuous;
+
+    private async Task HandleListening()
+    {
+        text = null;
+        await speechToText?.StartListening()!;
+        isListening = true;
+    }    
+
+    private void HandleSpeech(string? value)
+    {
+        if (value is null) return;
+        text = value;
+    }
+
+    private async Task HandleStop()
+    {        
+        await speechToText?.StopListening()!;
+        isListening = false;
+    }
+
+    private void HandleStopListening()
+    {        
+        isListening = false;
+    }
+    
+}
