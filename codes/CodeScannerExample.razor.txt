@@ -1,7 +1,11 @@
 <section class="flex-col">
     <h2>Code Scanner</h2>
-    <div class="flex">
-        <CodeScanner OnCodeDetected="x => result = x" OnError="x => error = x" />
+    <div class="flex jcsb">
+        <Checkbox Label="Start automatically next time" Checked="@autoStart" OnClick="Update" />
+        <Button Text="Toggle Controls" OnClick="() => showControls = !showControls" />
+    </div>
+    <div class="flex-col">
+        <CodeScanner OnCodeDetected="x => result = x" OnError="x => error = x" StartCamera="@startCamera" Controls="@showControls" Width="100%" />
     </div>
     <p>Detected code: <b>@result</b></p>
     <p style="color: red">Error: <b>@error</b></p>
@@ -9,5 +13,26 @@
 
 @code
 {
+    bool startCamera = false, autoStart = false, showControls = false;    
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var cameraStart = bool.Parse(await be.GetFromLocalStorage("cameraAutoStart") ?? "false");
+            if (cameraStart)
+            {
+                startCamera = true;
+                autoStart = true;
+            }
+        }
+    }
+
+    private async Task Update(bool status)
+    {
+        autoStart = !autoStart;
+        await be.SetToLocalStorage("cameraAutoStart", autoStart ? "true" : "false");
+    }
+
     string? result, error;
 }
