@@ -1534,6 +1534,85 @@ hr[b-52fbtuz3y3] {
             border: 1px solid var(--primary-border);
             padding: 8px;
         }
+/* _content/Sysinfocus.AspNetCore.Components/FileManager.razor.rz.scp.css */
+.sbc-file-manager[b-9x2eenk5wh] {
+    position: relative;
+    border: 1px solid var(--primary-border);
+    border-radius: 0.5rem;
+    overflow: auto;
+    user-select: none;
+    width: 100%;
+    outline: transparent;
+}
+
+.sbc-file-items[b-9x2eenk5wh] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    align-content: flex-start;
+    padding: 0.5rem;
+}
+
+.sbc-file-item[b-9x2eenk5wh] {
+    width: 100px;
+    height: 120px;
+    text-align: center;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: 300ms ease-in-out;
+    cursor: default;
+}
+
+.sbc-file-manager img[b-9x2eenk5wh] {
+    width: 40px;
+    height: 40px;
+    object-fit: contain
+}
+
+.sbc-file-manager p[b-9x2eenk5wh] {
+    font-size: 13px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.75;
+}
+
+.sbc-file-item:focus-within[b-9x2eenk5wh],
+.sbc-file-item:focus-visible[b-9x2eenk5wh],
+.sbc-file-item:active[b-9x2eenk5wh],
+.sbc-file-item:hover[b-9x2eenk5wh],
+.sbc-file-item-list:focus-within[b-9x2eenk5wh],
+.sbc-file-item-list:focus-visible[b-9x2eenk5wh],
+.sbc-file-item-list:active[b-9x2eenk5wh],
+.sbc-file-item-list:hover[b-9x2eenk5wh] {
+    background-color: var(--toggle-bg);
+    outline: transparent;
+}
+
+    .sbc-file-item:focus-within[b-9x2eenk5wh],
+    .sbc-file-item:focus-visible[b-9x2eenk5wh],
+    .sbc-file-item:active[b-9x2eenk5wh],
+    .sbc-file-item:hover p[b-9x2eenk5wh],
+    .sbc-file-item-list:focus-within[b-9x2eenk5wh],
+    .sbc-file-item-list:focus-visible[b-9x2eenk5wh],
+    .sbc-file-item-list:active[b-9x2eenk5wh],
+    .sbc-file-item-list:hover p[b-9x2eenk5wh] {
+        opacity: 1
+    }
+
+.list-icon[b-9x2eenk5wh] {
+    width: 18px !important;
+    height: 18px !important;
+    object-fit: contain
+}
 /* _content/Sysinfocus.AspNetCore.Components/FileUpload.razor.rz.scp.css */
 .sbc-fileupload[b-emlxcnw45e] {
 	position: relative;

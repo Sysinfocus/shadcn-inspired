@@ -1,0 +1,72 @@
+﻿<section class="flex-col">
+    <div class="flex jcsb aic">
+        <div class="flex-col g4">
+            <h2>File Manager</h2>
+            <small class="muted-color">This component is under development.</small>
+        </div>
+        <Button Icon="@(showList ? "apps" : "list")" Tooltip="Toggle Icon/List view" Type="ButtonType.Icon" OnClick="() => showList = !showList" />
+    </div>
+    <div class="flex">
+        <FileManager Items="@files" ShowAsList="@showList" OnContextMenu="x => HandleContextMenu(x)" OnContextMenuCancelled="() => showMenu = false" />
+    </div>
+    <MenuGroup Id="tvContextMenu" Items="@menu" OnSelect="HandleContextMenuSelection" Style="@style" Show="@showMenu" />
+</section>
+
+@code
+{
+    private List<Files> files = new();
+    private bool showList;
+    protected override async Task OnInitializedAsync()
+    {
+        var folder = "https://www.svgrepo.com/show/474852/folder.svg";
+        var img = "https://www.svgrepo.com/show/216563/image-photo.svg";
+
+        files = [
+            new(1, "Camera Roll", new(2024,10,7,0,0,0), "Folder", folder, 0),
+            new(2, "Saved Pictures", new(2024,10,7,0,0,0), "Folder", folder, 0),
+            new(3, "Screenshots", new(2024,10,7,0,0,0), "Folder", folder, 0),
+            new(4, "20230305_182223.jpg", new(2024,10,7,0,0,0), "JPG", img, 913),
+            new(5, "Desktop Wallpaper - Large-01.jpg", new(2024,10,7,0,0,0), "JPG", img, 3758),
+            new(6, "Desktop Wallpaper - Large-02.jpg", new(2024,10,7,0,0,0), "JPG", img, 1217),
+            new(7, "Desktop Wallpaper - Large-03.jpg", new(2024,10,7,0,0,0), "JPG", img, 1248),
+            new(8, "Desktop Wallpaper - Large-04.jpg", new(2024,10,7,0,0,0), "JPG", img, 903),
+            new(9, "Camera Roll (1)", new(2024,10,7,0,0,0), "Folder", folder, 0),
+            new(10, "Saved Pictures (1)", new(2024,10,7,0,0,0), "Folder", folder, 0),
+            new(11, "Screenshots (1)", new(2024,10,7,0,0,0), "Folder", folder, 0),
+            new(12, "20230305_182223.jpg (1)", new(2024,10,7,0,0,0), "JPG", img, 913),
+            new(13, "Desktop Wallpaper - Large-01.jpg (1)", new(2024,10,7,0,0,0), "JPG", img, 3758),
+            new(14, "Desktop Wallpaper - Large-02.jpg (1)", new(2024,10,7,0,0,0), "JPG", img, 1217),
+            new(15, "Desktop Wallpaper - Large-03.jpg (1)", new(2024,10,7,0,0,0), "JPG", img, 1248),
+            new(16, "Desktop Wallpaper - Large-04.jpg (1)", new(2024,10,7,0,0,0), "JPG", img, 903),
+        ];
+    }
+
+    // Context Menu specific
+
+    List<MenuItemOption> menu = [];
+    MenuItemOption? selectedMenu;
+    Files? selectedNode;
+    bool showMenu;
+
+    protected override void OnInitialized()
+    {
+        menu.Add(new MenuItemOption("Cut"));
+        menu.Add(new MenuItemOption("Copy"));
+        menu.Add(new MenuItemOption("Paste"));
+    }
+
+    void HandleContextMenuSelection(MenuItemOption menu)
+    {
+        selectedMenu = menu;
+        showMenu = false;
+    }
+
+    string style = "";
+    async Task HandleContextMenu((MouseEventArgs args, Files model) menu)
+    {
+        selectedNode = menu.model;
+        style = $"min-width: unset; max-width: 80px; opacity: 0";
+        showMenu = true;
+        await be.SetPosition("#tvContextMenu", null, menu.args.ClientX, menu.args.ClientY);
+    }
+}
