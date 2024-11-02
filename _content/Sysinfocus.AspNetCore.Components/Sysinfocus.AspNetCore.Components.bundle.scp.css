@@ -2223,6 +2223,78 @@ hr[b-52fbtuz3y3] {
         height: 5px;
         background: var(--primary-border);
     }
+/* _content/Sysinfocus.AspNetCore.Components/Scheduler.razor.rz.scp.css */
+.sbc-scheduler[b-i4xv79ku48] {
+    position: relative;
+    user-select: none;
+    border: 1px solid var(--primary-border);
+    border-radius: 0.5rem;
+    overflow: auto;
+}
+
+.sbc-scheduler[b-i4xv79ku48]  table {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    border-collapse: collapse;
+    border: none;
+    border-radius: 0.5rem
+}
+
+.sbc-scheduler[b-i4xv79ku48]  thead {
+    font-size: 0.8rem;
+    position: sticky;
+    top: 0;
+    background-color: var(--btn-secondary-bg);
+}
+
+    .sbc-scheduler[b-i4xv79ku48]  th {
+        z-index: 100 !important;
+        position: sticky;
+        top: 0;
+        font-weight: normal !important;
+        border-bottom: 1px solid var(--primary-border);
+        border-right: 1px solid var(--primary-border);
+        padding: 1rem
+    }
+
+    .sbc-scheduler[b-i4xv79ku48]  td {
+        z-index: 0;
+        border-bottom: 1px solid var(--primary-border);
+        border-right: 1px solid var(--primary-border);
+        padding: 1rem;
+        vertical-align: top;
+        transition: 300ms ease-in-out
+    }
+
+    .sbc-scheduler[b-i4xv79ku48]  thead th {
+        border-top: none;
+    }
+
+[b-i4xv79ku48] .time {
+    font-size: 0.8rem;
+    opacity: 0.75;
+    width: fit-content;
+}
+
+.sbc-scheduler td:hover[b-i4xv79ku48],
+.sbc-scheduler td:focus-visible[b-i4xv79ku48] {
+    background-color: var(--toggle-bg);
+    filter: opacity(0.5);
+    outline: transparent;
+}
+
+[b-i4xv79ku48] tr.currentTime td:is(:empty) {
+    background-color: var(--btn-primary-bg);
+    filter: opacity(0.15);
+}
+
+[b-i4xv79ku48] td.mark,
+[b-i4xv79ku48] tr.currentTime td.mark {
+    background-color: var(--btn-primary-bg) !important;
+    filter: opacity(0.25) !important;
+    outline: transparent;
+}
 /* _content/Sysinfocus.AspNetCore.Components/ScrollArea.razor.rz.scp.css */
 .sbc-scroll-area-vertical[b-epyu621z5b] {
     display: flex;

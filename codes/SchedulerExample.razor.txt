@@ -1,0 +1,26 @@
+<section class="flex-col">
+    <div class="flex-col g4">
+        <h2>Scheduler</h2>
+        <p>This component is under development.</p>
+    </div>
+    <div class="flex-col">
+        <div class="flex">
+            <Button Text="Today" OnClick="() => startDate = DateTime.Now" Type="ButtonType.Secondary" />
+            <div class="flex g4">
+                <Button Icon="chevron_left" Type="ButtonType.Icon" OnClick="() => startDate = startDate.AddDays(-7)" />
+                <Button Icon="chevron_right" Type="ButtonType.Icon" OnClick="() => startDate = startDate.AddDays(7)" />
+            </div>
+            <Button Text="@(viewType == ViewType.WorkWeek ? "Week" : "WorkWeek")" OnClick="@(() => viewType = viewType == ViewType.Week ? ViewType.WorkWeek : ViewType.Week)" />
+            <b>@startDate.ToString("MMMM dd")-@startDate.AddDays(getDays()).ToString("dd, yyyy")</b>
+        </div>
+        <Scheduler Type="@viewType" Start="@startDate" />
+    </div>
+</section>
+
+@code
+{
+    ViewType viewType = ViewType.WorkWeek;
+    DateTime startDate = DateTime.Now;
+
+    private int getDays() => viewType == ViewType.WorkWeek ? 4 : 6;
+}
