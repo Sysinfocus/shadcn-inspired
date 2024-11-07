@@ -38,8 +38,9 @@
 
 .sbc-accordion-item-header:hover[b-yn8kze91g8] {
     cursor: pointer;
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    opacity: 0.75;
+/*    text-decoration: underline;
+    text-underline-offset: 4px;*/
 }
 
 .sbc-accordion-item-content[b-yn8kze91g8] {
@@ -53,7 +54,7 @@
 
 
     .sbc-accordion-item-content.hide[b-yn8kze91g8] {
-        animation: hide-b-yn8kze91g8 300ms linear forwards;        
+        animation: hide-b-yn8kze91g8 1ms linear forwards;        
     }
 
 @keyframes show-b-yn8kze91g8 {
@@ -72,11 +73,11 @@
 @keyframes hide-b-yn8kze91g8 {
     from {
         opacity: 1;
-        height: var(--minHeight);
+        height: auto;
     }
     to {
         opacity: 0;
-        height: 0px;
+        height: 0;
         pointer-events: none;
         margin-bottom: 0;
     }
@@ -833,8 +834,9 @@
 
     .sbc-checkbox label[b-ix9et0c73c] {
         font-size: 14px;
-        font-weight: 500;        
+        font-weight: 500;
         outline: transparent;
+        border: 1px dotted transparent;
     }
 
         .sbc-checkbox label:focus-within[b-ix9et0c73c],
