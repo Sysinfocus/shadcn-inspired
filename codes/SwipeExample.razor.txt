@@ -1,0 +1,42 @@
+<style>
+    .oa { overflow: auto }
+    .oh { overflow: hidden }
+    .p1 { padding: 1rem }
+    .pl-0 { padding-left: 0 }
+    .pr-0 { padding-right: 0 }
+    .pt-0 { padding-top: 0 }
+    .pb-0 { padding-bottom: 0 }
+    .bcl { background-color: var(--primary-border) }
+    .p { margin-bottom: 1rem; line-height: 1.5rem }
+</style>
+<section class="flex-col">
+    <div class="flex-col g4">
+        <h2>Swipe</h2>
+        <p class="muted">This component is useful in mobile applications where swipe gestures can be utilized to perform desired actions.</p>
+        <p class="muted">Below example displays whether you swiped to Top, Bottom, Left or Right with the text below. The events are fired so that can be used to perform actions accordingly.</p>
+    </div>
+    <div class="flex">
+        <Swipe OnSwipeTop="@(_ => message = "You swiped to <b>Top</b>")"
+               OnSwipeBottom="@(_ => message = "You swiped to <b>Bottom</b>")"
+               OnSwipeLeft="@(_ => message = "You swiped to <b>Left</b>")"
+               OnSwipeRight="@(_ => message = "You swiped to <b>Right</b>")">
+            <div class="flex-col oa" style="border: 1px solid var(--primary-border); border-radius: 1rem; max-width: 375px; width: 100%; max-height: 550px; height: 100%">
+                <h3 class="p1 bcl">What is Artificial Intelligence (AI)?</h3>
+                <div class="f1 oa p1 pb-0 pt-0">
+                    <p class="p">Artificial intelligence is a field of science concerned with building computers and machines that can reason, learn, and act in such a way that would normally require human intelligence or that involves data whose scale exceeds what humans can analyze.</p>
+                    <p class="p">AI is a broad field that encompasses many different disciplines, including computer science, data analytics and statistics, hardware and software engineering, linguistics, neuroscience, and even philosophy and psychology.</p>
+                    <p class="p">On an operational level for business use, AI is a set of technologies that are based primarily on machine learning and deep learning, used for data analytics, predictions and forecasting, object categorization, natural language processing, recommendations, intelligent data retrieval, and more.</p>
+                </div>
+                <p class="p1 bcl">Learn about <a href="https://cloud.google.com/discover/what-is-deep-learning" target="_blank">Deep Learning</a></p>
+            </div>
+        </Swipe>
+    </div>
+    <div>
+        @((MarkupString)message)
+    </div>
+</section>
+
+@code
+{
+    string? message = null;    
+}
