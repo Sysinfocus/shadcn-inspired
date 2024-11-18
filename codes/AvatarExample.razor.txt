@@ -1,7 +1,7 @@
 ﻿<section class="flex-col">
     <h2>Avatar</h2>
     <div class="flex">
-        <Avatar ImageUrl="https://avatars.githubusercontent.com/u/124599?v=4" Name="Some Person" />
+        <Avatar ImageUrl="https://img.freepik.com/free-psd/3d-render-avatar-character_23-2150611765.jpg" Name="Some Person" />
         <Avatar Name="R H" Background="seagreen" />
         <Avatar Name="R H" Size="AvatarSize.Small" Foreground="gold" />
         <Avatar Name="P H" Size="AvatarSize.Large" Disabled />
