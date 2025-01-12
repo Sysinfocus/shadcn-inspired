@@ -2689,39 +2689,71 @@ span.message[b-p0e6o0899p] {
 }
 /* _content/Sysinfocus.AspNetCore.Components/Slider.razor.rz.scp.css */
 .sbc-slider[b-31m14i83ff] {
+    --accent-color: var(--btn-primary-bg);
     --width: 0%;
     position: relative;
-    width: 100%;
-    height: 8px;
-    border-radius: 8px;
-    background-color: var(--primary-border);
 }
 
     .sbc-slider input[b-31m14i83ff] {
-        appearance: none;        
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 8px;
         width: 100%;
-        background-color: transparent;
-        outline: transparent;        
+        background-color: var(--primary-border);
+        border-radius: 8px;
+        outline: transparent;
+        appearance: none;
+        outline: transparent;
     }
 
         .sbc-slider input[b-31m14i83ff]::-webkit-slider-thumb {
             appearance: none;
+            margin-top: -4px;
+            background-color: var(--accent-color);
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            margin-top: -12px;
-            border: 1px solid var(--medium-text);
-            background-color: var(--medium-text) !important;
-            z-index: 2;
+            border: 1px solid transparent;
+            z-index: 9999;
             transition: 200ms ease-in-out;
         }
-        .sbc-slider input:focus[b-31m14i83ff]::-webkit-slider-thumb {
-            box-shadow: 0 0 12px 0 var(--medium-text);
+
+        .sbc-slider input[b-31m14i83ff]::-moz-range-thumb {
+            appearance: none;
+            margin-top: -4px;
+            background-color: var(--accent-color);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            z-index: 9999;
+            transition: 200ms ease-in-out;
+        }
+
+        .sbc-slider input:not(:disabled):hover[b-31m14i83ff]::-webkit-slider-thumb,
+        .sbc-slider input:not(:disabled):focus[b-31m14i83ff]::-webkit-slider-thumb {
+            box-shadow: 0 0 12px 0 var(--accent-color);
+            border-color: var(--accent-color);
+            background-color: var(--accent-color) !important;
+            cursor: pointer;
+        }
+
+        .sbc-slider input:not(:disabled):hover[b-31m14i83ff]::-moz-range-thumb,
+        .sbc-slider input:not(:disabled):focus[b-31m14i83ff]::-moz-range-thumb {
+            box-shadow: 0 0 12px 0 var(--accent-color);
+            border-color: var(--accent-color);
+            background-color: var(--accent-color) !important;
+            cursor: pointer;
         }
 
         .sbc-slider input[b-31m14i83ff]::-webkit-slider-runnable-track {
             height: 8px;
-            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .sbc-slider input[b-31m14i83ff]::-moz-range-track {
+            height: 8px;
             cursor: pointer;
         }
 
@@ -2731,8 +2763,9 @@ span.message[b-p0e6o0899p] {
     top: 0;
     height: 100%;
     width: var(--width);
-    z-index: 1;
-    background-color: var(--medium-text);
+    max-width: 100%;
+    z-index: 0;
+    background-color: var(--accent-color);
     height: 8px;
     border-radius: 8px;
     pointer-events: none;

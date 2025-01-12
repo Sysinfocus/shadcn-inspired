@@ -1,0 +1,12 @@
+<section class="flex-col">
+    <div class="flex-col g4">
+        <h2>AI Chat</h2>
+        <p class="muted">Uses <b>Ollama</b> and <b>@modelName</b> model. Type <b>clear</b> to restart.</p>
+    </div>
+    <AIChat Height="calc(100vh - 150px)" Width="100%" Model="@modelName" />
+</section>
+
+@code
+{
+    private string modelName = "llama3.2:1b";    
+}
