@@ -2,7 +2,7 @@
 a Razor component library for Blazor, inspired by the shadcn/ui components.
 
 ## Setup Instructions
-This is being updated. Please check out this section later. Thank you.
+There are setup instructions and sample projects both for .NET8 and .NET9 at this [Repo](https://github.com/Sysinfocus/simple-ui)
 
 
 [![pages-build-deployment](https://github.com/Sysinfocus/shadcn-inspired/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Sysinfocus/shadcn-inspired/actions/workflows/pages/pages-build-deployment)
