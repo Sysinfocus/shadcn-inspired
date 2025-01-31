@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title>Sysinfocus simple/ui - Blazor Components inspired by shadcn/ui</title>
@@ -16,62 +17,145 @@
     <link href="_content/Sysinfocus.AspNetCore.Components/styles.css" rel="stylesheet" />
     <link href="_content/Sysinfocus.AspNetCore.Components/Sysinfocus.AspNetCore.Components.bundle.scp.css" rel="stylesheet" />
     <link href="_content/Sysinfocus.AspNetCore.Components.AIChat/Sysinfocus.AspNetCore.Components.AIChat.bundle.scp.css" rel="stylesheet" />
+    <script type="text/javascript">
+        if (location.href.indexOf("github") >= 0) {
+            document.querySelector("base").href = "/shadcn-inspired/";
+            // Single Page Apps for GitHub Pages
+            // MIT License
+            // https://github.com/rafgraph/spa-github-pages
+            // This script checks to see if a redirect is present in the query string,
+            // converts it back into the correct url and adds it to the
+            // browser's history using window.history.replaceState(...),
+            // which won't cause the browser to attempt to load the new url.
+            // When the single page app is loaded further down in this file,
+            // the correct url will be waiting in the browser's history for
+            // the single page app to route accordingly.
+
+            (function(l) {
+             if (l.search[1] === '/' ) {
+              var decoded = l.search.slice(1).split('&').map(function(s) {
+              return s.replace(/~and~/g, '&')
+              }).join('?');
+              window.history.replaceState(null, null,
+                  l.pathname.slice(0, -1) + decoded + l.hash
+               );
+              }
+             }(window.location))
+         }
+    </script>
 </head>
+
 <body>
     <div id="app">
-        <div class="container"><div class="header-wrapper"><div class="header-overlay"></div>
-        <div class="header-content"><div class="flex g4 aic"><button type="button" id="btn-9e689f9f-df72-4635-8cf8-0d251e456dd4" class="sbc-button icon regular nostyle " style="width:36px; " b-dxlcnpbuql=""><span class="material-symbols-outlined" b-dxlcnpbuql="">close</span></button><a class="flex g4" href="." style="text-decoration: none; color: inherit; align-items: center"><div class="large desktop normal">Sysinfocus </div><div class="large normal" style="color: var(--btn-primary-bg)">simple/ui</div></a></div>
-            <div class="flex g4 aic"><div class="sbc-avatar tiny " style="background-color: black; color: black" title="Default" b-0d20zdvh5e="">D</div>
-                <div class="sbc-avatar tiny " style="background-color: royalblue; color: royalblue" title="Royalblue" b-0d20zdvh5e="">R</div>
-                <div class="sbc-avatar tiny " style="background-color: crimson; color: crimson" title="Crimson" b-0d20zdvh5e="">C</div>
-                <div class="sbc-avatar tiny " style="background-color: seagreen; color: seagreen" title="Seagreen" b-0d20zdvh5e="">S</div>
-                <div class="sbc-avatar tiny " style="background-color: orange; color: orange" title="Orange" b-0d20zdvh5e="">O</div>
-                <div class="sbc-avatar tiny " style="background-color: magenta; color: magenta" title="Orange" b-0d20zdvh5e="">O</div>
-                <button type="button" id="btn-e5f72fc3-5f22-4e1c-9db5-f1f274aa58aa" class="sbc-button icon small nostyle rounded " style="width:36px;width: 0 " title="Toggle Theme" b-dxlcnpbuql=""><span class="material-symbols-outlined" b-dxlcnpbuql="">light_mode</span></button></div></div></div>
-    <main><div class="menu" style="position: fixed"><b>Components</b><a href="Examples/AccordionExample" class="menu-item ">Accordion</a><a href="Examples/ActivityLogExample" class="menu-item ">Activity Log<span id="icon-e009e3b0-362c-4ead-9dc8-40eeb32f8140" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/AlertExample" class="menu-item ">Alert</a><a href="Examples/AlertDialogExample" class="menu-item ">Alert Dialog<span id="icon-e8570e8d-2bad-49ec-8f7c-5981538100f4" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/AspectRatioExample" class="menu-item ">Aspect Ratio</a><a href="Examples/AvatarExample" class="menu-item ">Avatar</a><a href="Examples/BadgeExample" class="menu-item ">Badge</a><a href="Examples/BarcodeQRCodeExample" class="menu-item ">Barcode QRCode<span id="icon-e0e85109-f404-44a5-a26d-ee45a06e637a" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/BreadcrumbExample" class="menu-item ">Breadcrumb</a><a href="Examples/ButtonExample" class="menu-item ">Button</a><a href="Examples/CalendarExample" class="menu-item ">Calendar<span id="icon-4e7b0553-8e2f-4b9e-acf8-ba57775c38cc" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/CardExample" class="menu-item ">Card</a><a href="Examples/CarouselExample" class="menu-item ">Carousel</a><a href="Examples/ChartExample" class="menu-item ">Chart<span id="icon-e9c28237-f112-4bad-8b2c-d8aedafd9915" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/CheckboxExample" class="menu-item ">Checkbox</a><a href="Examples/CodeScannerExample" class="menu-item ">Code Scanner<span id="icon-c87cf67c-ed3b-4643-bf1b-2f33531fae6d" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/CollapsibleExample" class="menu-item ">Collapsible</a><a href="Examples/ComboboxExample" class="menu-item ">Combobox<span id="icon-4fece61f-997b-4e00-be4b-1539c9ffe9a9" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/CommandExample" class="menu-item ">Command<span id="icon-a3410b8d-e87e-4eb7-8614-3d9b6407d3fd" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/ContextMenuExample" class="menu-item ">Context Menu<span id="icon-75272c80-ebba-4d43-b65b-e3d487900f25" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/DataTableExample" class="menu-item ">Data Table<span id="icon-36a3785e-6843-48d8-9403-d7a0d5b274d4" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/DatePickerExample" class="menu-item ">Date Picker<span id="icon-2796084b-a5f1-475b-a48e-4b5fef973b19" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/DialogExample" class="menu-item ">Dialog</a><a href="Examples/DocumentViewerExample" class="menu-item ">Document Viewer<span id="icon-39709924-5e63-42f5-a09e-3fbd1f0517d8" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/DrawerExample" class="menu-item ">Drawer<span id="icon-fb060c8b-c463-4c64-871a-8b5bef47f4aa" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/DropdownMenuExample" class="menu-item ">Dropdown Menu</a><a href="Examples/EditorExample" class="menu-item ">Editor<span id="icon-6d3ba9ec-426e-457a-8753-5994b5b5a1d6" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/ExcelReaderExample" class="menu-item ">Excel Reader<span id="icon-8d3b0212-3078-44e9-8fb5-09f58c8a2441" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/FileManagerExample" class="menu-item ">File Manager<span id="icon-0df518a4-b41e-4b34-80d0-d343e823de1f" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/FileUploadExample" class="menu-item ">File Upload<span id="icon-96a65ca7-7e90-479b-b835-79e7dce6d781" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/FormExample" class="menu-item ">Form</a><a href="Examples/HoverCardExample" class="menu-item ">Hover Card</a><a href="Examples/InputExample" class="menu-item ">Input</a><a href="Examples/InputOTPExample" class="menu-item ">Input OTP</a><a href="Examples/LabelExample" class="menu-item ">Label</a><a href="Examples/LottieExample" class="menu-item ">Lottie<span id="icon-7ebeccdb-7ee0-4dec-bda1-ec2343e27665" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/MapsExample" class="menu-item ">Maps<span id="icon-aec8954e-1755-4e1a-b000-94ab075af0bd" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/MenubarExample" class="menu-item ">Menubar<span id="icon-1d6cad1d-9158-44c1-b957-02c3c1aa7333" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/NavigationMenuExample" class="menu-item ">Navigation Menu</a><a href="Examples/PaginationExample" class="menu-item ">Pagination</a><a href="Examples/PopoverExample" class="menu-item ">Popover</a><a href="Examples/ProgressExample" class="menu-item ">Progress</a><a href="Examples/RadioGroupExample" class="menu-item ">Radio Group</a><a href="Examples/ResizableExample" class="menu-item ">Resizable</a><a href="Examples/SaveFilePickerExample" class="menu-item ">Save File Picker</a><a href="Examples/SchedulerExample" class="menu-item ">Scheduler<span id="icon-91cb8fc8-4117-44e1-a84d-fc57ddfa2d64" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/ScrollAreaExample" class="menu-item ">Scroll Area</a><a href="Examples/SelectExample" class="menu-item ">Select</a><a href="Examples/SeparatorExample" class="menu-item ">Separator</a><a href="Examples/SheetExample" class="menu-item ">Sheet<span id="icon-faff944b-271f-4cbf-b4ca-8f6d97fe6dae" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/SkeletonExample" class="menu-item ">Skeleton</a><a href="Examples/SignatureExample" class="menu-item ">Signature<span id="icon-9332f399-d707-4f32-a63f-6045172b2a0f" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/SliderExample" class="menu-item ">Slider</a><a href="Examples/SonnerExample" class="menu-item ">Sonner</a><a href="Examples/SortableExample" class="menu-item ">Sortable<span id="icon-36685b4d-c41b-4d16-9fd7-dec853d65069" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/SpeechToTextExample" class="menu-item ">Speech To Text</a><a href="Examples/SwipeExample" class="menu-item ">Swipe<span id="icon-deb1ea80-06b5-4901-820d-f685bb94557c" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/SwitchExample" class="menu-item ">Switch</a><a href="Examples/TableExample" class="menu-item ">Table</a><a href="Examples/TabsExample" class="menu-item ">Tabs<span id="icon-72b32d93-fab5-4402-beeb-cc70db8008b4" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/TextareaExample" class="menu-item ">Textarea</a><a href="Examples/TextToSpeechExample" class="menu-item ">Text To Speech</a><a href="Examples/TimePickerExample" class="menu-item ">Time Picker</a><a href="Examples/ToastExample" class="menu-item ">Toast</a><a href="Examples/ToggleExample" class="menu-item ">Toggle</a><a href="Examples/ToggleGroupExample" class="menu-item ">Toggle Group</a><a href="Examples/TooltipExample" class="menu-item ">Tooltip</a><a href="Examples/TreeviewExample" class="menu-item ">Treeview<span id="icon-36cf866f-0a87-426e-a8bf-7e9d121250fa" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/VerifyHumanExample" class="menu-item ">Verify Human<span id="icon-29c2a4ea-9a2f-4007-b0b0-ca1d8f641667" tabindex="0" class="material-symbols-outlined  " style="color: goldenrod; font-size: 14px; " title="Paid Component">paid</span></a><a href="Examples/VideoExample" class="menu-item ">Video</a><a href="Examples/WidgetExample" class="menu-item ">Widget</a></div>
-            <style>
-                .menu-item { display: flex; justify-content: space-between; align-items: center; text-decoration: none !important }
-                .menu-item:hover { font-weight: bold }
-                .menu-item.active { font-weight: bold !important }
-            </style><div class="examples" style="margin-left: 200px; width: calc(100% - 200px)"><section><div class="flex-col g8"><h3>Welcome to</h3>
-        <h2>Sysinfocus <span style="color: var(--btn-primary-bg)">simple/ui</span></h2>
-        <p>a Razor component library for Blazor, inspired by the <b>shadcn/ui</b> components.</p>
-        <p>This site has examples for all the components built for Blazor using HTML, vanilla CSS, vanilla JavaScript and C#.</p>
-        <p>using NuGet package version: <b>0.0.2</b></p>
-        <div class="sbc-separator-horizontal " b-a729lixv8b=""></div>
-        <div class="flex-col g4 mt1"><div class="mb1">
-                This component library is now available on <a href="https://www.nuget.org/packages/Sysinfocus.AspNetCore.Components" target="_blank"><b>NuGet</b></a><br>
-                Setup instructions and examples are available here <a href="https://github.com/sysinfocus/simple-ui" target="_blank"><b>GitHub repo</b></a></div></div>
-        <div class="mb1">
-            This library comes in 2 licenses - <b>Individual</b> and <b>Enterprise</b>. If you are interested in purchasing the license, email to <a href="mailto:info@sysinfocus.com?subject=I am interest in Blazor Components&amp;body=Hi, I am interested to buy Blazor Components. Please do let me know how I can go ahead with it. Regards,"><b>info@sysinfocus.com</b></a></div>
-        <div class="sbc-separator-horizontal " b-a729lixv8b=""></div>
-        <div class="flex-col mtb1 g8"><h3 class="large">Examples built using these components</h3>
-            <a href="https://sparkling-marzipan-a92604.netlify.app/" target="_blank">• Payroll sheet</a>
-            <a href="https://opinion.sysinfocus.com/" target="_blank">• Opinion Poll</a>
-            <a href="https://gorgeous-raindrop-9b504f.netlify.app/" target="_blank">• Resume Builder</a>
-            <a href="https://github.com/Sysinfocus/SUIA" target="_blank">• Simple UI and API Starter Template GitHub repo</a></div>
-        <div class="sbc-separator-horizontal " b-a729lixv8b=""></div>
-        <div class="flex-col mtb1 g8"><b>What's new?</b>
-            <a href="Examples/SwipeExample"><b>• Swipe sample</b></a>
-            <a href="Examples/SchedulerExample"><b>• Scheduler sample</b> (Under Development)</a>
-            <a href="Examples/FileManagerExample"><b>• File Manager sample</b> (Under Development)</a>
-            <a href="Examples/TextToSpeechExample">• Text to Speech sample</a>
-            <a href="Examples/SpeechToTextExample">• Speech to Text sample</a>
-            <a href="Examples/VerifyHumanExample">• Verify Human sample</a>
-            <a href="Examples/TreeviewExample">• Treeview sample</a></div></div></section>
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="header-overlay"></div>
+                <div class="header-content">
+                    <div class="flex g4 aic"><button type="button" id="btn-9e689f9f-df72-4635-8cf8-0d251e456dd4" class="sbc-button icon regular nostyle " style="width:36px; " b-dxlcnpbuql=""><span class="material-symbols-outlined" b-dxlcnpbuql="">close</span></button><a class="flex g4" href="." style="text-decoration: none; color: inherit; align-items: center"><div class="large desktop normal">Sysinfocus </div><div class="large normal" style="color: var(--btn-primary-bg)">simple/ui</div></a></div>
+                    <div class="flex g4 aic">
+                        <div class="sbc-avatar tiny " style="background-color: black; color: black" title="Default" b-0d20zdvh5e="">D</div>
+                        <div class="sbc-avatar tiny " style="background-color: royalblue; color: royalblue" title="Royalblue" b-0d20zdvh5e="">R</div>
+                        <div class="sbc-avatar tiny " style="background-color: crimson; color: crimson" title="Crimson" b-0d20zdvh5e="">C</div>
+                        <div class="sbc-avatar tiny " style="background-color: seagreen; color: seagreen" title="Seagreen" b-0d20zdvh5e="">S</div>
+                        <div class="sbc-avatar tiny " style="background-color: orange; color: orange" title="Orange" b-0d20zdvh5e="">O</div>
+                        <div class="sbc-avatar tiny " style="background-color: magenta; color: magenta" title="Orange" b-0d20zdvh5e="">O</div>
+                        <button type="button" id="btn-e5f72fc3-5f22-4e1c-9db5-f1f274aa58aa" class="sbc-button icon small nostyle rounded " style="width:36px;width: 0 " title="Toggle Theme" b-dxlcnpbuql=""><span class="material-symbols-outlined" b-dxlcnpbuql="">light_mode</span></button>
+                    </div>
+                </div>
+            </div>
+            <main>
+                <div class="menu" style="position: fixed"><b>Components</b><a href="Examples/AccordionExample" class="menu-item ">Accordion</a><a href="Examples/ActivityLogExample" class="menu-item ">Activity Log</a><a href="Examples/AlertExample" class="menu-item ">Alert</a><a href="Examples/AlertDialogExample" class="menu-item ">Alert Dialog</a><a href="Examples/AIChatExample" class="menu-item ">AI Chat</a><a href="Examples/AspectRatioExample" class="menu-item ">Aspect Ratio</a><a href="Examples/AvatarExample" class="menu-item ">Avatar</a><a href="Examples/BadgeExample" class="menu-item ">Badge</a><a href="Examples/BarcodeQRCodeExample" class="menu-item ">Barcode QRCode</a><a href="Examples/BreadcrumbExample" class="menu-item ">Breadcrumb</a><a href="Examples/ButtonExample" class="menu-item ">Button</a><a href="Examples/CalendarExample" class="menu-item ">Calendar</a><a href="Examples/CardExample" class="menu-item ">Card</a><a href="Examples/CarouselExample" class="menu-item ">Carousel</a><a href="Examples/ChartExample" class="menu-item ">Chart</a><a href="Examples/CheckboxExample" class="menu-item ">Checkbox</a><a href="Examples/CodeScannerExample" class="menu-item ">Code Scanner</a><a href="Examples/CollapsibleExample" class="menu-item ">Collapsible</a><a href="Examples/ComboboxExample" class="menu-item ">Combobox</a><a href="Examples/CommandExample" class="menu-item ">Command</a><a href="Examples/ContextMenuExample" class="menu-item ">Context Menu</a><a href="Examples/DataTableExample" class="menu-item ">Data Table</a><a href="Examples/DatePickerExample" class="menu-item ">Date Picker</a><a href="Examples/DialogExample" class="menu-item ">Dialog</a><a href="Examples/DocumentViewerExample" class="menu-item ">Document Viewer</a><a href="Examples/DrawerExample" class="menu-item ">Drawer</a><a href="Examples/DropdownMenuExample" class="menu-item ">Dropdown Menu</a><a href="Examples/EditorExample" class="menu-item ">Editor</a><a href="Examples/ExcelReaderExample" class="menu-item ">Excel Reader</a><a href="Examples/FileManagerExample" class="menu-item ">File Manager</a><a href="Examples/FileUploadExample" class="menu-item ">File Upload</a><a href="Examples/FormExample" class="menu-item ">Form</a><a href="Examples/HoverCardExample" class="menu-item ">Hover Card</a><a href="Examples/InputExample" class="menu-item ">Input</a><a href="Examples/InputOTPExample" class="menu-item ">Input OTP</a><a href="Examples/LabelExample" class="menu-item ">Label</a><a href="Examples/LottieExample" class="menu-item ">Lottie</a><a href="Examples/MapsExample" class="menu-item ">Maps</a><a href="Examples/MenubarExample" class="menu-item ">Menubar</a><a href="Examples/NavigationMenuExample" class="menu-item ">Navigation Menu</a><a href="Examples/PaginationExample" class="menu-item ">Pagination</a><a href="Examples/PopoverExample" class="menu-item ">Popover</a><a href="Examples/ProgressExample" class="menu-item ">Progress</a><a href="Examples/RadioGroupExample" class="menu-item ">Radio Group</a><a href="Examples/ResizableExample" class="menu-item ">Resizable</a><a href="Examples/SaveFilePickerExample" class="menu-item ">Save File Picker</a><a href="Examples/SchedulerExample" class="menu-item ">Scheduler</a><a href="Examples/ScrollAreaExample" class="menu-item ">Scroll Area</a><a href="Examples/SelectExample" class="menu-item ">Select</a><a href="Examples/SeparatorExample" class="menu-item ">Separator</a><a href="Examples/SheetExample" class="menu-item ">Sheet</a><a href="Examples/SkeletonExample" class="menu-item ">Skeleton</a><a href="Examples/SignatureExample" class="menu-item ">Signature</a><a href="Examples/SliderExample" class="menu-item ">Slider</a><a href="Examples/SonnerExample" class="menu-item ">Sonner</a><a href="Examples/SortableExample" class="menu-item ">Sortable</a><a href="Examples/SpeechToTextExample" class="menu-item ">Speech To Text</a><a href="Examples/SwipeExample" class="menu-item ">Swipe</a><a href="Examples/SwitchExample" class="menu-item ">Switch</a><a href="Examples/TableExample" class="menu-item ">Table</a><a href="Examples/TabsExample" class="menu-item ">Tabs</a><a href="Examples/TextareaExample" class="menu-item ">Textarea</a><a href="Examples/TextToSpeechExample" class="menu-item ">Text To Speech</a><a href="Examples/TimePickerExample" class="menu-item ">Time Picker</a><a href="Examples/ToastExample" class="menu-item ">Toast</a><a href="Examples/ToggleExample" class="menu-item ">Toggle</a><a href="Examples/ToggleGroupExample" class="menu-item ">Toggle Group</a><a href="Examples/TooltipExample" class="menu-item ">Tooltip</a><a href="Examples/TreeviewExample" class="menu-item ">Treeview</a><a href="Examples/VerifyHumanExample" class="menu-item ">Verify Human</a><a href="Examples/VideoExample" class="menu-item ">Video</a><a href="Examples/WidgetExample" class="menu-item ">Widget</a></div>
+                <style>
+                    .menu-item { display: flex; justify-content: space-between; align-items: center; text-decoration: none !important }
+                    .menu-item:hover { font-weight: bold }
+                    .menu-item.active { font-weight: bold !important }
+                </style><div class="examples" style="margin-left: 200px; width: calc(100% - 200px)">
+                    <section>
+                        <div class="flex-col g8">
+                            <h3>Welcome to</h3>
+                            <h2>Sysinfocus <span style="color: var(--btn-primary-bg)">simple/ui</span></h2>
+                            <p>a Razor component library for Blazor, inspired by the <b>shadcn/ui</b> components.</p>
+                            <p>This site has examples for all the components built for Blazor using HTML, vanilla CSS, vanilla JavaScript and C#.</p>
+                            <p>using NuGet package version: <b>0.0.2.1</b></p>
+                            <hr style="opacity: 0.5" />
+                            <div class="flex-col g4 mt1">
+                                <div class="mb1">
+                                    This component library is now available on <a href="https://www.nuget.org/packages/Sysinfocus.AspNetCore.Components" target="_blank"><b>NuGet</b></a><br>
+                                    Setup instructions and examples are available here <a href="https://github.com/sysinfocus/simple-ui" target="_blank"><b>GitHub repo</b></a>
+                                </div>
+                            </div>                            
+                            <hr style="opacity: 0.5" />
+                            <div class="flex-col mtb1 g8">
+                                <h3 class="large">Examples built using these components</h3>
+                                <a href="https://sparkling-marzipan-a92604.netlify.app/" target="_blank">• Payroll sheet</a>
+                                <a href="https://opinion.sysinfocus.com/" target="_blank">• Opinion Poll</a>
+                                <a href="https://gorgeous-raindrop-9b504f.netlify.app/" target="_blank">• Resume Builder</a>
+                                <a href="https://github.com/Sysinfocus/SUIA" target="_blank">• Simple UI and API Starter Template GitHub repo</a>
+                            </div>
+                            <div class="sbc-separator-horizontal " b-a729lixv8b=""></div>
+                            <div class="flex-col mtb1 g8">
+                                <b>What's new?</b>
+                                <a href="Examples/AIChatExample"><b>• AIChat sample</b>(Under Development)</a>
+                                <a href="Examples/SwipeExample"><b>• Swipe sample</b></a>
+                                <a href="Examples/SchedulerExample"><b>• Scheduler sample</b> (Under Development)</a>
+                                <a href="Examples/FileManagerExample"><b>• File Manager sample</b> (Under Development)</a>
+                                <a href="Examples/TextToSpeechExample">• Text to Speech sample</a>
+                                <a href="Examples/SpeechToTextExample">• Speech to Text sample</a>
+                                <a href="Examples/VerifyHumanExample">• Verify Human sample</a>
+                                <a href="Examples/TreeviewExample">• Treeview sample</a>
+                            </div>
+                        </div>
+                    </section>
 
-            <div class="mt1"><style>
-    .sbc-about { text-decoration:none; width: fit-content; display: flex; gap: 0.5rem; align-items: center; font-size: 12px; background-color: var(--primary-fg); color: var(--primary-bg); padding: 0.5rem; border-radius: 6px; transition: all 300ms ease-in-out }
-    .sbc-about img { width: 24px; height: 24px; transition: all 300ms ease-in-out }
-    .sbc-about div { display: flex; flex-direction: column }
-    .sbc-about:hover { cursor: pointer }
-    .sbc-about:hover img { transform: scale(1.3) }
-</style>
-<a class="sbc-about" href="https://sysinfocus.com/simple-ui/" target="_blank"><img src="https://sysinfocus.github.io/shadcn-inspired/favicon.ico" alt="Sysinfocus">
-    <div><small>Built with ❤️</small>
-        <b>Sysinfocus</b></div></a></div></div></main></div>
-        <!-- <div class="app-loading"><span style="--d: 300ms"></span><span style="--d: 200ms"></span><span style="--d: 100ms"></span><span style="--d: 200ms"></span><span style="--d: 300ms"></span></div> -->
-    </div>    
+                    <div class="mt1">
+                        <style>
+                            .sbc-about {
+                                text-decoration: none;
+                                width: fit-content;
+                                display: flex;
+                                gap: 0.5rem;
+                                align-items: center;
+                                font-size: 12px;
+                                background-color: var(--primary-fg);
+                                color: var(--primary-bg);
+                                padding: 0.5rem;
+                                border-radius: 6px;
+                                transition: all 300ms ease-in-out
+                            }
+
+                                .sbc-about img {
+                                    width: 24px;
+                                    height: 24px;
+                                    transition: all 300ms ease-in-out
+                                }
+
+                                .sbc-about div {
+                                    display: flex;
+                                    flex-direction: column
+                                }
+
+                                .sbc-about:hover {
+                                    cursor: pointer
+                                }
+
+                                    .sbc-about:hover img {
+                                        transform: scale(1.3)
+                                    }
+                        </style>
+                        <a class="sbc-about" href="https://sysinfocus.com/simple-ui/" target="_blank">
+                            <img src="https://sysinfocus.github.io/shadcn-inspired/favicon.ico" alt="Sysinfocus">
+                            <div>
+                                <small>Built with ❤️</small>
+                                <b>Sysinfocus</b>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!--<div class="app-loading"><span style="--d: 300ms"></span><span style="--d: 200ms"></span><span style="--d: 100ms"></span><span style="--d: 200ms"></span><span style="--d: 300ms"></span></div>-->
+    </div>
     <script src="_framework/blazor.webassembly.js"></script>
 </body>
+
 </html>

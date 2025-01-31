@@ -261,43 +261,55 @@
 .sbc-badge[b-l2s21howrn] {
     height: 22px;
     padding-inline: 10px;
-    border-radius: 6px;       
+    border-radius: 6px;
     font-size: 12px;
     font-weight: 500;
-    cursor: default;        
+    cursor: default;
     transition: opacity 150ms ease-in-out;
     display: flex;
     align-items: center;
+    user-select: none;
 }
-.sbc-badge:hover[b-l2s21howrn] {
-    opacity: 0.85;
-}
+
+    .sbc-badge:hover[b-l2s21howrn] {
+        opacity: 0.85;
+    }
+
+    .sbc-badge.pointer:hover[b-l2s21howrn] {
+        cursor: pointer;
+    }
 
 .default[b-l2s21howrn] {
     background-color: var(--btn-primary-bg);
     color: var(--btn-primary-fg);
 }
+
 .secondary[b-l2s21howrn] {
     background-color: var(--btn-secondary-bg);
     color: var(--btn-secondary-fg);
 }
+
 .outline[b-l2s21howrn] {
     background-color: transparent;
     border: 1px solid var(--primary-border);
     color: var(--primary-fg) !important;
 }
+
 .destructive[b-l2s21howrn] {
     background-color: var(--btn-destructive-bg);
     color: var(--btn-destructive-fg);
 }
+
 .success[b-l2s21howrn] {
     background-color: var(--success-bg);
     color: var(--success-fg);
 }
+
 .warning[b-l2s21howrn] {
     background-color: var(--warning-bg);
     color: var(--warning-fg);
 }
+
 .info[b-l2s21howrn] {
     background-color: var(--info-bg);
     color: var(--info-fg);
@@ -549,69 +561,36 @@
 
 .sbc-date-picker[b-7d73tkmg3g] {
     background-color: var(--primary-bg);
-    width: fit-content;
+    min-width: fit-content;
+    min-height: fit-content;
+    width: 100%;
+    height: 100%;
     border: 1px solid var(--primary-border);
     padding: 12px;
     font-family: inherit;
     border-radius: 0.5rem;
     z-index: 100;
 }
-/*
-.sbc-date-picker-button {
-    display: flex;
-    gap: 8px;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--primary-bg);
-    color: var(--primary-fg);
-    font-weight: 500;
-    border: 1px solid var(--primary-border);
-    padding: 8px 16px;
-    height: 36px;
-    border-radius: 6px;
-    outline: transparent;
-    width: 100%;
-}*/
 
-/*    .sbc-date-picker-button span:first-child {
-        opacity: 0.5;
-        font-size: 18px;
-    }
-
-    .sbc-date-picker-button div:first-child {
-        display: flex;
-        gap: 8px;
-        align-items: center
-    }
-
-    .sbc-date-picker-button:not(:disabled):hover,
-    .sbc-date-picker-button:not(:disabled):focus-within {
-        cursor: pointer;
-        background-color: var(--btn-secondary-bg);
-        color: var(--btn-secondary-fg);
-    }
-
-    .sbc-date-picker-button p {
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-        width: 100%;
-    }*/
-
-
-/*.sbc-date-picker,*/
 .sbc-date-picker-header button[b-7d73tkmg3g],
 .sbc-date-picker-days button[b-7d73tkmg3g] {
     background-color: var(--primary-bg);
     color: var(--primary-fg);
     border: 1px solid transparent;
     padding: 4px;
-    height: 36px;
-    font-size: 14.5px;
+    min-height: 36px;
+    font-size: 0.9rem;
     font-weight: 500;
     min-width: 36px;
     border-radius: 6px;
     outline: transparent;
+}
+
+.sbc-date-picker-content[b-7d73tkmg3g] {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: calc(100% - 2.25rem);
 }
 
 .sbc-date-picker-content button:not(:disabled):hover[b-7d73tkmg3g] {
@@ -644,9 +623,10 @@
 
 .sbc-date-picker-days[b-7d73tkmg3g] {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    height: 100%;
+    grid-template-columns: repeat(7, 1fr);    
     gap: 1px;
-    row-gap: 8px;
+    row-gap: 0.5rem;
     text-align: center;
 }
 
@@ -1098,6 +1078,10 @@ hr[b-52fbtuz3y3] {
 .sbc-ac-list.show[b-52fbtuz3y3] {
     visibility: visible;
     animation: show-b-52fbtuz3y3 100ms linear both;
+}
+
+.light .sbc-combobox button[b-52fbtuz3y3] {
+    box-shadow: 0 1px 2px 0 var(--primary-border);
 }
 
 .light .sbc-ac-list[b-52fbtuz3y3] {
@@ -1736,10 +1720,12 @@ hr[b-52fbtuz3y3] {
     width: 100%;
 }
 
-.sbc-input input:focus[b-9pp4fu6np5] {
-    border-color: transparent;
-    box-shadow: 0 0 1px 1px var(--primary-fg) !important;
-}
+    .sbc-input input:focus[b-9pp4fu6np5] {
+        border-color: transparent;
+        box-shadow: 0 0 1px 1px var(--primary-fg) !important;
+        margin-left: 2px;
+        width: calc(100% - 4px);
+    }
 
 .sbc-input input:disabled[b-9pp4fu6np5] {
     opacity: 0.5;
@@ -2483,6 +2469,11 @@ hr[b-oioz0f36uz] {
 .sbc-ac-list.show[b-oioz0f36uz] {
     visibility: visible;
     animation: show-b-oioz0f36uz 100ms linear both;
+}
+
+
+.light .sbc-select button[b-oioz0f36uz] {
+    box-shadow: 0 1px 2px 0 var(--primary-border);
 }
 
 .light .sbc-ac-list[b-oioz0f36uz] {
