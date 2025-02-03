@@ -1,0 +1,20 @@
+<section class="flex-col">
+    <div class="flex-col g8">
+        <h2>Text</h2>    
+        <small class="muted">It is a simple component specifically for displaying titles with various gradient combinations.</small>
+    </div>
+    <Grid MinColWidth="350px">
+        <Text Content="simple/ui" SizeInRem="4" Weight="FontWeights.W100" />
+        <Text Content="simple/ui" SizeInRem="4" Color="crimson" />
+        <Text Content="simple/ui" SizeInRem="4" Weight="FontWeights.W900" LetterSpacing="-4px" ShowGradient />
+        <Text Content="simple/ui" SizeInRem="4" Weight="FontWeights.W900" Color="orange" LetterSpacing="-4px" />
+        <Text Content="simple/ui" SizeInRem="4" Weight="FontWeights.W900" GradientColors="purple, cyan" ShowGradient />
+        <Text Content="simple/ui" SizeInRem="4" Weight="FontWeights.W900" GradientColors="magenta 55%, royalblue 55%" ShowGradient />
+        <Text Content="simple/ui" SizeInRem="4" Weight="FontWeights.W900" GradientColors="45deg, red 20%, green 40%, blue" ShowGradient />
+
+        <Text Style="grid-column: span 3" SizeInRem="1.5" ShowGradient GradientColors="blueviolet, forestgreen">
+            <h1>Header Content</h1>
+            Wisi elitr et ut accusam gubergren diam. Eos est laoreet sed accumsan diam magna dolores nonumy sadipscing gubergren erat ut quis rebum et velit. Ea ipsum invidunt clita kasd. Zzril magna ullamcorper dolores zzril. Lorem duo dolor dolore takimata erat sea duo no volutpat. Consequat et et lorem dolore labore sanctus kasd velit ad nisl consetetur elitr est gubergren duis adipiscing ut. Nobis ut qui sed gubergren sed kasd blandit. Ut voluptua duo no ad est ea nulla nonummy velit dolor dolor ex eos ipsum rebum. Vero no dolore ipsum dolores sadipscing gubergren sit.
+        </Text>
+    </Grid>
+</section>

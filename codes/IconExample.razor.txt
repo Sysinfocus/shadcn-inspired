@@ -1,0 +1,60 @@
+<section class="flex-col">
+    <div class="flex-col g8">
+        <h2>Icon</h2>    
+        <small class="muted">Currently this component supports Google Material Icons and Microsoft Fluent Icons.</small>
+    </div>
+    <div class="flex-col">
+        <p>Using Google Material Icons - Refer Icons list here <a href="https://fonts.google.com/icons" target="_blank">Google Fonts - Icons</a></p>
+        <div class="flex">
+            <Icon Name="settings" Size="80px" />
+            <Icon Name="refresh" Size="80px" />
+        </div>
+    </div>
+    <Separator />
+    <div class="flex-col">
+        <p>Using Microsoft Fluent Icons - Refer Icons list here <a href="https://developer.microsoft.com/en-us/fluentui#/styles/web/icons" target="_blank">Icons</a></p>
+        <div class="flex">
+            <Icon Name="Settings" Type="IconType.Fabric" Size="64px" />
+            <Icon Name="Refresh" Type="IconType.Fabric" Size="64px" />
+        </div>
+        <Separator />
+        <h4 class="large">Brand Icons</h4>
+        <div class="flex wrap">
+            <Icon Name="outlook" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="onedrive" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="word" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="excel" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="powerpoint" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="onenote" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="sharepoint" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="teams" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="office" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="access" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="project" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="visio" IsBrand Type="IconType.Fabric" Size="48" />
+        </div>
+        <Separator />
+        <h4 class="large">File Type Icons</h4>
+        <div class="flex wrap">
+            <Icon Name="accdb" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="csv" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="docx" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="dotx" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="mpp" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="mpt" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="one" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="onetoc" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="potx" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="ppsx" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="pptx" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="pub" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="vsdx" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="vssx" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="vstx" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="xlsx" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="xltx" IsBrand Type="IconType.Fabric" Size="48" />
+            <Icon Name="xsn" IsBrand Type="IconType.Fabric" Size="48" />
+            
+        </div>
+    </div>
+</section>

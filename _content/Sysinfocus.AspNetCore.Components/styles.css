@@ -425,24 +425,25 @@ h4 {
 
 /* Animations */
 .slide-in { animation: slideIn 300ms ease-in-out var(--delay, 0) forwards; }
-@keyframes slideIn {
-    from { transform: translateX(100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
+@keyframes slideIn { from { transform: translateX(100px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 .slide-out { animation: slideOut 300ms ease-in-out var(--delay, 0) forwards; }
-@keyframes slideOut {
-    from { transform: translateX(-100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
+@keyframes slideOut { from { transform: translateX(-100px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 .fade-in { animation: fadeIn 300ms ease-in-out var(--delay, 0) forwards; }
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .fade-out { animation: fadeOut 300ms ease-in-out var(--delay, 0) forwards; }
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+/*@keyframes slideleft { from { transform: translateX(var(--from-x, 100px)) } to { transform: translateX(var(--to-x, 0)) } }
+@keyframes slideright { from { transform: translateX(var(--from-x, -100px)) } to { transform: translateX(var(--to-x, 0)) } }
+@keyframes slideup { from { transform: translateY(var(--from-y, 100px)) } to { transform: translateY(var(--to-y, 0)) } }
+@keyframes slidedown { from { transform: translateY(var(--from-y, -100px)) } to { transform: translateY(var(--to-y, 0)) } }
+@keyframes fadein { from { opacity: var(--from-opacity, 0) } to { opacity: var(--to-opacity, 1) } }
+@keyframes fadeout { from { opacity: var(--from-opacity, 1) } to { opacity: var(--to-opacity, 0) } }*/
+@keyframes slide { from { transform: translate(var(--from-x, 0), var(--from-y, 0)) } to { transform: translate(var(--to-x, 0),var(--to-y, 0)) } }
+@keyframes fade { from { opacity: var(--from-opacity, 0) } to { opacity: var(--to-opacity, 1) } }
+@keyframes slidefade { from { opacity: var(--from-opacity, 0); transform: translate(var(--from-x, 0), var(--from-y, 0)) } to { opacity: var(--to-opacity, 1); transform: translate(var(--to-x, 0),var(--to-y, 0)) } }
+@keyframes color { from { color:var(--from-color) } to { color:var(--to-color) } }
+@keyframes rotate { from { transform: rotate(var(--from-degree)) } to { transform: rotate(var(--to-degree)) } }
+@keyframes scale { from { transform: scale(var(--from-scale)) } to { transform: scale(var(--to-scale)) } }
 
 .test { background-color: yellow }

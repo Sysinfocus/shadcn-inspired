@@ -1,0 +1,55 @@
+<section class="flex-col">
+    <div class="flex-col g8 mb1">
+        <h2>Animate</h2>
+        <small class="muted">Simple animation component. Wrap your content within the <b>Animate</b> component and you get these different animation types.</small>
+    </div>
+    <Grid MinColWidth="250px" Gap="3rem">
+        <Group Label="Fade In animation">
+            <Animate Type="AnimationType.Fade" Duration="2s"><h1>FadeIn</h1></Animate>
+        </Group>
+        <Group Label="Fade Out animation">
+            <Animate Type="AnimationType.Fade" FromOpacity="1" ToOpacity="0" Duration="2s"><h1>FadeOut</h1></Animate>
+        </Group>
+        <Group Label="Slide Fade In animation">
+            <Animate Type="AnimationType.SlideFade" Duration="2s" FromX="25px" ToX="0" FromY="25px" ToY="0"><h1>SlideFadeIn</h1></Animate>
+        </Group>
+        <Group Label="Slide Fade Out animation">
+            <Animate Type="AnimationType.SlideFade" FromOpacity="1" ToOpacity="0" Duration="2s" FromX="0" ToX="25px" FromY="0" ToY="25px"><h1>SlideFadeOut</h1></Animate>
+        </Group>
+        <Group Label="Slide Up animation">
+            <Animate Type="AnimationType.Slide" Duration="2s" FromY="25px" ToY="0"><h1>Up</h1></Animate>
+        </Group>
+        <Group Label="Slide Down animation">
+            <Animate Type="AnimationType.Slide" Duration="2s" FromY="0" ToY="25px"><h1>Down</h1></Animate>
+        </Group>
+        <Group Label="Slide Left animation">
+            <Animate Type="AnimationType.Slide" Duration="2s" FromX="25px" ToX="0"><h1>Left</h1></Animate>
+        </Group>
+        <Group Label="Slide Right animation">
+            <Animate Type="AnimationType.Slide" Duration="2s" FromX="0" ToX="25px"><h1>Right</h1></Animate>
+        </Group>
+        <Group Label="Slide Left Up animation">
+            <Animate Type="AnimationType.Slide" Duration="2s" FromX="25px" FromY="25px" ToX="0" ToY="0"><h1>LeftUp</h1></Animate>
+        </Group>
+        <Group Label="Slide Right Down animation">
+            <Animate Type="AnimationType.Slide" Duration="2s" FromX="0" FromY="0" ToX="25px" ToY="25px"><h1>RightDown</h1></Animate>
+        </Group>
+        <Group Label="Color change animation">
+            <Animate Type="AnimationType.Color" Duration="2s" Direction="alternate-reverse" FromColor="lime" ToColor="orange" Ease="EasingType.Ease_In_Out">
+                <h1>ColorChange</h1>
+            </Animate>
+        </Group>
+        <Group Label="Rotate animation">
+            <Animate Type="AnimationType.Rotate" Duration="2s" FromDegree="0deg" ToDegree="360deg" Ease="EasingType.Linear">
+                <Icon Name="refresh" Size="64px" />
+            </Animate>
+        </Group>
+        <Group Label="Scale + Color change animation">
+            <Animate Type="AnimationType.Scale" Duration="1s" Direction="alternate-reverse" FromScale="0.5" ToScale="1.5" Ease="EasingType.Ease_In" TransformOrigin="center" Style="margin-left: 50px">
+                <Animate Type="AnimationType.Color" Duration="2s" FromColor="magenta" ToColor="red" Ease="EasingType.Ease_In_Out">
+                    <Icon Name="favorite" Size="40px" Color="inherit" />
+                </Animate>
+            </Animate>
+        </Group>
+    </Grid>
+</section>
