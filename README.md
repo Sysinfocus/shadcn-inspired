@@ -1,6 +1,8 @@
 # Sysinfocus AspNetCore Components
 a Razor component library for Blazor, inspired by the shadcn/ui components.
 
+# Visit our new home for this UI library @ [BLAZOR.ART](https://blazor.art)
+
 ## Setup Instructions
 There are setup instructions and sample projects both for .NET8 and .NET9 at this [Repo](https://github.com/Sysinfocus/simple-ui)
 
